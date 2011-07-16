@@ -98,7 +98,7 @@ static void renderingFinished(void *context, const AudioDecoder *decoder)
 	[self.window makeKeyAndVisible];
 
 	// Just play the file
-	if(![self playFile:[[NSBundle mainBundle] pathForResource:@"test" ofType:@"aiff"]])
+	if(![self playFile:[[NSBundle mainBundle] pathForResource:@"test" ofType:@"flac"]])
 		NSLog(@"Couldn't play");
 
 	return YES;
@@ -173,7 +173,8 @@ static void renderingFinished(void *context, const AudioDecoder *decoder)
 
 - (BOOL) playFile:(NSString *)file
 {
-	NSParameterAssert(nil != file);
+	if(nil == file)
+		return NO;
 	
 	NSURL *url = [NSURL fileURLWithPath:file];
 	
