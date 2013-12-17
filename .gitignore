@@ -1,6 +1,7 @@
 doc/
 build/
 Frameworks/
+Libraries/
 
 *.pbxuser
 *.mode1v3
@@ -15,3 +16,7 @@ Frameworks/
 xcuserdata
 
 .DS_Store
+
+# Vendor sourcetrees
+Vendor/*/*-src/
+Vendor/*/.patched*

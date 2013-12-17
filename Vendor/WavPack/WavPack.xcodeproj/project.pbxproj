@@ -1,0 +1,424 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DB90554718701154007B1AE1 /* wavpack.h in Headers */ = {isa = PBXBuildFile; fileRef = DB90550418701154007B1AE1 /* wavpack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB90555718701154007B1AE1 /* bits.c in Sources */ = {isa = PBXBuildFile; fileRef = DB90551618701154007B1AE1 /* bits.c */; };
+		DB90555818701154007B1AE1 /* extra1.c in Sources */ = {isa = PBXBuildFile; fileRef = DB90551718701154007B1AE1 /* extra1.c */; };
+		DB90555918701154007B1AE1 /* extra2.c in Sources */ = {isa = PBXBuildFile; fileRef = DB90551818701154007B1AE1 /* extra2.c */; };
+		DB90555A18701154007B1AE1 /* float.c in Sources */ = {isa = PBXBuildFile; fileRef = DB90551918701154007B1AE1 /* float.c */; };
+		DB90555D18701154007B1AE1 /* metadata.c in Sources */ = {isa = PBXBuildFile; fileRef = DB90551C18701154007B1AE1 /* metadata.c */; };
+		DB90555E18701154007B1AE1 /* pack.c in Sources */ = {isa = PBXBuildFile; fileRef = DB90551D18701154007B1AE1 /* pack.c */; };
+		DB90555F18701154007B1AE1 /* tags.c in Sources */ = {isa = PBXBuildFile; fileRef = DB90551E18701154007B1AE1 /* tags.c */; };
+		DB90556018701154007B1AE1 /* unpack.c in Sources */ = {isa = PBXBuildFile; fileRef = DB90551F18701154007B1AE1 /* unpack.c */; };
+		DB90556118701154007B1AE1 /* unpack3.c in Sources */ = {isa = PBXBuildFile; fileRef = DB90552018701154007B1AE1 /* unpack3.c */; };
+		DB90556218701154007B1AE1 /* unpack3.h in Headers */ = {isa = PBXBuildFile; fileRef = DB90552118701154007B1AE1 /* unpack3.h */; };
+		DB90556318701154007B1AE1 /* wavpack_local.h in Headers */ = {isa = PBXBuildFile; fileRef = DB90552218701154007B1AE1 /* wavpack_local.h */; };
+		DB90556418701154007B1AE1 /* wavpack_version.h in Headers */ = {isa = PBXBuildFile; fileRef = DB90552318701154007B1AE1 /* wavpack_version.h */; };
+		DB90556518701154007B1AE1 /* words.c in Sources */ = {isa = PBXBuildFile; fileRef = DB90552418701154007B1AE1 /* words.c */; };
+		DB90556618701154007B1AE1 /* wputils.c in Sources */ = {isa = PBXBuildFile; fileRef = DB90552518701154007B1AE1 /* wputils.c */; };
+		DB905A8318701D51007B1AE1 /* wavpack.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB90550418701154007B1AE1 /* wavpack.h */; };
+		DB905A8418701D6A007B1AE1 /* bits.c in Sources */ = {isa = PBXBuildFile; fileRef = DB90551618701154007B1AE1 /* bits.c */; };
+		DB905A8518701D6A007B1AE1 /* extra1.c in Sources */ = {isa = PBXBuildFile; fileRef = DB90551718701154007B1AE1 /* extra1.c */; };
+		DB905A8618701D6A007B1AE1 /* extra2.c in Sources */ = {isa = PBXBuildFile; fileRef = DB90551818701154007B1AE1 /* extra2.c */; };
+		DB905A8718701D6A007B1AE1 /* float.c in Sources */ = {isa = PBXBuildFile; fileRef = DB90551918701154007B1AE1 /* float.c */; };
+		DB905A8818701D6A007B1AE1 /* metadata.c in Sources */ = {isa = PBXBuildFile; fileRef = DB90551C18701154007B1AE1 /* metadata.c */; };
+		DB905A8918701D6A007B1AE1 /* pack.c in Sources */ = {isa = PBXBuildFile; fileRef = DB90551D18701154007B1AE1 /* pack.c */; };
+		DB905A8A18701D6A007B1AE1 /* tags.c in Sources */ = {isa = PBXBuildFile; fileRef = DB90551E18701154007B1AE1 /* tags.c */; };
+		DB905A8B18701D6A007B1AE1 /* unpack.c in Sources */ = {isa = PBXBuildFile; fileRef = DB90551F18701154007B1AE1 /* unpack.c */; };
+		DB905A8C18701D6A007B1AE1 /* unpack3.c in Sources */ = {isa = PBXBuildFile; fileRef = DB90552018701154007B1AE1 /* unpack3.c */; };
+		DB905A8D18701D6A007B1AE1 /* words.c in Sources */ = {isa = PBXBuildFile; fileRef = DB90552418701154007B1AE1 /* words.c */; };
+		DB905A8E18701D6A007B1AE1 /* wputils.c in Sources */ = {isa = PBXBuildFile; fileRef = DB90552518701154007B1AE1 /* wputils.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DB9054E218701117007B1AE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB9054A7187010C4007B1AE1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB9054AD187010F2007B1AE1;
+			remoteInfo = "Download WavPack";
+		};
+		DB905A8118701D4A007B1AE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB9054A7187010C4007B1AE1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB9054AD187010F2007B1AE1;
+			remoteInfo = "Download WavPack";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DB905A5718701D04007B1AE1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				DB905A8318701D51007B1AE1 /* wavpack.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		DB9054B6187010F8007B1AE1 /* wavpack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = wavpack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB9054E718701154007B1AE1 /* WavPack-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "WavPack-Info.plist"; sourceTree = "<group>"; };
+		DB9054E818701154007B1AE1 /* WavPack-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WavPack-Prefix.pch"; sourceTree = "<group>"; };
+		DB90550418701154007B1AE1 /* wavpack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wavpack.h; sourceTree = "<group>"; };
+		DB90551618701154007B1AE1 /* bits.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bits.c; sourceTree = "<group>"; };
+		DB90551718701154007B1AE1 /* extra1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = extra1.c; sourceTree = "<group>"; };
+		DB90551818701154007B1AE1 /* extra2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = extra2.c; sourceTree = "<group>"; };
+		DB90551918701154007B1AE1 /* float.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = float.c; sourceTree = "<group>"; };
+		DB90551C18701154007B1AE1 /* metadata.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = metadata.c; sourceTree = "<group>"; };
+		DB90551D18701154007B1AE1 /* pack.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pack.c; sourceTree = "<group>"; };
+		DB90551E18701154007B1AE1 /* tags.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tags.c; sourceTree = "<group>"; };
+		DB90551F18701154007B1AE1 /* unpack.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unpack.c; sourceTree = "<group>"; };
+		DB90552018701154007B1AE1 /* unpack3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unpack3.c; sourceTree = "<group>"; };
+		DB90552118701154007B1AE1 /* unpack3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unpack3.h; sourceTree = "<group>"; };
+		DB90552218701154007B1AE1 /* wavpack_local.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wavpack_local.h; sourceTree = "<group>"; };
+		DB90552318701154007B1AE1 /* wavpack_version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wavpack_version.h; sourceTree = "<group>"; };
+		DB90552418701154007B1AE1 /* words.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = words.c; sourceTree = "<group>"; };
+		DB90552518701154007B1AE1 /* wputils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wputils.c; sourceTree = "<group>"; };
+		DB905A5918701D04007B1AE1 /* libwavpack.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libwavpack.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB905B8118702474007B1AE1 /* WavPack-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "WavPack-Debug.xcconfig"; sourceTree = "<group>"; };
+		DB905B8218702474007B1AE1 /* WavPack-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "WavPack-Release.xcconfig"; sourceTree = "<group>"; };
+		DB905B8318702474007B1AE1 /* WavPack-Static-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "WavPack-Static-Debug.xcconfig"; sourceTree = "<group>"; };
+		DB905B8418702474007B1AE1 /* WavPack-Static-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "WavPack-Static-Release.xcconfig"; sourceTree = "<group>"; };
+		DB905B8518702474007B1AE1 /* WavPack.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = WavPack.xcconfig; sourceTree = "<group>"; };
+		DB905B8618702478007B1AE1 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = ../../Configurations/Debug.xcconfig; sourceTree = "<group>"; };
+		DB905B8718702478007B1AE1 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = ../../Configurations/Release.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		DB9054A6187010C4007B1AE1 = {
+			isa = PBXGroup;
+			children = (
+				DB9054EB18701154007B1AE1 /* WavPack */,
+				DB9055691870116D007B1AE1 /* Supporting Files */,
+				DB9054B7187010F8007B1AE1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DB9054B7187010F8007B1AE1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB9054B6187010F8007B1AE1 /* wavpack.framework */,
+				DB905A5918701D04007B1AE1 /* libwavpack.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB9054EB18701154007B1AE1 /* WavPack */ = {
+			isa = PBXGroup;
+			children = (
+				DB90550118701154007B1AE1 /* include */,
+				DB90551518701154007B1AE1 /* src */,
+			);
+			name = WavPack;
+			path = "wavpack-src";
+			sourceTree = "<group>";
+		};
+		DB90550118701154007B1AE1 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				DB90550418701154007B1AE1 /* wavpack.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		DB90551518701154007B1AE1 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				DB90551618701154007B1AE1 /* bits.c */,
+				DB90551718701154007B1AE1 /* extra1.c */,
+				DB90551818701154007B1AE1 /* extra2.c */,
+				DB90551918701154007B1AE1 /* float.c */,
+				DB90551C18701154007B1AE1 /* metadata.c */,
+				DB90551D18701154007B1AE1 /* pack.c */,
+				DB90551E18701154007B1AE1 /* tags.c */,
+				DB90551F18701154007B1AE1 /* unpack.c */,
+				DB90552018701154007B1AE1 /* unpack3.c */,
+				DB90552118701154007B1AE1 /* unpack3.h */,
+				DB90552218701154007B1AE1 /* wavpack_local.h */,
+				DB90552318701154007B1AE1 /* wavpack_version.h */,
+				DB90552418701154007B1AE1 /* words.c */,
+				DB90552518701154007B1AE1 /* wputils.c */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		DB9055691870116D007B1AE1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DB9054E718701154007B1AE1 /* WavPack-Info.plist */,
+				DB9054E818701154007B1AE1 /* WavPack-Prefix.pch */,
+				DB905B8018702474007B1AE1 /* Configurations */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DB905B8018702474007B1AE1 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				DB905B8618702478007B1AE1 /* Debug.xcconfig */,
+				DB905B8718702478007B1AE1 /* Release.xcconfig */,
+				DB905B8118702474007B1AE1 /* WavPack-Debug.xcconfig */,
+				DB905B8218702474007B1AE1 /* WavPack-Release.xcconfig */,
+				DB905B8318702474007B1AE1 /* WavPack-Static-Debug.xcconfig */,
+				DB905B8418702474007B1AE1 /* WavPack-Static-Release.xcconfig */,
+				DB905B8518702474007B1AE1 /* WavPack.xcconfig */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		DB9054B3187010F8007B1AE1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB90554718701154007B1AE1 /* wavpack.h in Headers */,
+				DB90556218701154007B1AE1 /* unpack3.h in Headers */,
+				DB90556318701154007B1AE1 /* wavpack_local.h in Headers */,
+				DB90556418701154007B1AE1 /* wavpack_version.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXLegacyTarget section */
+		DB9054AD187010F2007B1AE1 /* Download WavPack */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = DB9054B0187010F2007B1AE1 /* Build configuration list for PBXLegacyTarget "Download WavPack" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = "$(SRCROOT)";
+			dependencies = (
+			);
+			name = "Download WavPack";
+			passBuildSettingsInEnvironment = 1;
+			productName = "Download WavPack";
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXNativeTarget section */
+		DB9054B5187010F8007B1AE1 /* WavPack */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB9054DC187010F8007B1AE1 /* Build configuration list for PBXNativeTarget "WavPack" */;
+			buildPhases = (
+				DB9054B1187010F8007B1AE1 /* Sources */,
+				DB9054B3187010F8007B1AE1 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB9054E318701117007B1AE1 /* PBXTargetDependency */,
+			);
+			name = WavPack;
+			productName = WavPack;
+			productReference = DB9054B6187010F8007B1AE1 /* wavpack.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DB905A5818701D04007B1AE1 /* libwavpack */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB905A7D18701D04007B1AE1 /* Build configuration list for PBXNativeTarget "libwavpack" */;
+			buildPhases = (
+				DB905A5518701D04007B1AE1 /* Sources */,
+				DB905A5718701D04007B1AE1 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB905A8218701D4A007B1AE1 /* PBXTargetDependency */,
+			);
+			name = libwavpack;
+			productName = libwavpack;
+			productReference = DB905A5918701D04007B1AE1 /* libwavpack.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DB9054A7187010C4007B1AE1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+			};
+			buildConfigurationList = DB9054AA187010C4007B1AE1 /* Build configuration list for PBXProject "WavPack" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DB9054A6187010C4007B1AE1;
+			productRefGroup = DB9054B7187010F8007B1AE1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DB9054AD187010F2007B1AE1 /* Download WavPack */,
+				DB9054B5187010F8007B1AE1 /* WavPack */,
+				DB905A5818701D04007B1AE1 /* libwavpack */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DB9054B1187010F8007B1AE1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB90555F18701154007B1AE1 /* tags.c in Sources */,
+				DB90555E18701154007B1AE1 /* pack.c in Sources */,
+				DB90555D18701154007B1AE1 /* metadata.c in Sources */,
+				DB90556118701154007B1AE1 /* unpack3.c in Sources */,
+				DB90556518701154007B1AE1 /* words.c in Sources */,
+				DB90556618701154007B1AE1 /* wputils.c in Sources */,
+				DB90555A18701154007B1AE1 /* float.c in Sources */,
+				DB90555718701154007B1AE1 /* bits.c in Sources */,
+				DB90556018701154007B1AE1 /* unpack.c in Sources */,
+				DB90555818701154007B1AE1 /* extra1.c in Sources */,
+				DB90555918701154007B1AE1 /* extra2.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB905A5518701D04007B1AE1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB905A8418701D6A007B1AE1 /* bits.c in Sources */,
+				DB905A8518701D6A007B1AE1 /* extra1.c in Sources */,
+				DB905A8618701D6A007B1AE1 /* extra2.c in Sources */,
+				DB905A8718701D6A007B1AE1 /* float.c in Sources */,
+				DB905A8818701D6A007B1AE1 /* metadata.c in Sources */,
+				DB905A8918701D6A007B1AE1 /* pack.c in Sources */,
+				DB905A8A18701D6A007B1AE1 /* tags.c in Sources */,
+				DB905A8B18701D6A007B1AE1 /* unpack.c in Sources */,
+				DB905A8C18701D6A007B1AE1 /* unpack3.c in Sources */,
+				DB905A8D18701D6A007B1AE1 /* words.c in Sources */,
+				DB905A8E18701D6A007B1AE1 /* wputils.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DB9054E318701117007B1AE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB9054AD187010F2007B1AE1 /* Download WavPack */;
+			targetProxy = DB9054E218701117007B1AE1 /* PBXContainerItemProxy */;
+		};
+		DB905A8218701D4A007B1AE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB9054AD187010F2007B1AE1 /* Download WavPack */;
+			targetProxy = DB905A8118701D4A007B1AE1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		DB9054AB187010C4007B1AE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB905B8618702478007B1AE1 /* Debug.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		DB9054AC187010C4007B1AE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB905B8718702478007B1AE1 /* Release.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		DB9054AE187010F2007B1AE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		DB9054AF187010F2007B1AE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		DB9054DD187010F8007B1AE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB905B8118702474007B1AE1 /* WavPack-Debug.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		DB9054DE187010F8007B1AE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB905B8218702474007B1AE1 /* WavPack-Release.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		DB905A7918701D04007B1AE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB905B8318702474007B1AE1 /* WavPack-Static-Debug.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		DB905A7A18701D04007B1AE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB905B8418702474007B1AE1 /* WavPack-Static-Release.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DB9054AA187010C4007B1AE1 /* Build configuration list for PBXProject "WavPack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB9054AB187010C4007B1AE1 /* Debug */,
+				DB9054AC187010C4007B1AE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB9054B0187010F2007B1AE1 /* Build configuration list for PBXLegacyTarget "Download WavPack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB9054AE187010F2007B1AE1 /* Debug */,
+				DB9054AF187010F2007B1AE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB9054DC187010F8007B1AE1 /* Build configuration list for PBXNativeTarget "WavPack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB9054DD187010F8007B1AE1 /* Debug */,
+				DB9054DE187010F8007B1AE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB905A7D18701D04007B1AE1 /* Build configuration list for PBXNativeTarget "libwavpack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB905A7918701D04007B1AE1 /* Debug */,
+				DB905A7A18701D04007B1AE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DB9054A7187010C4007B1AE1 /* Project object */;
+}

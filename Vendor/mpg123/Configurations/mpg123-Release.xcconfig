@@ -1,0 +1,2 @@
+#include "../../Configurations/Framework-Release.xcconfig"
+#include "mpg123.xcconfig"

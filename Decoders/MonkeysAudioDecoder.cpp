@@ -52,14 +52,14 @@ namespace {
 #pragma mark IO Interface
 
 // The I/O interface for MAC
-class SFB::Audio::MonkeysAudioDecoder::APEIOInterface : public CIO
+class SFB::Audio::MonkeysAudioDecoder::APEIOInterface : public APE::CIO
 {
 public:
 	APEIOInterface(SFB::InputSource& inputSource)
 		: mInputSource(inputSource)
 	{}
 
-	inline virtual int Open(const wchar_t * pName)
+    inline virtual int Open(const wchar_t * pName, BOOL bOpenReadOnly = FALSE)
 	{
 #pragma unused(pName)
 		return ERROR_INVALID_INPUT_FILE;
@@ -202,8 +202,7 @@ SFB::Audio::MonkeysAudioDecoder::MonkeysAudioDecoder(InputSource::unique_ptr inp
 bool SFB::Audio::MonkeysAudioDecoder::_Open(CFErrorRef *error)
 {
 	auto ioInterface = 	std::unique_ptr<APEIOInterface>(new APEIOInterface(GetInputSource()));
-
-	auto decompressor = std::unique_ptr<IAPEDecompress>(CreateIAPEDecompressEx(ioInterface.get(), nullptr));
+	auto decompressor = std::unique_ptr<APE::IAPEDecompress>(CreateIAPEDecompressEx(ioInterface.get(), nullptr));
 	if(!decompressor) {
 		if(error) {
 			SFB::CFString description = CFCopyLocalizedString(CFSTR("The file “%@” is not a valid Monkey's Audio file."), "");
@@ -223,9 +222,9 @@ bool SFB::Audio::MonkeysAudioDecoder::_Open(CFErrorRef *error)
 	mFormat.mFormatID			= kAudioFormatLinearPCM;
 	mFormat.mFormatFlags		= kAudioFormatFlagIsSignedInteger | kAudioFormatFlagsNativeEndian | kAudioFormatFlagIsPacked;
 	
-	mFormat.mBitsPerChannel		= (UInt32)mDecompressor->GetInfo(APE_INFO_BITS_PER_SAMPLE);
-	mFormat.mSampleRate			= mDecompressor->GetInfo(APE_INFO_SAMPLE_RATE);
-	mFormat.mChannelsPerFrame	= (UInt32)mDecompressor->GetInfo(APE_INFO_CHANNELS);
+	mFormat.mBitsPerChannel		= (UInt32)mDecompressor->GetInfo(APE::APE_INFO_BITS_PER_SAMPLE);
+	mFormat.mSampleRate			= mDecompressor->GetInfo(APE::APE_INFO_SAMPLE_RATE);
+	mFormat.mChannelsPerFrame	= (UInt32)mDecompressor->GetInfo(APE::APE_INFO_CHANNELS);
 	
 	mFormat.mBytesPerPacket		= (mFormat.mBitsPerChannel / 8) * mFormat.mChannelsPerFrame;
 	mFormat.mFramesPerPacket	= 1;
@@ -281,12 +280,12 @@ UInt32 SFB::Audio::MonkeysAudioDecoder::_ReadAudio(AudioBufferList *bufferList, 
 
 SInt64 SFB::Audio::MonkeysAudioDecoder::_GetTotalFrames() const
 {
-	return mDecompressor->GetInfo(APE_DECOMPRESS_TOTAL_BLOCKS);
+	return mDecompressor->GetInfo(APE::APE_DECOMPRESS_TOTAL_BLOCKS);
 }
 
 SInt64 SFB::Audio::MonkeysAudioDecoder::_GetCurrentFrame() const
 {
-	return mDecompressor->GetInfo(APE_DECOMPRESS_CURRENT_BLOCK);
+	return mDecompressor->GetInfo(APE::APE_DECOMPRESS_CURRENT_BLOCK);
 }
 
 SInt64 SFB::Audio::MonkeysAudioDecoder::_SeekToFrame(SInt64 frame)

@@ -31,14 +31,10 @@
 		3296824E17B9D33100B3CDB4 /* Logger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32AEB28F1409AF2B001F9A60 /* Logger.cpp */; };
 		3296824F17B9D33100B3CDB4 /* Logger+NSOverloads.mm in Sources */ = {isa = PBXBuildFile; fileRef = 32DFA2F214FA7FD400D1FB58 /* Logger+NSOverloads.mm */; };
 		3296825217B9D33100B3CDB4 /* Semaphore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 326A98F51392F38A0061A65F /* Semaphore.cpp */; };
-		3296825617B9D47000B3CDB4 /* CreateChannelLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3285714A12ED5C5D0001AF20 /* CreateChannelLayout.cpp */; };
-		3296825817B9D47000B3CDB4 /* AllocateABL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32DEDA07122C07AF00C25252 /* AllocateABL.cpp */; };
-		3296825917B9D47000B3CDB4 /* DeallocateABL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32DEDA13122C095600C25252 /* DeallocateABL.cpp */; };
 		3296825A17B9D47000B3CDB4 /* CreateStringForOSType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 320723C7138D564700007369 /* CreateStringForOSType.cpp */; };
 		3296825B17B9D47000B3CDB4 /* CFErrorUtilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32DFA2F014FA7FD400D1FB58 /* CFErrorUtilities.cpp */; };
 		3296831E17B9DD0300B3CDB4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3296821C17B9D23100B3CDB4 /* Foundation.framework */; };
 		3296832017B9DD0300B3CDB4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3296831F17B9DD0300B3CDB4 /* CoreGraphics.framework */; };
-		3296832117B9DD0300B3CDB4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3296822D17B9D23200B3CDB4 /* UIKit.framework */; };
 		3296832717B9DD0300B3CDB4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3296832517B9DD0300B3CDB4 /* InfoPlist.strings */; };
 		3296832917B9DD0300B3CDB4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3296832817B9DD0300B3CDB4 /* main.m */; };
 		3296832D17B9DD0300B3CDB4 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3296832C17B9DD0300B3CDB4 /* AppDelegate.mm */; };
@@ -48,6 +44,14 @@
 		3296833817B9DD0300B3CDB4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3296833717B9DD0300B3CDB4 /* Images.xcassets */; };
 		32BA7608182039A700366204 /* AudioConverter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32BA7604182039A700366204 /* AudioConverter.cpp */; };
 		32BA7609182039A700366204 /* ReplayGainAnalyzer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32BA7606182039A700366204 /* ReplayGainAnalyzer.cpp */; };
+		DB905935187018EC007B1AE1 /* liblibogg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB90590A1870168F007B1AE1 /* liblibogg.a */; };
+		DB90598418701A3A007B1AE1 /* libvorbis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB90598318701A31007B1AE1 /* libvorbis.a */; };
+		DB9059EE18701B20007B1AE1 /* liblibspeex.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB9059BD18701A99007B1AE1 /* liblibspeex.a */; };
+		DB905A3B18701C81007B1AE1 /* libFLAC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB905A1918701C25007B1AE1 /* libFLAC.a */; };
+		DB905A9418701D95007B1AE1 /* libwavpack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB905A9118701D84007B1AE1 /* libwavpack.a */; };
+		DB905B2618701E7C007B1AE1 /* libmpg123.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB905B2318701E72007B1AE1 /* libmpg123.a */; };
+		DB982382185EE5270047E817 /* AudioChannelLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB982380185EE5270047E817 /* AudioChannelLayout.cpp */; };
+		DB982385185EE5340047E817 /* AudioBufferList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB982383185EE5340047E817 /* AudioBufferList.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +61,146 @@
 			proxyType = 1;
 			remoteGlobalIDString = 3296821A17B9D23100B3CDB4;
 			remoteInfo = libSFBAudioEngine;
+		};
+		DB9058C01870158E007B1AE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB9058B11870158E007B1AE1 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB904043186FFCB4007B1AE1;
+			remoteInfo = Ogg;
+		};
+		DB9058C21870158E007B1AE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB9058B11870158E007B1AE1 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB9041C6186FFE0F007B1AE1;
+			remoteInfo = Vorbis;
+		};
+		DB9058C41870158E007B1AE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB9058B11870158E007B1AE1 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB904590186FFFA3007B1AE1;
+			remoteInfo = Speex;
+		};
+		DB9058C61870158E007B1AE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB9058B11870158E007B1AE1 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB90481A18700130007B1AE1;
+			remoteInfo = FLAC;
+		};
+		DB9058C81870158E007B1AE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB9058B11870158E007B1AE1 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB904E3418700321007B1AE1;
+			remoteInfo = Opus;
+		};
+		DB9058CA1870158E007B1AE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB9058B11870158E007B1AE1 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB90519818700741007B1AE1;
+			remoteInfo = sndfile;
+		};
+		DB9059091870168F007B1AE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB9058B11870158E007B1AE1 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB9058D1187015B0007B1AE1;
+			remoteInfo = libogg;
+		};
+		DB905933187018DE007B1AE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB9058B11870158E007B1AE1 /* Shared.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = DB9058D0187015B0007B1AE1;
+			remoteInfo = libogg;
+		};
+		DB90597F18701A31007B1AE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB9058B11870158E007B1AE1 /* Shared.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = DB90593C1870194F007B1AE1;
+			remoteInfo = libvorbis;
+		};
+		DB90598218701A31007B1AE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB9058B11870158E007B1AE1 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB90593D1870194F007B1AE1;
+			remoteInfo = libvorbis;
+		};
+		DB9059BC18701A99007B1AE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB9058B11870158E007B1AE1 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB90598918701A57007B1AE1;
+			remoteInfo = libspeex;
+		};
+		DB9059EB18701B15007B1AE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB9058B11870158E007B1AE1 /* Shared.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = DB90598818701A57007B1AE1;
+			remoteInfo = libspeex;
+		};
+		DB905A1818701C25007B1AE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB9058B11870158E007B1AE1 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB9059F318701BC0007B1AE1;
+			remoteInfo = libFLAC;
+		};
+		DB905A3918701C79007B1AE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB9058B11870158E007B1AE1 /* Shared.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = DB9059F218701BC0007B1AE1;
+			remoteInfo = libFLAC;
+		};
+		DB905A4518701CBA007B1AE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB905A4018701CBA007B1AE1 /* mpg123.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB905583187012F1007B1AE1;
+			remoteInfo = mpg123;
+		};
+		DB905A5318701CCA007B1AE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB905A4E18701CCA007B1AE1 /* WavPack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB9054B6187010F8007B1AE1;
+			remoteInfo = WavPack;
+		};
+		DB905A9018701D84007B1AE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB905A4E18701CCA007B1AE1 /* WavPack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB905A5918701D04007B1AE1;
+			remoteInfo = libwavpack;
+		};
+		DB905A9218701D8B007B1AE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB905A4E18701CCA007B1AE1 /* WavPack.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = DB905A5818701D04007B1AE1;
+			remoteInfo = libwavpack;
+		};
+		DB905B2218701E72007B1AE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB905A4018701CBA007B1AE1 /* mpg123.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB905A9B18701E00007B1AE1;
+			remoteInfo = libmpg123;
+		};
+		DB905B2418701E75007B1AE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB905A4018701CBA007B1AE1 /* mpg123.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = DB905A9A18701E00007B1AE1;
+			remoteInfo = libmpg123;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -92,16 +236,11 @@
 		3255602A1092A38F00580566 /* FLACDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLACDecoder.h; sourceTree = "<group>"; };
 		3258AE3112DF8FDF00ADA052 /* OggSpeexDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OggSpeexDecoder.h; sourceTree = "<group>"; };
 		3258AE3212DF8FDF00ADA052 /* OggSpeexDecoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OggSpeexDecoder.cpp; sourceTree = "<group>"; };
-		3259C9C717389B850035D749 /* sndfile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = sndfile.framework; path = Frameworks/sndfile.framework; sourceTree = "<group>"; };
 		326A98F51392F38A0061A65F /* Semaphore.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Semaphore.cpp; sourceTree = "<group>"; };
 		326A98F61392F38A0061A65F /* Semaphore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Semaphore.h; sourceTree = "<group>"; };
 		326CE06C17E365B8003877AB /* CFWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFWrapper.h; sourceTree = "<group>"; };
-		3285714A12ED5C5D0001AF20 /* CreateChannelLayout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CreateChannelLayout.cpp; sourceTree = "<group>"; };
-		3285714B12ED5C5D0001AF20 /* CreateChannelLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateChannelLayout.h; sourceTree = "<group>"; };
 		3296821B17B9D23100B3CDB4 /* libSFBAudioEngine.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSFBAudioEngine.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3296821C17B9D23100B3CDB4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		3296822A17B9D23200B3CDB4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		3296822D17B9D23200B3CDB4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		3296831D17B9DD0300B3CDB4 /* SimplePlayer-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SimplePlayer-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3296831F17B9DD0300B3CDB4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3296832417B9DD0300B3CDB4 /* SimplePlayer-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimplePlayer-iOS-Info.plist"; sourceTree = "<group>"; };
@@ -136,10 +275,6 @@
 		32D6552C115FC58C002B275C /* InputSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputSource.h; sourceTree = "<group>"; };
 		32D6556A115FE7EA002B275C /* MemoryMappedFileInputSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemoryMappedFileInputSource.h; sourceTree = "<group>"; };
 		32D6556B115FE7EA002B275C /* MemoryMappedFileInputSource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MemoryMappedFileInputSource.cpp; sourceTree = "<group>"; };
-		32DEDA06122C07AF00C25252 /* AllocateABL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AllocateABL.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		32DEDA07122C07AF00C25252 /* AllocateABL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = AllocateABL.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
-		32DEDA12122C095600C25252 /* DeallocateABL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeallocateABL.h; sourceTree = "<group>"; };
-		32DEDA13122C095600C25252 /* DeallocateABL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DeallocateABL.cpp; sourceTree = "<group>"; };
 		32DF3208123E6C940002CA5A /* InMemoryFileInputSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InMemoryFileInputSource.h; sourceTree = "<group>"; };
 		32DF3209123E6C940002CA5A /* InMemoryFileInputSource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InMemoryFileInputSource.cpp; sourceTree = "<group>"; };
 		32DFA2F014FA7FD400D1FB58 /* CFErrorUtilities.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CFErrorUtilities.cpp; sourceTree = "<group>"; };
@@ -153,6 +288,13 @@
 		32E7374310B90C9A00094C8A /* MPEGDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPEGDecoder.h; sourceTree = "<group>"; };
 		32E7376C10B913AE00094C8A /* OggVorbisDecoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OggVorbisDecoder.cpp; sourceTree = "<group>"; };
 		32E7376D10B913AE00094C8A /* OggVorbisDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OggVorbisDecoder.h; sourceTree = "<group>"; };
+		DB9058B11870158E007B1AE1 /* Shared.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Shared.xcodeproj; path = Vendor/Shared.xcodeproj; sourceTree = "<group>"; };
+		DB905A4018701CBA007B1AE1 /* mpg123.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = mpg123.xcodeproj; path = Vendor/mpg123/mpg123.xcodeproj; sourceTree = "<group>"; };
+		DB905A4E18701CCA007B1AE1 /* WavPack.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WavPack.xcodeproj; path = Vendor/WavPack/WavPack.xcodeproj; sourceTree = "<group>"; };
+		DB982380185EE5270047E817 /* AudioChannelLayout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioChannelLayout.cpp; sourceTree = "<group>"; };
+		DB982381185EE5270047E817 /* AudioChannelLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioChannelLayout.h; sourceTree = "<group>"; };
+		DB982383185EE5340047E817 /* AudioBufferList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioBufferList.cpp; sourceTree = "<group>"; };
+		DB982384185EE5340047E817 /* AudioBufferList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioBufferList.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +302,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB905B2618701E7C007B1AE1 /* libmpg123.a in Frameworks */,
+				DB905935187018EC007B1AE1 /* liblibogg.a in Frameworks */,
+				DB90598418701A3A007B1AE1 /* libvorbis.a in Frameworks */,
+				DB9059EE18701B20007B1AE1 /* liblibspeex.a in Frameworks */,
+				DB905A3B18701C81007B1AE1 /* libFLAC.a in Frameworks */,
+				DB905A9418701D95007B1AE1 /* libwavpack.a in Frameworks */,
 				3296821D17B9D23200B3CDB4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,7 +319,6 @@
 				3240F9EF17BA57B4002360A3 /* Accelerate.framework in Frameworks */,
 				3240F9ED17BA579F002360A3 /* AudioToolbox.framework in Frameworks */,
 				3296832017B9DD0300B3CDB4 /* CoreGraphics.framework in Frameworks */,
-				3296832117B9DD0300B3CDB4 /* UIKit.framework in Frameworks */,
 				3296831E17B9DD0300B3CDB4 /* Foundation.framework in Frameworks */,
 				3240F9F117BA58B1002360A3 /* libSFBAudioEngine.a in Frameworks */,
 			);
@@ -194,6 +341,10 @@
 		29B97315FDCFA39411CA2CEA /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				DB982383185EE5340047E817 /* AudioBufferList.cpp */,
+				DB982384185EE5340047E817 /* AudioBufferList.h */,
+				DB982380185EE5270047E817 /* AudioChannelLayout.cpp */,
+				DB982381185EE5270047E817 /* AudioChannelLayout.h */,
 				32BA7605182039A700366204 /* AudioConverter.h */,
 				32BA7604182039A700366204 /* AudioConverter.cpp */,
 				32BA7607182039A700366204 /* ReplayGainAnalyzer.h */,
@@ -206,12 +357,6 @@
 				32DFA2F214FA7FD400D1FB58 /* Logger+NSOverloads.mm */,
 				326A98F61392F38A0061A65F /* Semaphore.h */,
 				326A98F51392F38A0061A65F /* Semaphore.cpp */,
-				3285714B12ED5C5D0001AF20 /* CreateChannelLayout.h */,
-				3285714A12ED5C5D0001AF20 /* CreateChannelLayout.cpp */,
-				32DEDA06122C07AF00C25252 /* AllocateABL.h */,
-				32DEDA07122C07AF00C25252 /* AllocateABL.cpp */,
-				32DEDA12122C095600C25252 /* DeallocateABL.h */,
-				32DEDA13122C095600C25252 /* DeallocateABL.cpp */,
 				322D78B1112F9851006676FC /* CreateDisplayNameForURL.h */,
 				322D78B0112F9851006676FC /* CreateDisplayNameForURL.cpp */,
 				320723BC138D521A00007369 /* CreateStringForOSType.h */,
@@ -225,6 +370,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DB9058B018701579007B1AE1 /* Vendor */,
 				3240F9EE17BA57B4002360A3 /* Accelerate.framework */,
 				3240F9EB17BA578C002360A3 /* AudioToolbox.framework */,
 				32A1012016A50C2400EC1F9C /* Accelerate.framework */,
@@ -234,10 +380,7 @@
 				32AEB2D71409BA26001F9A60 /* CoreAudio.framework */,
 				32AEB2D81409BA27001F9A60 /* CoreServices.framework */,
 				32CB55B817B6EE6C004022E0 /* Security.framework */,
-				3259C9C717389B850035D749 /* sndfile.framework */,
 				3296821C17B9D23100B3CDB4 /* Foundation.framework */,
-				3296822A17B9D23200B3CDB4 /* XCTest.framework */,
-				3296822D17B9D23200B3CDB4 /* UIKit.framework */,
 				3296831F17B9DD0300B3CDB4 /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
@@ -339,6 +482,51 @@
 			path = Input;
 			sourceTree = "<group>";
 		};
+		DB9058B018701579007B1AE1 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				DB905A4018701CBA007B1AE1 /* mpg123.xcodeproj */,
+				DB9058B11870158E007B1AE1 /* Shared.xcodeproj */,
+				DB905A4E18701CCA007B1AE1 /* WavPack.xcodeproj */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		DB9058B21870158E007B1AE1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB9058C11870158E007B1AE1 /* ogg.framework */,
+				DB9058C31870158E007B1AE1 /* vorbis.framework */,
+				DB9058C51870158E007B1AE1 /* speex.framework */,
+				DB9058C71870158E007B1AE1 /* FLAC.framework */,
+				DB9058C91870158E007B1AE1 /* opus.framework */,
+				DB9058CB1870158E007B1AE1 /* sndfile.framework */,
+				DB90590A1870168F007B1AE1 /* liblibogg.a */,
+				DB90598318701A31007B1AE1 /* libvorbis.a */,
+				DB9059BD18701A99007B1AE1 /* liblibspeex.a */,
+				DB905A1918701C25007B1AE1 /* libFLAC.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB905A4118701CBA007B1AE1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB905A4618701CBA007B1AE1 /* mpg123.framework */,
+				DB905B2318701E72007B1AE1 /* libmpg123.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB905A4F18701CCA007B1AE1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB905A5418701CCA007B1AE1 /* wavpack.framework */,
+				DB905A9118701D84007B1AE1 /* libwavpack.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -353,6 +541,12 @@
 			buildRules = (
 			);
 			dependencies = (
+				DB905B2518701E75007B1AE1 /* PBXTargetDependency */,
+				DB905934187018DE007B1AE1 /* PBXTargetDependency */,
+				DB90598018701A31007B1AE1 /* PBXTargetDependency */,
+				DB9059EC18701B15007B1AE1 /* PBXTargetDependency */,
+				DB905A3A18701C79007B1AE1 /* PBXTargetDependency */,
+				DB905A9318701D8B007B1AE1 /* PBXTargetDependency */,
 			);
 			name = libSFBAudioEngine;
 			productName = lib;
@@ -383,7 +577,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = sbooth.org;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "SFBAudioEngine-iOS" */;
@@ -393,10 +587,25 @@
 			knownRegions = (
 				en,
 				Base,
+				English,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CFPlayer */;
 			productRefGroup = 3210AB8E17B9BF8000743639 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = DB905A4118701CBA007B1AE1 /* Products */;
+					ProjectRef = DB905A4018701CBA007B1AE1 /* mpg123.xcodeproj */;
+				},
+				{
+					ProductGroup = DB9058B21870158E007B1AE1 /* Products */;
+					ProjectRef = DB9058B11870158E007B1AE1 /* Shared.xcodeproj */;
+				},
+				{
+					ProductGroup = DB905A4F18701CCA007B1AE1 /* Products */;
+					ProjectRef = DB905A4E18701CCA007B1AE1 /* WavPack.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				3296821A17B9D23100B3CDB4 /* libSFBAudioEngine */,
@@ -404,6 +613,107 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		DB9058C11870158E007B1AE1 /* ogg.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ogg.framework;
+			remoteRef = DB9058C01870158E007B1AE1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB9058C31870158E007B1AE1 /* vorbis.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = vorbis.framework;
+			remoteRef = DB9058C21870158E007B1AE1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB9058C51870158E007B1AE1 /* speex.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = speex.framework;
+			remoteRef = DB9058C41870158E007B1AE1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB9058C71870158E007B1AE1 /* FLAC.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FLAC.framework;
+			remoteRef = DB9058C61870158E007B1AE1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB9058C91870158E007B1AE1 /* opus.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = opus.framework;
+			remoteRef = DB9058C81870158E007B1AE1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB9058CB1870158E007B1AE1 /* sndfile.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = sndfile.framework;
+			remoteRef = DB9058CA1870158E007B1AE1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB90590A1870168F007B1AE1 /* liblibogg.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = liblibogg.a;
+			remoteRef = DB9059091870168F007B1AE1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB90598318701A31007B1AE1 /* libvorbis.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libvorbis.a;
+			remoteRef = DB90598218701A31007B1AE1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB9059BD18701A99007B1AE1 /* liblibspeex.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = liblibspeex.a;
+			remoteRef = DB9059BC18701A99007B1AE1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB905A1918701C25007B1AE1 /* libFLAC.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libFLAC.a;
+			remoteRef = DB905A1818701C25007B1AE1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB905A4618701CBA007B1AE1 /* mpg123.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = mpg123.framework;
+			remoteRef = DB905A4518701CBA007B1AE1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB905A5418701CCA007B1AE1 /* wavpack.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = wavpack.framework;
+			remoteRef = DB905A5318701CCA007B1AE1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB905A9118701D84007B1AE1 /* libwavpack.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libwavpack.a;
+			remoteRef = DB905A9018701D84007B1AE1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB905B2318701E72007B1AE1 /* libmpg123.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libmpg123.a;
+			remoteRef = DB905B2218701E72007B1AE1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		3296831B17B9DD0300B3CDB4 /* Resources */ = {
@@ -433,24 +743,23 @@
 				3296824E17B9D33100B3CDB4 /* Logger.cpp in Sources */,
 				3296824B17B9D31100B3CDB4 /* HTTPInputSource.cpp in Sources */,
 				3296824017B9D24600B3CDB4 /* AudioPlayer.cpp in Sources */,
+				DB982382185EE5270047E817 /* AudioChannelLayout.cpp in Sources */,
 				3296824C17B9D31100B3CDB4 /* InMemoryFileInputSource.cpp in Sources */,
 				3240F9F317BB2159002360A3 /* CreateDisplayNameForURL.cpp in Sources */,
 				3296824417B9D30100B3CDB4 /* CoreAudioDecoder.cpp in Sources */,
 				3296824F17B9D33100B3CDB4 /* Logger+NSOverloads.mm in Sources */,
-				3296825617B9D47000B3CDB4 /* CreateChannelLayout.cpp in Sources */,
 				32BA7608182039A700366204 /* AudioConverter.cpp in Sources */,
 				3296825B17B9D47000B3CDB4 /* CFErrorUtilities.cpp in Sources */,
 				3296824917B9D31100B3CDB4 /* InputSource.cpp in Sources */,
 				3296825A17B9D47000B3CDB4 /* CreateStringForOSType.cpp in Sources */,
 				321FCF9817C14FEE00828C3A /* RingBuffer.cpp in Sources */,
 				3296824317B9D30100B3CDB4 /* LoopableRegionDecoder.cpp in Sources */,
+				DB982385185EE5340047E817 /* AudioBufferList.cpp in Sources */,
 				3240F9F417BB21FC002360A3 /* FLACDecoder.cpp in Sources */,
 				3296824A17B9D31100B3CDB4 /* FileInputSource.cpp in Sources */,
 				3240F9F717BB2203002360A3 /* OggVorbisDecoder.cpp in Sources */,
-				3296825817B9D47000B3CDB4 /* AllocateABL.cpp in Sources */,
 				32BA7609182039A700366204 /* ReplayGainAnalyzer.cpp in Sources */,
 				3296824D17B9D31100B3CDB4 /* MemoryMappedFileInputSource.cpp in Sources */,
-				3296825917B9D47000B3CDB4 /* DeallocateABL.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,6 +780,36 @@
 			isa = PBXTargetDependency;
 			target = 3296821A17B9D23100B3CDB4 /* libSFBAudioEngine */;
 			targetProxy = 3296835117B9DE0400B3CDB4 /* PBXContainerItemProxy */;
+		};
+		DB905934187018DE007B1AE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = libogg;
+			targetProxy = DB905933187018DE007B1AE1 /* PBXContainerItemProxy */;
+		};
+		DB90598018701A31007B1AE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = libvorbis;
+			targetProxy = DB90597F18701A31007B1AE1 /* PBXContainerItemProxy */;
+		};
+		DB9059EC18701B15007B1AE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = libspeex;
+			targetProxy = DB9059EB18701B15007B1AE1 /* PBXContainerItemProxy */;
+		};
+		DB905A3A18701C79007B1AE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = libFLAC;
+			targetProxy = DB905A3918701C79007B1AE1 /* PBXContainerItemProxy */;
+		};
+		DB905A9318701D8B007B1AE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = libwavpack;
+			targetProxy = DB905A9218701D8B007B1AE1 /* PBXContainerItemProxy */;
+		};
+		DB905B2518701E75007B1AE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = libmpg123;
+			targetProxy = DB905B2418701E75007B1AE1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -508,23 +847,23 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				DSTROOT = /tmp/libSFBAudioEngine.dst;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"OV_EXCLUDE_STATIC_CALLBACKS=1",
+				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				"HEADER_SEARCH_PATHS[sdk=iphoneos*][arch=armv7]" = "$(SRCROOT)/Libraries/ios-armv7-clang-libc++/include";
-				"HEADER_SEARCH_PATHS[sdk=iphoneos*][arch=armv7s]" = "$(SRCROOT)/Libraries/ios-armv7s-clang-libc++/include";
-				"HEADER_SEARCH_PATHS[sdk=iphonesimulator*]" = "$(SRCROOT)/Libraries/ios-simulator-clang-libc++/include";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"Vendor/FLAC/flac-src/include",
+					"Vendor/WavPack/wavpack-src/include",
+					Vendor/mpg123,
+					"Vendor/Speex/speex-src/include",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				"LIBRARY_SEARCH_PATHS[sdk=iphoneos*][arch=armv7]" = "$(SRCROOT)/Libraries/ios-armv7-clang-libc++/lib";
 				"LIBRARY_SEARCH_PATHS[sdk=iphoneos*][arch=armv7s]" = "$(SRCROOT)/Libraries/ios-armv7s-clang-libc++/lib";
 				"LIBRARY_SEARCH_PATHS[sdk=iphonesimulator*]" = "$(SRCROOT)/Libraries/ios-simulator-clang-libc++/lib";
-				OTHER_LDFLAGS = (
-					"-lFLAC",
-					"-lmpg123",
-					"-logg",
-					"-lspeex",
-					"-lvorbis",
-					"-lvorbisfile",
-					"-lwavpack",
-				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = SFBAudioEngine;
 				SKIP_INSTALL = YES;
 			};
@@ -536,22 +875,22 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				COPY_PHASE_STRIP = YES;
 				DSTROOT = /tmp/libSFBAudioEngine.dst;
-				"HEADER_SEARCH_PATHS[sdk=iphoneos*][arch=armv7]" = "$(SRCROOT)/Libraries/ios-armv7-clang-libc++/include";
-				"HEADER_SEARCH_PATHS[sdk=iphoneos*][arch=armv7s]" = "$(SRCROOT)/Libraries/ios-armv7s-clang-libc++/include";
-				"HEADER_SEARCH_PATHS[sdk=iphonesimulator*]" = "$(SRCROOT)/Libraries/ios-simulator-clang-libc++/include";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"OV_EXCLUDE_STATIC_CALLBACKS=1",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"Vendor/FLAC/flac-src/include",
+					"Vendor/WavPack/wavpack-src/include",
+					Vendor/mpg123,
+					"Vendor/Speex/speex-src/include",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				"LIBRARY_SEARCH_PATHS[sdk=iphoneos*][arch=armv7]" = "$(SRCROOT)/Libraries/ios-armv7-clang-libc++/lib";
 				"LIBRARY_SEARCH_PATHS[sdk=iphoneos*][arch=armv7s]" = "$(SRCROOT)/Libraries/ios-armv7s-clang-libc++/lib";
 				"LIBRARY_SEARCH_PATHS[sdk=iphonesimulator*]" = "$(SRCROOT)/Libraries/ios-simulator-clang-libc++/lib";
-				OTHER_LDFLAGS = (
-					"-lFLAC",
-					"-lmpg123",
-					"-logg",
-					"-lspeex",
-					"-lvorbis",
-					"-lvorbisfile",
-					"-lwavpack",
-				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = SFBAudioEngine;
 				SKIP_INSTALL = YES;
 			};

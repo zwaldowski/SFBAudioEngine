@@ -1,0 +1,5 @@
+#include "Framework-Shared.xcconfig"
+
+DEBUG_INFORMATION_FORMAT=
+COPY_PHASE_STRIP=NO
+ENABLE_NS_ASSERTIONS=YES

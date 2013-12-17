@@ -1,0 +1,45 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#if defined(__APPLE__) && defined(__MACH__) && !defined(MACOSX)
+# define MACOSX
+#endif
+
+#ifndef MACOSX
+# error "This file is only supported on OS X or iOS."
+#endif
+
+#ifndef WAVPACK_CONFIG_H
+#define WAVPACK_CONFIG_H
+
+#define PACKAGE_NAME "wavpack"
+#define PACKAGE_TARNAME "wavpack"
+#define PACKAGE_VERSION "4.70.0"
+#define PACKAGE_STRING "wavpack 4.70.0"
+#define PACKAGE_BUGREPORT "bryant@wavpack.com"
+#define PACKAGE_URL ""
+#define LIBWAVPACK_MAJOR 4
+#define LIBWAVPACK_MINOR 70
+#define LIBWAVPACK_MICRO 0
+#define LIBWAVPACK_VERSION_STRING "4.70.0"
+
+#define VERSION_OS "Darwin"
+
+#define HAVE_SYS_TYPES_H 1
+#define HAVE_SYS_STAT_H 1
+#define HAVE_STDLIB_H 1
+#define HAVE_STRING_H 1
+#define HAVE_MEMORY_H 1
+#define HAVE_STRINGS_H 1
+#define HAVE_INTTYPES_H 1
+#define HAVE_STDINT_H 1
+#define HAVE_UNISTD_H 1
+#define HAVE_DLFCN_H 1
+#define STDC_HEADERS 1
+
+#define AC_APPLE_UNIVERSAL_BUILD 1
+
+#endif

@@ -1,0 +1,2 @@
+#include "../../Configurations/Framework-Release.xcconfig"
+#include "TagLib.xcconfig"

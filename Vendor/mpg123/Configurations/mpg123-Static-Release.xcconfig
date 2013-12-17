@@ -1,0 +1,2 @@
+#include "../../Configurations/Library-Release.xcconfig"
+#include "mpg123.xcconfig"

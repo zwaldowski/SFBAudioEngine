@@ -1,0 +1,13 @@
+diff --git a/include/opusfile.h b/include/opusfile.h
+index 31eeaed..3eda828 100644
+--- a/include/opusfile.h
++++ b/include/opusfile.h
+@@ -106,7 +106,7 @@ extern "C" {
+ # include <stdarg.h>
+ # include <stdio.h>
+ # include <ogg/ogg.h>
+-# include <opus_multistream.h>
++# include <opus/opus_multistream.h>
+ 
+ /*Enable special features for gcc and gcc-compatible compilers.*/
+ # if !defined(OP_GNUC_PREREQ)

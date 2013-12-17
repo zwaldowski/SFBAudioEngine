@@ -1,0 +1,680 @@
+diff --git a/src/libmpg123/dct36_avx.S b/src/libmpg123/dct36_avx.S
+index 18860ae..07166c8 100644
+--- a/src/libmpg123/dct36_avx.S
++++ b/src/libmpg123/dct36_avx.S
+@@ -8,6 +8,8 @@
+ 
+ #include "mangle.h"
+ 
++#if defined(__x86_64__) && defined(__AVX__)
++
+ #ifdef _WIN64
+ #define in %rcx
+ #define out1 %rdx
+@@ -356,3 +358,5 @@ xmm15 tmp2b
+ 	ret
+ 
+ NONEXEC_STACK
++
++#endif
+diff --git a/src/libmpg123/dct36_x86_64.S b/src/libmpg123/dct36_x86_64.S
+index 5035e05..69b1ff4 100644
+--- a/src/libmpg123/dct36_x86_64.S
++++ b/src/libmpg123/dct36_x86_64.S
+@@ -8,6 +8,8 @@
+ 
+ #include "mangle.h"
+ 
++#ifdef __x86_64__
++
+ #ifdef _WIN64
+ #define in %rcx
+ #define out1 %rdx
+@@ -392,3 +394,5 @@ xmm15 tmp2b
+ 	ret
+ 
+ NONEXEC_STACK
++
++#endif
+diff --git a/src/libmpg123/dct64_avx.S b/src/libmpg123/dct64_avx.S
+index 079a09e..106b025 100644
+--- a/src/libmpg123/dct64_avx.S
++++ b/src/libmpg123/dct64_avx.S
+@@ -8,6 +8,8 @@
+ 
+ #include "mangle.h"
+ 
++#if defined(__x86_64__) && defined(__AVX__)
++
+ #define samples %rdx
+ #define costab %rcx
+ #define out0 %rdi
+@@ -322,3 +324,5 @@ ASM_NAME(dct64_avx):
+ 	ret
+ 
+ NONEXEC_STACK
++
++#endif
+diff --git a/src/libmpg123/dct64_avx_float.S b/src/libmpg123/dct64_avx_float.S
+index 65619a3..591fe97 100644
+--- a/src/libmpg123/dct64_avx_float.S
++++ b/src/libmpg123/dct64_avx_float.S
+@@ -8,6 +8,8 @@
+ 
+ #include "mangle.h"
+ 
++#if defined(__x86_64__) && defined(__AVX__)
++
+ #define samples %rdx
+ #define costab %rcx
+ #define out0 %rdi
+@@ -292,3 +294,5 @@ ASM_NAME(dct64_real_avx):
+ 	ret
+ 
+ NONEXEC_STACK
++
++#endif
+diff --git a/src/libmpg123/dct64_i386.c b/src/libmpg123/dct64_i386.c
+index abc05b9..d60b21b 100644
+--- a/src/libmpg123/dct64_i386.c
++++ b/src/libmpg123/dct64_i386.c
+@@ -16,6 +16,8 @@
+ 
+ #include "mpg123lib_intern.h"
+ 
++#if defined(__i386__)
++
+ static void dct64_1(real *out0,real *out1,real *b1,real *b2,real *samples)
+ {
+  {
+@@ -334,3 +336,4 @@ void dct64_i386(real *a,real *b,real *c)
+   dct64_1(a,b,bufs,bufs+0x20,c);
+ }
+ 
++#endif
+diff --git a/src/libmpg123/dct64_neon.S b/src/libmpg123/dct64_neon.S
+index a8a3614..89c317f 100644
+--- a/src/libmpg123/dct64_neon.S
++++ b/src/libmpg123/dct64_neon.S
+@@ -8,6 +8,8 @@
+ 
+ #include "mangle.h"
+ 
++#if defined(__arm__) && defined(__ARM_NEON__)
++
+ 	.text
+ 	ALIGN16
+ costab_arm:
+@@ -295,3 +297,5 @@ ASM_NAME(dct64_neon):
+ 
+ 	vpop		{q4-q7}
+ 	bx			lr
++
++#endif
+diff --git a/src/libmpg123/dct64_neon_float.S b/src/libmpg123/dct64_neon_float.S
+index fae43aa..3def313 100644
+--- a/src/libmpg123/dct64_neon_float.S
++++ b/src/libmpg123/dct64_neon_float.S
+@@ -8,6 +8,8 @@
+ 
+ #include "mangle.h"
+ 
++#if defined(__arm__) && defined(__ARM_NEON__)
++
+ 	.text
+ 	ALIGN16
+ costab_arm:
+@@ -268,3 +270,5 @@ ASM_NAME(dct64_real_neon):
+ 
+ 	vpop		{q4-q7}
+ 	bx			lr
++
++#endif
+diff --git a/src/libmpg123/dct64_x86_64.S b/src/libmpg123/dct64_x86_64.S
+index 0144039..efaa9a5 100644
+--- a/src/libmpg123/dct64_x86_64.S
++++ b/src/libmpg123/dct64_x86_64.S
+@@ -8,6 +8,8 @@
+ 
+ #include "mangle.h"
+ 
++#ifdef __x86_64__
++
+ #ifdef _WIN64
+ /* short *out0 */
+ #define ARG0 %r9
+@@ -462,3 +464,5 @@ ASM_NAME(dct64_x86_64):
+ 	ret
+ 
+ NONEXEC_STACK
++
++#endif
+diff --git a/src/libmpg123/dct64_x86_64_float.S b/src/libmpg123/dct64_x86_64_float.S
+index 168a321..b686ebe 100644
+--- a/src/libmpg123/dct64_x86_64_float.S
++++ b/src/libmpg123/dct64_x86_64_float.S
+@@ -8,6 +8,8 @@
+ 
+ #include "mangle.h"
+ 
++#ifdef __x86_64__
++
+ #ifdef _WIN64
+ /* short *out0 */
+ #define ARG0 %r9
+@@ -424,3 +426,5 @@ ASM_NAME(dct64_real_x86_64):
+ 	ret
+ 
+ NONEXEC_STACK
++
++#endif
+diff --git a/src/libmpg123/getcpuflags.S b/src/libmpg123/getcpuflags.S
+index 50a9d00..3df6413 100644
+--- a/src/libmpg123/getcpuflags.S
++++ b/src/libmpg123/getcpuflags.S
+@@ -17,6 +17,8 @@
+ 
+ #include "mangle.h"
+ 
++#ifdef __i386__
++
+ .text
+ 	ALIGN4
+ 
+@@ -100,3 +102,5 @@ ASM_NAME(getcpuflags):
+ 	ret
+ 
+ NONEXEC_STACK
++
++#endif
+diff --git a/src/libmpg123/getcpuflags_x86_64.S b/src/libmpg123/getcpuflags_x86_64.S
+index 2d75160..4578964 100644
+--- a/src/libmpg123/getcpuflags_x86_64.S
++++ b/src/libmpg123/getcpuflags_x86_64.S
+@@ -8,6 +8,8 @@
+ 
+ #include "mangle.h"
+ 
++#ifdef __x86_64__
++
+ 	.text
+ 	ALIGN4
+ 	.globl ASM_NAME(getcpuflags)
+@@ -55,3 +57,5 @@ ASM_NAME(getcpuflags):
+ 	ret
+ 	
+ NONEXEC_STACK
++
++#endif
+diff --git a/src/libmpg123/synth_arm.S b/src/libmpg123/synth_arm.S
+index cdb3754..1b95c63 100644
+--- a/src/libmpg123/synth_arm.S
++++ b/src/libmpg123/synth_arm.S
+@@ -8,6 +8,8 @@
+ 
+ #include "mangle.h"
+ 
++#ifdef __arm__
++
+ #define WINDOW r0
+ #define B0 r1
+ #define SAMPLES r2
+@@ -269,3 +271,5 @@ ASM_NAME(synth_1to1_arm_asm):
+ 	mov		r0, REG_CLIP
+ 	
+ 	ldmfd   sp!, {r4, r5, r6, r7, r8, r9, r10, pc}
++
++#endif
+diff --git a/src/libmpg123/synth_arm_accurate.S b/src/libmpg123/synth_arm_accurate.S
+index 4dde540..4149ea0 100644
+--- a/src/libmpg123/synth_arm_accurate.S
++++ b/src/libmpg123/synth_arm_accurate.S
+@@ -8,6 +8,8 @@
+ 
+ #include "mangle.h"
+ 
++#ifdef __arm__
++
+ #define WINDOW r0
+ #define B0 r1
+ #define SAMPLES r2
+@@ -285,3 +287,5 @@ ASM_NAME(synth_1to1_arm_accurate_asm):
+ 	mov		r0, REG_CLIP
+ 	
+ 	ldmfd   sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
++
++#endif
+diff --git a/src/libmpg123/synth_i586.S b/src/libmpg123/synth_i586.S
+index 4f125f0..9b90707 100644
+--- a/src/libmpg123/synth_i586.S
++++ b/src/libmpg123/synth_i586.S
+@@ -32,6 +32,8 @@
+ 
+ #include "mangle.h"
+ 
++#ifdef __i386__
++
+ .data
+ #ifndef __APPLE__
+ .section .rodata
+@@ -334,3 +336,5 @@ ASM_NAME(synth_1to1_i586_asm):
+ 	ret
+ 
+ NONEXEC_STACK
++
++#endif
+diff --git a/src/libmpg123/synth_i586_dither.S b/src/libmpg123/synth_i586_dither.S
+index 831e604..0dd5f6a 100644
+--- a/src/libmpg123/synth_i586_dither.S
++++ b/src/libmpg123/synth_i586_dither.S
+@@ -13,6 +13,8 @@
+ 
+ #include "mangle.h"
+ 
++#ifdef __i386__
++
+ .data
+ #ifndef __APPLE__
+ 		.section	.rodata
+@@ -373,3 +375,5 @@ ASM_NAME(synth_1to1_i586_asm_dither):
+ 	ret
+ 
+ NONEXEC_STACK
++
++#endif
+diff --git a/src/libmpg123/synth_neon.S b/src/libmpg123/synth_neon.S
+index 6b18852..b7afce0 100644
+--- a/src/libmpg123/synth_neon.S
++++ b/src/libmpg123/synth_neon.S
+@@ -8,6 +8,8 @@
+ 
+ #include "mangle.h"
+ 
++#if defined(__arm__) && defined(__ARM_NEON__)
++
+ #define WINDOW r0
+ #define B0 r1
+ #define SAMPLES r2
+@@ -121,3 +123,5 @@ ASM_NAME(synth_1to1_neon_asm):
+ 
+ 	vpop		{q4-q7}
+ 	pop			{r4-r5, pc}
++
++#endif
+diff --git a/src/libmpg123/synth_neon_accurate.S b/src/libmpg123/synth_neon_accurate.S
+index 5e31b80..7ab9c84 100644
+--- a/src/libmpg123/synth_neon_accurate.S
++++ b/src/libmpg123/synth_neon_accurate.S
+@@ -8,6 +8,8 @@
+ 
+ #include "mangle.h"
+ 
++#if defined(__arm__) && defined(__ARM_NEON__)
++
+ #define WINDOW r0
+ #define B0 r1
+ #define SAMPLES r2
+@@ -18,6 +20,7 @@
+ */
+ 
+ 	.text
++    ALIGN4
+ 	.globl ASM_NAME(synth_1to1_neon_accurate_asm)
+ ASM_NAME(synth_1to1_neon_accurate_asm):
+ 	push		{r4-r6, lr}
+@@ -171,3 +174,5 @@ ASM_NAME(synth_1to1_neon_accurate_asm):
+ 	mov			sp, r6
+ 	vpop		{q4-q7}
+ 	pop			{r4-r6, pc}
++
++#endif
+diff --git a/src/libmpg123/synth_neon_float.S b/src/libmpg123/synth_neon_float.S
+index 27182db..5922015 100644
+--- a/src/libmpg123/synth_neon_float.S
++++ b/src/libmpg123/synth_neon_float.S
+@@ -8,6 +8,8 @@
+ 
+ #include "mangle.h"
+ 
++#if defined(__arm__) && defined(__ARM_NEON__)
++
+ #define WINDOW r0
+ #define B0 r1
+ #define SAMPLES r2
+@@ -147,3 +149,5 @@ ASM_NAME(synth_1to1_real_neon_asm):
+ 
+ 	vpop		{q4-q7}
+ 	pop			{r4-r5, pc}
++
++#endif
+diff --git a/src/libmpg123/synth_neon_s32.S b/src/libmpg123/synth_neon_s32.S
+index 57eb4e6..0a8ca05 100644
+--- a/src/libmpg123/synth_neon_s32.S
++++ b/src/libmpg123/synth_neon_s32.S
+@@ -8,6 +8,8 @@
+ 
+ #include "mangle.h"
+ 
++#if defined(__arm__) && defined(__ARM_NEON__)
++
+ #define WINDOW r0
+ #define B0 r1
+ #define SAMPLES r2
+@@ -166,3 +168,5 @@ ASM_NAME(synth_1to1_s32_neon_asm):
+ 	mov			sp, r6
+ 	vpop		{q4-q7}
+ 	pop			{r4-r6, pc}
++
++#endif
+diff --git a/src/libmpg123/synth_stereo_avx.S b/src/libmpg123/synth_stereo_avx.S
+index d22cd6d..db282aa 100644
+--- a/src/libmpg123/synth_stereo_avx.S
++++ b/src/libmpg123/synth_stereo_avx.S
+@@ -8,6 +8,8 @@
+ 
+ #include "mangle.h"
+ 
++#if defined(__x86_64__) && defined(__AVX__)
++
+ #ifdef _WIN64
+ /* short *window; */
+ #define WINDOW %r10
+@@ -254,3 +256,5 @@ ASM_NAME(synth_1to1_s_avx_asm):
+ 	ret
+ 
+ NONEXEC_STACK
++
++#endif
+diff --git a/src/libmpg123/synth_stereo_avx_accurate.S b/src/libmpg123/synth_stereo_avx_accurate.S
+index be91d4f..61a4547 100644
+--- a/src/libmpg123/synth_stereo_avx_accurate.S
++++ b/src/libmpg123/synth_stereo_avx_accurate.S
+@@ -8,6 +8,8 @@
+ 
+ #include "mangle.h"
+ 
++#if defined(__x86_64__) && defined(__AVX__)
++
+ #ifdef _WIN64
+ /* real *window; */
+ #define WINDOW %r10
+@@ -284,3 +286,5 @@ ASM_NAME(synth_1to1_s_avx_accurate_asm):
+ 	ret
+ 
+ NONEXEC_STACK
++
++#endif
+diff --git a/src/libmpg123/synth_stereo_avx_float.S b/src/libmpg123/synth_stereo_avx_float.S
+index 585b4fe..dcdc2a1 100644
+--- a/src/libmpg123/synth_stereo_avx_float.S
++++ b/src/libmpg123/synth_stereo_avx_float.S
+@@ -8,6 +8,8 @@
+ 
+ #include "mangle.h"
+ 
++#if defined(__x86_64__) && defined(__AVX__)
++
+ #ifdef _WIN64
+ /* real *window; */
+ #define WINDOW %r10
+@@ -241,3 +243,5 @@ ASM_NAME(synth_1to1_real_s_avx_asm):
+ 	ret
+ 
+ NONEXEC_STACK
++
++#endif
+diff --git a/src/libmpg123/synth_stereo_avx_s32.S b/src/libmpg123/synth_stereo_avx_s32.S
+index 370524f..44c3a7b 100644
+--- a/src/libmpg123/synth_stereo_avx_s32.S
++++ b/src/libmpg123/synth_stereo_avx_s32.S
+@@ -8,6 +8,8 @@
+ 
+ #include "mangle.h"
+ 
++#if defined(__x86_64__) && defined(__AVX__)
++
+ #ifdef _WIN64
+ /* real *window; */
+ #define WINDOW %r10
+@@ -290,3 +292,5 @@ ASM_NAME(synth_1to1_s32_s_avx_asm):
+ 	ret
+ 
+ NONEXEC_STACK
++
++#endif
+diff --git a/src/libmpg123/synth_stereo_neon.S b/src/libmpg123/synth_stereo_neon.S
+index b8f3e73..cb49cfa 100644
+--- a/src/libmpg123/synth_stereo_neon.S
++++ b/src/libmpg123/synth_stereo_neon.S
+@@ -8,6 +8,8 @@
+ 
+ #include "mangle.h"
+ 
++#if defined(__arm__) && defined(__ARM_NEON__)
++
+ #define WINDOW r0
+ #define B0L r1
+ #define B0R r2
+@@ -173,3 +175,5 @@ ASM_NAME(synth_1to1_s_neon_asm):
+ 
+ 	vpop		{q4-q7}
+ 	pop			{r4-r6, pc}
++
++#endif
+diff --git a/src/libmpg123/synth_stereo_neon_accurate.S b/src/libmpg123/synth_stereo_neon_accurate.S
+index c2175d0..60a1cbf 100644
+--- a/src/libmpg123/synth_stereo_neon_accurate.S
++++ b/src/libmpg123/synth_stereo_neon_accurate.S
+@@ -8,6 +8,8 @@
+ 
+ #include "mangle.h"
+ 
++#if defined(__arm__) && defined(__ARM_NEON__)
++
+ #define WINDOW r0
+ #define B0L r1
+ #define B0R r2
+@@ -19,6 +21,7 @@
+ */
+ 
+ 	.text
++    ALIGN4
+ 	.globl ASM_NAME(synth_1to1_s_neon_accurate_asm)
+ ASM_NAME(synth_1to1_s_neon_accurate_asm):
+ 	push		{r4-r7, lr}
+@@ -260,3 +263,5 @@ ASM_NAME(synth_1to1_s_neon_accurate_asm):
+ 	mov			sp, r7
+ 	vpop		{q4-q7}
+ 	pop			{r4-r7, pc}
++
++#endif
+diff --git a/src/libmpg123/synth_stereo_neon_float.S b/src/libmpg123/synth_stereo_neon_float.S
+index c2fc5dd..4718980 100644
+--- a/src/libmpg123/synth_stereo_neon_float.S
++++ b/src/libmpg123/synth_stereo_neon_float.S
+@@ -8,6 +8,8 @@
+ 
+ #include "mangle.h"
+ 
++#if defined(__arm__) && defined(__ARM_NEON__)
++
+ #define WINDOW r0
+ #define B0L r1
+ #define B0R r2
+@@ -218,3 +220,5 @@ ASM_NAME(synth_1to1_real_s_neon_asm):
+ 
+ 	vpop		{q4-q7}
+ 	pop			{r4-r6, pc}
++
++#endif
+diff --git a/src/libmpg123/synth_stereo_neon_s32.S b/src/libmpg123/synth_stereo_neon_s32.S
+index 2c8a8ab..4cb2446 100644
+--- a/src/libmpg123/synth_stereo_neon_s32.S
++++ b/src/libmpg123/synth_stereo_neon_s32.S
+@@ -8,6 +8,8 @@
+ 
+ #include "mangle.h"
+ 
++#if defined(__arm__) && defined(__ARM_NEON__)
++
+ #define WINDOW r0
+ #define B0L r1
+ #define B0R r2
+@@ -245,3 +247,5 @@ ASM_NAME(synth_1to1_s32_s_neon_asm):
+ 	mov			sp, r7
+ 	vpop		{q4-q7}
+ 	pop			{r4-r7, pc}
++
++#endif
+diff --git a/src/libmpg123/synth_stereo_x86_64.S b/src/libmpg123/synth_stereo_x86_64.S
+index 1ee5dd6..ab75021 100644
+--- a/src/libmpg123/synth_stereo_x86_64.S
++++ b/src/libmpg123/synth_stereo_x86_64.S
+@@ -8,6 +8,8 @@
+ 
+ #include "mangle.h"
+ 
++#ifdef __x86_64__
++
+ #ifdef _WIN64
+ /* short *window; */
+ #define WINDOW %r10
+@@ -333,3 +335,5 @@ ASM_NAME(synth_1to1_s_x86_64_asm):
+ 	ret
+ 
+ NONEXEC_STACK
++
++#endif
+diff --git a/src/libmpg123/synth_stereo_x86_64_accurate.S b/src/libmpg123/synth_stereo_x86_64_accurate.S
+index a6a3375..0c2d801 100644
+--- a/src/libmpg123/synth_stereo_x86_64_accurate.S
++++ b/src/libmpg123/synth_stereo_x86_64_accurate.S
+@@ -8,6 +8,8 @@
+ 
+ #include "mangle.h"
+ 
++#ifdef __x86_64__
++
+ #ifdef _WIN64
+ /* short *window; */
+ #define WINDOW %rsi
+@@ -452,3 +454,5 @@ ASM_NAME(synth_1to1_s_x86_64_accurate_asm):
+ 	ret
+ 
+ NONEXEC_STACK
++
++#endif
+diff --git a/src/libmpg123/synth_stereo_x86_64_float.S b/src/libmpg123/synth_stereo_x86_64_float.S
+index 2436b60..f19de12 100644
+--- a/src/libmpg123/synth_stereo_x86_64_float.S
++++ b/src/libmpg123/synth_stereo_x86_64_float.S
+@@ -8,6 +8,8 @@
+ 
+ #include "mangle.h"
+ 
++#ifdef __x86_64__
++
+ #ifdef _WIN64
+ /* short *window; */
+ #define WINDOW %r10
+@@ -394,3 +396,5 @@ ASM_NAME(synth_1to1_real_s_x86_64_asm):
+ 	ret
+ 
+ NONEXEC_STACK
++
++#endif
+diff --git a/src/libmpg123/synth_stereo_x86_64_s32.S b/src/libmpg123/synth_stereo_x86_64_s32.S
+index dcc9186..e2a9b76 100644
+--- a/src/libmpg123/synth_stereo_x86_64_s32.S
++++ b/src/libmpg123/synth_stereo_x86_64_s32.S
+@@ -8,6 +8,8 @@
+ 
+ #include "mangle.h"
+ 
++#ifdef __x86_64__
++
+ #ifdef _WIN64
+ /* short *window; */
+ #define WINDOW %rsi
+@@ -471,3 +473,5 @@ ASM_NAME(synth_1to1_s32_s_x86_64_asm):
+ 	ret
+ 
+ NONEXEC_STACK
++
++#endif
+diff --git a/src/libmpg123/synth_x86_64.S b/src/libmpg123/synth_x86_64.S
+index 821b7d9..f1ca40a 100644
+--- a/src/libmpg123/synth_x86_64.S
++++ b/src/libmpg123/synth_x86_64.S
+@@ -8,6 +8,8 @@
+ 
+ #include "mangle.h"
+ 
++#ifdef __x86_64__
++
+ #ifdef _WIN64
+ /* short *window; */
+ #define ARG0 %r10
+@@ -242,3 +244,5 @@ ASM_NAME(synth_1to1_x86_64_asm):
+ 	ret
+ 
+ NONEXEC_STACK
++
++#endif
+diff --git a/src/libmpg123/synth_x86_64_accurate.S b/src/libmpg123/synth_x86_64_accurate.S
+index 3a46c64..f3c59f8 100644
+--- a/src/libmpg123/synth_x86_64_accurate.S
++++ b/src/libmpg123/synth_x86_64_accurate.S
+@@ -8,6 +8,8 @@
+ 
+ #include "mangle.h"
+ 
++#ifdef __x86_64__
++
+ #ifdef _WIN64
+ /* short *window; */
+ #define ARG0 %r10
+@@ -299,3 +301,5 @@ ASM_NAME(synth_1to1_x86_64_accurate_asm):
+ 	ret
+ 
+ NONEXEC_STACK
++
++#endif
+diff --git a/src/libmpg123/synth_x86_64_float.S b/src/libmpg123/synth_x86_64_float.S
+index 5c9425e..a918641 100644
+--- a/src/libmpg123/synth_x86_64_float.S
++++ b/src/libmpg123/synth_x86_64_float.S
+@@ -8,6 +8,8 @@
+ 
+ #include "mangle.h"
+ 
++#ifdef __x86_64__
++
+ #ifdef _WIN64
+ /* short *window; */
+ #define ARG0 %r10
+@@ -257,3 +259,5 @@ ASM_NAME(synth_1to1_real_x86_64_asm):
+ 	ret
+ 
+ NONEXEC_STACK
++
++#endif
+diff --git a/src/libmpg123/synth_x86_64_s32.S b/src/libmpg123/synth_x86_64_s32.S
+index cd6fe45..09ee202 100644
+--- a/src/libmpg123/synth_x86_64_s32.S
++++ b/src/libmpg123/synth_x86_64_s32.S
+@@ -8,6 +8,8 @@
+ 
+ #include "mangle.h"
+ 
++#ifdef __x86_64__
++
+ #ifdef _WIN64
+ /* short *window; */
+ #define ARG0 %r10
+@@ -310,3 +312,5 @@ ASM_NAME(synth_1to1_s32_x86_64_asm):
+ 	ret
+ 
+ NONEXEC_STACK
++
++#endif

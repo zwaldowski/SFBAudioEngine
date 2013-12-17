@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DBF3EA5F186FEFAE0040398E /* crc32.c in Sources */ = {isa = PBXBuildFile; fileRef = DBF3E9D6186FEFAE0040398E /* crc32.c */; };
+		DBF3EA60186FEFAE0040398E /* fastmath.c in Sources */ = {isa = PBXBuildFile; fileRef = DBF3E9D7186FEFAE0040398E /* fastmath.c */; };
+		DBF3EA61186FEFAE0040398E /* huffman-bcl.c in Sources */ = {isa = PBXBuildFile; fileRef = DBF3E9D8186FEFAE0040398E /* huffman-bcl.c */; };
+		DBF3EA62186FEFAE0040398E /* tags.c in Sources */ = {isa = PBXBuildFile; fileRef = DBF3E9D9186FEFAE0040398E /* tags.c */; };
+		DBF3EA69186FEFAE0040398E /* datatypes.h in Headers */ = {isa = PBXBuildFile; fileRef = DBF3E9E3186FEFAE0040398E /* datatypes.h */; };
+		DBF3EA6A186FEFAE0040398E /* minimax.h in Headers */ = {isa = PBXBuildFile; fileRef = DBF3E9E4186FEFAE0040398E /* minimax.h */; };
+		DBF3EA6B186FEFAE0040398E /* mpc_types.h in Headers */ = {isa = PBXBuildFile; fileRef = DBF3E9E5186FEFAE0040398E /* mpc_types.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DBF3EA6C186FEFAE0040398E /* mpcdec.h in Headers */ = {isa = PBXBuildFile; fileRef = DBF3E9E6186FEFAE0040398E /* mpcdec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DBF3EA6D186FEFAE0040398E /* mpcmath.h in Headers */ = {isa = PBXBuildFile; fileRef = DBF3E9E7186FEFAE0040398E /* mpcmath.h */; };
+		DBF3EA6E186FEFAE0040398E /* reader.h in Headers */ = {isa = PBXBuildFile; fileRef = DBF3E9E8186FEFAE0040398E /* reader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DBF3EA6F186FEFAE0040398E /* streaminfo.h in Headers */ = {isa = PBXBuildFile; fileRef = DBF3E9E9186FEFAE0040398E /* streaminfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DBF3EA75186FEFAE0040398E /* decoder.h in Headers */ = {isa = PBXBuildFile; fileRef = DBF3E9F0186FEFAE0040398E /* decoder.h */; };
+		DBF3EA76186FEFAE0040398E /* huffman.c in Sources */ = {isa = PBXBuildFile; fileRef = DBF3E9F1186FEFAE0040398E /* huffman.c */; };
+		DBF3EA77186FEFAE0040398E /* huffman.h in Headers */ = {isa = PBXBuildFile; fileRef = DBF3E9F2186FEFAE0040398E /* huffman.h */; };
+		DBF3EA78186FEFAE0040398E /* internal.h in Headers */ = {isa = PBXBuildFile; fileRef = DBF3E9F3186FEFAE0040398E /* internal.h */; };
+		DBF3EA7A186FEFAE0040398E /* mpc_bits_reader.c in Sources */ = {isa = PBXBuildFile; fileRef = DBF3E9F5186FEFAE0040398E /* mpc_bits_reader.c */; };
+		DBF3EA7B186FEFAE0040398E /* mpc_bits_reader.h in Headers */ = {isa = PBXBuildFile; fileRef = DBF3E9F6186FEFAE0040398E /* mpc_bits_reader.h */; };
+		DBF3EA7C186FEFAE0040398E /* mpc_decoder.c in Sources */ = {isa = PBXBuildFile; fileRef = DBF3E9F7186FEFAE0040398E /* mpc_decoder.c */; };
+		DBF3EA7D186FEFAE0040398E /* mpc_demux.c in Sources */ = {isa = PBXBuildFile; fileRef = DBF3E9F8186FEFAE0040398E /* mpc_demux.c */; };
+		DBF3EA7E186FEFAE0040398E /* mpc_reader.c in Sources */ = {isa = PBXBuildFile; fileRef = DBF3E9F9186FEFAE0040398E /* mpc_reader.c */; };
+		DBF3EA7F186FEFAE0040398E /* mpcdec_math.h in Headers */ = {isa = PBXBuildFile; fileRef = DBF3E9FA186FEFAE0040398E /* mpcdec_math.h */; };
+		DBF3EA81186FEFAE0040398E /* requant.c in Sources */ = {isa = PBXBuildFile; fileRef = DBF3E9FC186FEFAE0040398E /* requant.c */; };
+		DBF3EA82186FEFAE0040398E /* requant.h in Headers */ = {isa = PBXBuildFile; fileRef = DBF3E9FD186FEFAE0040398E /* requant.h */; };
+		DBF3EA83186FEFAE0040398E /* streaminfo.c in Sources */ = {isa = PBXBuildFile; fileRef = DBF3E9FE186FEFAE0040398E /* streaminfo.c */; };
+		DBF3EA84186FEFAE0040398E /* synth_filter.c in Sources */ = {isa = PBXBuildFile; fileRef = DBF3E9FF186FEFAE0040398E /* synth_filter.c */; };
+		DBF3EA98186FEFAE0040398E /* input.c in Sources */ = {isa = PBXBuildFile; fileRef = DBF3EA16186FEFAE0040398E /* input.c */; };
+		DBF3EA99186FEFAE0040398E /* libwaveformat.h in Headers */ = {isa = PBXBuildFile; fileRef = DBF3EA17186FEFAE0040398E /* libwaveformat.h */; };
+		DBF3EA9B186FEFAE0040398E /* output.c in Sources */ = {isa = PBXBuildFile; fileRef = DBF3EA19186FEFAE0040398E /* output.c */; };
+		DBF3EAAD186FEFAE0040398E /* mpcdec.c in Sources */ = {isa = PBXBuildFile; fileRef = DBF3EA2F186FEFAE0040398E /* mpcdec.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DBF3E9CB186FEF9B0040398E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DBF3E990186FEEE60040398E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DBF3E9C7186FEF900040398E;
+			remoteInfo = "Download Musepack";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DB905B4D1870216A007B1AE1 /* mpcdec-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "mpcdec-Debug.xcconfig"; sourceTree = "<group>"; };
+		DB905B4E1870216A007B1AE1 /* mpcdec-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "mpcdec-Release.xcconfig"; sourceTree = "<group>"; };
+		DB905B4F1870216A007B1AE1 /* mpcdec.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = mpcdec.xcconfig; sourceTree = "<group>"; };
+		DB905B501870216F007B1AE1 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = ../../Configurations/Debug.xcconfig; sourceTree = "<group>"; };
+		DB905B511870216F007B1AE1 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = ../../Configurations/Release.xcconfig; sourceTree = "<group>"; };
+		DBF3E99B186FEF660040398E /* mpcdec.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = mpcdec.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBF3E9CF186FEFAE0040398E /* mpcdec-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "mpcdec-Info.plist"; sourceTree = "<group>"; };
+		DBF3E9D6186FEFAE0040398E /* crc32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = crc32.c; sourceTree = "<group>"; };
+		DBF3E9D7186FEFAE0040398E /* fastmath.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fastmath.c; sourceTree = "<group>"; };
+		DBF3E9D8186FEFAE0040398E /* huffman-bcl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "huffman-bcl.c"; sourceTree = "<group>"; };
+		DBF3E9D9186FEFAE0040398E /* tags.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tags.c; sourceTree = "<group>"; };
+		DBF3E9E3186FEFAE0040398E /* datatypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = datatypes.h; sourceTree = "<group>"; };
+		DBF3E9E4186FEFAE0040398E /* minimax.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = minimax.h; sourceTree = "<group>"; };
+		DBF3E9E5186FEFAE0040398E /* mpc_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpc_types.h; sourceTree = "<group>"; };
+		DBF3E9E6186FEFAE0040398E /* mpcdec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpcdec.h; sourceTree = "<group>"; };
+		DBF3E9E7186FEFAE0040398E /* mpcmath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpcmath.h; sourceTree = "<group>"; };
+		DBF3E9E8186FEFAE0040398E /* reader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = reader.h; sourceTree = "<group>"; };
+		DBF3E9E9186FEFAE0040398E /* streaminfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = streaminfo.h; sourceTree = "<group>"; };
+		DBF3E9F0186FEFAE0040398E /* decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = decoder.h; sourceTree = "<group>"; };
+		DBF3E9F1186FEFAE0040398E /* huffman.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = huffman.c; sourceTree = "<group>"; };
+		DBF3E9F2186FEFAE0040398E /* huffman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = huffman.h; sourceTree = "<group>"; };
+		DBF3E9F3186FEFAE0040398E /* internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = internal.h; sourceTree = "<group>"; };
+		DBF3E9F5186FEFAE0040398E /* mpc_bits_reader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mpc_bits_reader.c; sourceTree = "<group>"; };
+		DBF3E9F6186FEFAE0040398E /* mpc_bits_reader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpc_bits_reader.h; sourceTree = "<group>"; };
+		DBF3E9F7186FEFAE0040398E /* mpc_decoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mpc_decoder.c; sourceTree = "<group>"; };
+		DBF3E9F8186FEFAE0040398E /* mpc_demux.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mpc_demux.c; sourceTree = "<group>"; };
+		DBF3E9F9186FEFAE0040398E /* mpc_reader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mpc_reader.c; sourceTree = "<group>"; };
+		DBF3E9FA186FEFAE0040398E /* mpcdec_math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpcdec_math.h; sourceTree = "<group>"; };
+		DBF3E9FC186FEFAE0040398E /* requant.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = requant.c; sourceTree = "<group>"; };
+		DBF3E9FD186FEFAE0040398E /* requant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = requant.h; sourceTree = "<group>"; };
+		DBF3E9FE186FEFAE0040398E /* streaminfo.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = streaminfo.c; sourceTree = "<group>"; };
+		DBF3E9FF186FEFAE0040398E /* synth_filter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = synth_filter.c; sourceTree = "<group>"; };
+		DBF3EA16186FEFAE0040398E /* input.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = input.c; sourceTree = "<group>"; };
+		DBF3EA17186FEFAE0040398E /* libwaveformat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libwaveformat.h; sourceTree = "<group>"; };
+		DBF3EA19186FEFAE0040398E /* output.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = output.c; sourceTree = "<group>"; };
+		DBF3EA2F186FEFAE0040398E /* mpcdec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mpcdec.c; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		DB905B4C1870216A007B1AE1 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				DB905B4F1870216A007B1AE1 /* mpcdec.xcconfig */,
+				DB905B4D1870216A007B1AE1 /* mpcdec-Debug.xcconfig */,
+				DB905B4E1870216A007B1AE1 /* mpcdec-Release.xcconfig */,
+				DB905B501870216F007B1AE1 /* Debug.xcconfig */,
+				DB905B511870216F007B1AE1 /* Release.xcconfig */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		DBF3E98F186FEEE60040398E = {
+			isa = PBXGroup;
+			children = (
+				DBF3E9D2186FEFAE0040398E /* mpcdec */,
+				DBF3EAD6186FEFBD0040398E /* Supporting Files */,
+				DBF3E99C186FEF660040398E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DBF3E99C186FEF660040398E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DBF3E99B186FEF660040398E /* mpcdec.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DBF3E9D2186FEFAE0040398E /* mpcdec */ = {
+			isa = PBXGroup;
+			children = (
+				DBF3E9D5186FEFAE0040398E /* common */,
+				DBF3E9DF186FEFAE0040398E /* include */,
+				DBF3E9EB186FEFAE0040398E /* libmpcdec */,
+				DBF3EA14186FEFAE0040398E /* libwavformat */,
+				DBF3EA2C186FEFAE0040398E /* mpcdec */,
+			);
+			name = mpcdec;
+			path = "mpcdec-src";
+			sourceTree = "<group>";
+		};
+		DBF3E9D5186FEFAE0040398E /* common */ = {
+			isa = PBXGroup;
+			children = (
+				DBF3E9D6186FEFAE0040398E /* crc32.c */,
+				DBF3E9D7186FEFAE0040398E /* fastmath.c */,
+				DBF3E9D8186FEFAE0040398E /* huffman-bcl.c */,
+				DBF3E9D9186FEFAE0040398E /* tags.c */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		DBF3E9DF186FEFAE0040398E /* include */ = {
+			isa = PBXGroup;
+			children = (
+				DBF3E9E2186FEFAE0040398E /* mpc */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		DBF3E9E2186FEFAE0040398E /* mpc */ = {
+			isa = PBXGroup;
+			children = (
+				DBF3E9E3186FEFAE0040398E /* datatypes.h */,
+				DBF3E9E4186FEFAE0040398E /* minimax.h */,
+				DBF3E9E5186FEFAE0040398E /* mpc_types.h */,
+				DBF3E9E6186FEFAE0040398E /* mpcdec.h */,
+				DBF3E9E7186FEFAE0040398E /* mpcmath.h */,
+				DBF3E9E8186FEFAE0040398E /* reader.h */,
+				DBF3E9E9186FEFAE0040398E /* streaminfo.h */,
+			);
+			path = mpc;
+			sourceTree = "<group>";
+		};
+		DBF3E9EB186FEFAE0040398E /* libmpcdec */ = {
+			isa = PBXGroup;
+			children = (
+				DBF3E9F0186FEFAE0040398E /* decoder.h */,
+				DBF3E9F1186FEFAE0040398E /* huffman.c */,
+				DBF3E9F2186FEFAE0040398E /* huffman.h */,
+				DBF3E9F3186FEFAE0040398E /* internal.h */,
+				DBF3E9F5186FEFAE0040398E /* mpc_bits_reader.c */,
+				DBF3E9F6186FEFAE0040398E /* mpc_bits_reader.h */,
+				DBF3E9F7186FEFAE0040398E /* mpc_decoder.c */,
+				DBF3E9F8186FEFAE0040398E /* mpc_demux.c */,
+				DBF3E9F9186FEFAE0040398E /* mpc_reader.c */,
+				DBF3E9FA186FEFAE0040398E /* mpcdec_math.h */,
+				DBF3E9FC186FEFAE0040398E /* requant.c */,
+				DBF3E9FD186FEFAE0040398E /* requant.h */,
+				DBF3E9FE186FEFAE0040398E /* streaminfo.c */,
+				DBF3E9FF186FEFAE0040398E /* synth_filter.c */,
+			);
+			path = libmpcdec;
+			sourceTree = "<group>";
+		};
+		DBF3EA14186FEFAE0040398E /* libwavformat */ = {
+			isa = PBXGroup;
+			children = (
+				DBF3EA16186FEFAE0040398E /* input.c */,
+				DBF3EA17186FEFAE0040398E /* libwaveformat.h */,
+				DBF3EA19186FEFAE0040398E /* output.c */,
+			);
+			path = libwavformat;
+			sourceTree = "<group>";
+		};
+		DBF3EA2C186FEFAE0040398E /* mpcdec */ = {
+			isa = PBXGroup;
+			children = (
+				DBF3EA2F186FEFAE0040398E /* mpcdec.c */,
+			);
+			path = mpcdec;
+			sourceTree = "<group>";
+		};
+		DBF3EAD6186FEFBD0040398E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DBF3E9CF186FEFAE0040398E /* mpcdec-Info.plist */,
+				DB905B4C1870216A007B1AE1 /* Configurations */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		DBF3E998186FEF660040398E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBF3EA6B186FEFAE0040398E /* mpc_types.h in Headers */,
+				DBF3EA6F186FEFAE0040398E /* streaminfo.h in Headers */,
+				DBF3EA6E186FEFAE0040398E /* reader.h in Headers */,
+				DBF3EA6C186FEFAE0040398E /* mpcdec.h in Headers */,
+				DBF3EA7B186FEFAE0040398E /* mpc_bits_reader.h in Headers */,
+				DBF3EA6A186FEFAE0040398E /* minimax.h in Headers */,
+				DBF3EA77186FEFAE0040398E /* huffman.h in Headers */,
+				DBF3EA7F186FEFAE0040398E /* mpcdec_math.h in Headers */,
+				DBF3EA6D186FEFAE0040398E /* mpcmath.h in Headers */,
+				DBF3EA99186FEFAE0040398E /* libwaveformat.h in Headers */,
+				DBF3EA75186FEFAE0040398E /* decoder.h in Headers */,
+				DBF3EA69186FEFAE0040398E /* datatypes.h in Headers */,
+				DBF3EA82186FEFAE0040398E /* requant.h in Headers */,
+				DBF3EA78186FEFAE0040398E /* internal.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXLegacyTarget section */
+		DBF3E9C7186FEF900040398E /* Download Musepack */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = DBF3E9C8186FEF900040398E /* Build configuration list for PBXLegacyTarget "Download Musepack" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = "$(SRCROOT)";
+			dependencies = (
+			);
+			name = "Download Musepack";
+			passBuildSettingsInEnvironment = 1;
+			productName = "Download Musepack";
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXNativeTarget section */
+		DBF3E99A186FEF660040398E /* mpcdec */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBF3E9C5186FEF670040398E /* Build configuration list for PBXNativeTarget "mpcdec" */;
+			buildPhases = (
+				DBF3E996186FEF660040398E /* Sources */,
+				DBF3E998186FEF660040398E /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DBF3E9CC186FEF9B0040398E /* PBXTargetDependency */,
+			);
+			name = mpcdec;
+			productName = mpcdec;
+			productReference = DBF3E99B186FEF660040398E /* mpcdec.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DBF3E990186FEEE60040398E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+			};
+			buildConfigurationList = DBF3E993186FEEE60040398E /* Build configuration list for PBXProject "mpcdec" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DBF3E98F186FEEE60040398E;
+			productRefGroup = DBF3E99C186FEF660040398E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DBF3E99A186FEF660040398E /* mpcdec */,
+				DBF3E9C7186FEF900040398E /* Download Musepack */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DBF3E996186FEF660040398E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBF3EA76186FEFAE0040398E /* huffman.c in Sources */,
+				DBF3EA5F186FEFAE0040398E /* crc32.c in Sources */,
+				DBF3EAAD186FEFAE0040398E /* mpcdec.c in Sources */,
+				DBF3EA81186FEFAE0040398E /* requant.c in Sources */,
+				DBF3EA60186FEFAE0040398E /* fastmath.c in Sources */,
+				DBF3EA7A186FEFAE0040398E /* mpc_bits_reader.c in Sources */,
+				DBF3EA83186FEFAE0040398E /* streaminfo.c in Sources */,
+				DBF3EA7E186FEFAE0040398E /* mpc_reader.c in Sources */,
+				DBF3EA7C186FEFAE0040398E /* mpc_decoder.c in Sources */,
+				DBF3EA62186FEFAE0040398E /* tags.c in Sources */,
+				DBF3EA7D186FEFAE0040398E /* mpc_demux.c in Sources */,
+				DBF3EA9B186FEFAE0040398E /* output.c in Sources */,
+				DBF3EA98186FEFAE0040398E /* input.c in Sources */,
+				DBF3EA84186FEFAE0040398E /* synth_filter.c in Sources */,
+				DBF3EA61186FEFAE0040398E /* huffman-bcl.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DBF3E9CC186FEF9B0040398E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DBF3E9C7186FEF900040398E /* Download Musepack */;
+			targetProxy = DBF3E9CB186FEF9B0040398E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		DBF3E994186FEEE60040398E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB905B501870216F007B1AE1 /* Debug.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		DBF3E995186FEEE60040398E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB905B511870216F007B1AE1 /* Release.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		DBF3E9C1186FEF670040398E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB905B4D1870216A007B1AE1 /* mpcdec-Debug.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		DBF3E9C2186FEF670040398E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB905B4E1870216A007B1AE1 /* mpcdec-Release.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		DBF3E9C9186FEF900040398E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		DBF3E9CA186FEF900040398E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DBF3E993186FEEE60040398E /* Build configuration list for PBXProject "mpcdec" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBF3E994186FEEE60040398E /* Debug */,
+				DBF3E995186FEEE60040398E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBF3E9C5186FEF670040398E /* Build configuration list for PBXNativeTarget "mpcdec" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBF3E9C1186FEF670040398E /* Debug */,
+				DBF3E9C2186FEF670040398E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBF3E9C8186FEF900040398E /* Build configuration list for PBXLegacyTarget "Download Musepack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBF3E9C9186FEF900040398E /* Debug */,
+				DBF3E9CA186FEF900040398E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DBF3E990186FEEE60040398E /* Project object */;
+}

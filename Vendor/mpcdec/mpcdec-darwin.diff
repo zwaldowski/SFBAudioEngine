@@ -1,0 +1,26 @@
+diff --git a/include/mpc/reader.h b/include/mpc/reader.h
+index 1a93e06..f14152d 100755
+--- a/include/mpc/reader.h
++++ b/include/mpc/reader.h
+@@ -38,7 +38,7 @@
+ #pragma once
+ #endif
+ 
+-#include <mpc/mpc_types.h>
++#include <mpcdec/mpc_types.h>
+ #include <stdio.h>
+ 
+ #ifdef __cplusplus
+diff --git a/include/mpc/streaminfo.h b/include/mpc/streaminfo.h
+index a0a9470..91c89f0 100755
+--- a/include/mpc/streaminfo.h
++++ b/include/mpc/streaminfo.h
+@@ -38,7 +38,7 @@
+ #pragma once
+ #endif
+ 
+-#include <mpc/mpc_types.h>
++#include <mpcdec/mpc_types.h>
+ 
+ #ifdef __cplusplus
+ extern "C" {

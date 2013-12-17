@@ -1,0 +1,468 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DB9039E8186FF35C007B1AE1 /* aldumb.h in Headers */ = {isa = PBXBuildFile; fileRef = DB90397D186FF35C007B1AE1 /* aldumb.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB9039E9186FF35C007B1AE1 /* dumb.h in Headers */ = {isa = PBXBuildFile; fileRef = DB90397E186FF35C007B1AE1 /* dumb.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB9039EA186FF35C007B1AE1 /* aldumb.h in Headers */ = {isa = PBXBuildFile; fileRef = DB903980186FF35C007B1AE1 /* aldumb.h */; };
+		DB9039EB186FF35C007B1AE1 /* dumb.h in Headers */ = {isa = PBXBuildFile; fileRef = DB903981186FF35C007B1AE1 /* dumb.h */; };
+		DB9039EC186FF35C007B1AE1 /* it.h in Headers */ = {isa = PBXBuildFile; fileRef = DB903982186FF35C007B1AE1 /* it.h */; };
+		DB903A05186FF35C007B1AE1 /* atexit.c in Sources */ = {isa = PBXBuildFile; fileRef = DB90399F186FF35C007B1AE1 /* atexit.c */; };
+		DB903A06186FF35C007B1AE1 /* duhlen.c in Sources */ = {isa = PBXBuildFile; fileRef = DB9039A0186FF35C007B1AE1 /* duhlen.c */; };
+		DB903A07186FF35C007B1AE1 /* duhtag.c in Sources */ = {isa = PBXBuildFile; fileRef = DB9039A1186FF35C007B1AE1 /* duhtag.c */; };
+		DB903A08186FF35C007B1AE1 /* dumbfile.c in Sources */ = {isa = PBXBuildFile; fileRef = DB9039A2186FF35C007B1AE1 /* dumbfile.c */; };
+		DB903A09186FF35C007B1AE1 /* loadduh.c in Sources */ = {isa = PBXBuildFile; fileRef = DB9039A3186FF35C007B1AE1 /* loadduh.c */; };
+		DB903A0A186FF35C007B1AE1 /* makeduh.c in Sources */ = {isa = PBXBuildFile; fileRef = DB9039A4186FF35C007B1AE1 /* makeduh.c */; };
+		DB903A0B186FF35C007B1AE1 /* rawsig.c in Sources */ = {isa = PBXBuildFile; fileRef = DB9039A5186FF35C007B1AE1 /* rawsig.c */; };
+		DB903A0C186FF35C007B1AE1 /* readduh.c in Sources */ = {isa = PBXBuildFile; fileRef = DB9039A6186FF35C007B1AE1 /* readduh.c */; };
+		DB903A0D186FF35C007B1AE1 /* register.c in Sources */ = {isa = PBXBuildFile; fileRef = DB9039A7186FF35C007B1AE1 /* register.c */; };
+		DB903A0E186FF35C007B1AE1 /* rendduh.c in Sources */ = {isa = PBXBuildFile; fileRef = DB9039A8186FF35C007B1AE1 /* rendduh.c */; };
+		DB903A0F186FF35C007B1AE1 /* rendsig.c in Sources */ = {isa = PBXBuildFile; fileRef = DB9039A9186FF35C007B1AE1 /* rendsig.c */; };
+		DB903A10186FF35C007B1AE1 /* unload.c in Sources */ = {isa = PBXBuildFile; fileRef = DB9039AA186FF35C007B1AE1 /* unload.c */; };
+		DB903A11186FF35C007B1AE1 /* clickrem.c in Sources */ = {isa = PBXBuildFile; fileRef = DB9039AC186FF35C007B1AE1 /* clickrem.c */; };
+		DB903A12186FF35C007B1AE1 /* memfile.c in Sources */ = {isa = PBXBuildFile; fileRef = DB9039AD186FF35C007B1AE1 /* memfile.c */; };
+		DB903A15186FF35C007B1AE1 /* resample.c in Sources */ = {isa = PBXBuildFile; fileRef = DB9039B0186FF35C007B1AE1 /* resample.c */; };
+		DB903A17186FF35C007B1AE1 /* sampbuf.c in Sources */ = {isa = PBXBuildFile; fileRef = DB9039B2186FF35C007B1AE1 /* sampbuf.c */; };
+		DB903A18186FF35C007B1AE1 /* silence.c in Sources */ = {isa = PBXBuildFile; fileRef = DB9039B3186FF35C007B1AE1 /* silence.c */; };
+		DB903A19186FF35C007B1AE1 /* stdfile.c in Sources */ = {isa = PBXBuildFile; fileRef = DB9039B4186FF35C007B1AE1 /* stdfile.c */; };
+		DB903A1A186FF35C007B1AE1 /* itload.c in Sources */ = {isa = PBXBuildFile; fileRef = DB9039B6186FF35C007B1AE1 /* itload.c */; };
+		DB903A1B186FF35C007B1AE1 /* itload2.c in Sources */ = {isa = PBXBuildFile; fileRef = DB9039B7186FF35C007B1AE1 /* itload2.c */; };
+		DB903A1C186FF35C007B1AE1 /* itmisc.c in Sources */ = {isa = PBXBuildFile; fileRef = DB9039B8186FF35C007B1AE1 /* itmisc.c */; };
+		DB903A1D186FF35C007B1AE1 /* itorder.c in Sources */ = {isa = PBXBuildFile; fileRef = DB9039B9186FF35C007B1AE1 /* itorder.c */; };
+		DB903A1E186FF35C007B1AE1 /* itread.c in Sources */ = {isa = PBXBuildFile; fileRef = DB9039BA186FF35C007B1AE1 /* itread.c */; };
+		DB903A1F186FF35C007B1AE1 /* itread2.c in Sources */ = {isa = PBXBuildFile; fileRef = DB9039BB186FF35C007B1AE1 /* itread2.c */; };
+		DB903A20186FF35C007B1AE1 /* itrender.c in Sources */ = {isa = PBXBuildFile; fileRef = DB9039BC186FF35C007B1AE1 /* itrender.c */; };
+		DB903A21186FF35C007B1AE1 /* itunload.c in Sources */ = {isa = PBXBuildFile; fileRef = DB9039BD186FF35C007B1AE1 /* itunload.c */; };
+		DB903A22186FF35C007B1AE1 /* loadmod.c in Sources */ = {isa = PBXBuildFile; fileRef = DB9039BE186FF35C007B1AE1 /* loadmod.c */; };
+		DB903A23186FF35C007B1AE1 /* loadmod2.c in Sources */ = {isa = PBXBuildFile; fileRef = DB9039BF186FF35C007B1AE1 /* loadmod2.c */; };
+		DB903A24186FF35C007B1AE1 /* loads3m.c in Sources */ = {isa = PBXBuildFile; fileRef = DB9039C0186FF35C007B1AE1 /* loads3m.c */; };
+		DB903A25186FF35C007B1AE1 /* loads3m2.c in Sources */ = {isa = PBXBuildFile; fileRef = DB9039C1186FF35C007B1AE1 /* loads3m2.c */; };
+		DB903A26186FF35C007B1AE1 /* loadxm.c in Sources */ = {isa = PBXBuildFile; fileRef = DB9039C2186FF35C007B1AE1 /* loadxm.c */; };
+		DB903A27186FF35C007B1AE1 /* loadxm2.c in Sources */ = {isa = PBXBuildFile; fileRef = DB9039C3186FF35C007B1AE1 /* loadxm2.c */; };
+		DB903A28186FF35C007B1AE1 /* readmod.c in Sources */ = {isa = PBXBuildFile; fileRef = DB9039C4186FF35C007B1AE1 /* readmod.c */; };
+		DB903A29186FF35C007B1AE1 /* readmod2.c in Sources */ = {isa = PBXBuildFile; fileRef = DB9039C5186FF35C007B1AE1 /* readmod2.c */; };
+		DB903A2A186FF35C007B1AE1 /* reads3m.c in Sources */ = {isa = PBXBuildFile; fileRef = DB9039C6186FF35C007B1AE1 /* reads3m.c */; };
+		DB903A2B186FF35C007B1AE1 /* reads3m2.c in Sources */ = {isa = PBXBuildFile; fileRef = DB9039C7186FF35C007B1AE1 /* reads3m2.c */; };
+		DB903A2C186FF35C007B1AE1 /* readxm.c in Sources */ = {isa = PBXBuildFile; fileRef = DB9039C8186FF35C007B1AE1 /* readxm.c */; };
+		DB903A2D186FF35C007B1AE1 /* readxm2.c in Sources */ = {isa = PBXBuildFile; fileRef = DB9039C9186FF35C007B1AE1 /* readxm2.c */; };
+		DB903A2E186FF35C007B1AE1 /* xmeffect.c in Sources */ = {isa = PBXBuildFile; fileRef = DB9039CA186FF35C007B1AE1 /* xmeffect.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DB903968186FF2F9007B1AE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB90392D186FF2B1007B1AE1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB903964186FF2EB007B1AE1;
+			remoteInfo = "Download DUMB";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DB903938186FF2D1007B1AE1 /* dumb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = dumb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB90397D186FF35C007B1AE1 /* aldumb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aldumb.h; sourceTree = "<group>"; };
+		DB90397E186FF35C007B1AE1 /* dumb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dumb.h; sourceTree = "<group>"; };
+		DB903980186FF35C007B1AE1 /* aldumb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aldumb.h; sourceTree = "<group>"; };
+		DB903981186FF35C007B1AE1 /* dumb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dumb.h; sourceTree = "<group>"; };
+		DB903982186FF35C007B1AE1 /* it.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = it.h; sourceTree = "<group>"; };
+		DB90399F186FF35C007B1AE1 /* atexit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = atexit.c; sourceTree = "<group>"; };
+		DB9039A0186FF35C007B1AE1 /* duhlen.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = duhlen.c; sourceTree = "<group>"; };
+		DB9039A1186FF35C007B1AE1 /* duhtag.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = duhtag.c; sourceTree = "<group>"; };
+		DB9039A2186FF35C007B1AE1 /* dumbfile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = dumbfile.c; sourceTree = "<group>"; };
+		DB9039A3186FF35C007B1AE1 /* loadduh.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = loadduh.c; sourceTree = "<group>"; };
+		DB9039A4186FF35C007B1AE1 /* makeduh.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = makeduh.c; sourceTree = "<group>"; };
+		DB9039A5186FF35C007B1AE1 /* rawsig.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rawsig.c; sourceTree = "<group>"; };
+		DB9039A6186FF35C007B1AE1 /* readduh.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = readduh.c; sourceTree = "<group>"; };
+		DB9039A7186FF35C007B1AE1 /* register.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = register.c; sourceTree = "<group>"; };
+		DB9039A8186FF35C007B1AE1 /* rendduh.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rendduh.c; sourceTree = "<group>"; };
+		DB9039A9186FF35C007B1AE1 /* rendsig.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rendsig.c; sourceTree = "<group>"; };
+		DB9039AA186FF35C007B1AE1 /* unload.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unload.c; sourceTree = "<group>"; };
+		DB9039AC186FF35C007B1AE1 /* clickrem.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = clickrem.c; sourceTree = "<group>"; };
+		DB9039AD186FF35C007B1AE1 /* memfile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = memfile.c; sourceTree = "<group>"; };
+		DB9039B0186FF35C007B1AE1 /* resample.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = resample.c; sourceTree = "<group>"; };
+		DB9039B2186FF35C007B1AE1 /* sampbuf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sampbuf.c; sourceTree = "<group>"; };
+		DB9039B3186FF35C007B1AE1 /* silence.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = silence.c; sourceTree = "<group>"; };
+		DB9039B4186FF35C007B1AE1 /* stdfile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = stdfile.c; sourceTree = "<group>"; };
+		DB9039B6186FF35C007B1AE1 /* itload.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = itload.c; sourceTree = "<group>"; };
+		DB9039B7186FF35C007B1AE1 /* itload2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = itload2.c; sourceTree = "<group>"; };
+		DB9039B8186FF35C007B1AE1 /* itmisc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = itmisc.c; sourceTree = "<group>"; };
+		DB9039B9186FF35C007B1AE1 /* itorder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = itorder.c; sourceTree = "<group>"; };
+		DB9039BA186FF35C007B1AE1 /* itread.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = itread.c; sourceTree = "<group>"; };
+		DB9039BB186FF35C007B1AE1 /* itread2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = itread2.c; sourceTree = "<group>"; };
+		DB9039BC186FF35C007B1AE1 /* itrender.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = itrender.c; sourceTree = "<group>"; };
+		DB9039BD186FF35C007B1AE1 /* itunload.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = itunload.c; sourceTree = "<group>"; };
+		DB9039BE186FF35C007B1AE1 /* loadmod.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = loadmod.c; sourceTree = "<group>"; };
+		DB9039BF186FF35C007B1AE1 /* loadmod2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = loadmod2.c; sourceTree = "<group>"; };
+		DB9039C0186FF35C007B1AE1 /* loads3m.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = loads3m.c; sourceTree = "<group>"; };
+		DB9039C1186FF35C007B1AE1 /* loads3m2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = loads3m2.c; sourceTree = "<group>"; };
+		DB9039C2186FF35C007B1AE1 /* loadxm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = loadxm.c; sourceTree = "<group>"; };
+		DB9039C3186FF35C007B1AE1 /* loadxm2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = loadxm2.c; sourceTree = "<group>"; };
+		DB9039C4186FF35C007B1AE1 /* readmod.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = readmod.c; sourceTree = "<group>"; };
+		DB9039C5186FF35C007B1AE1 /* readmod2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = readmod2.c; sourceTree = "<group>"; };
+		DB9039C6186FF35C007B1AE1 /* reads3m.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = reads3m.c; sourceTree = "<group>"; };
+		DB9039C7186FF35C007B1AE1 /* reads3m2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = reads3m2.c; sourceTree = "<group>"; };
+		DB9039C8186FF35C007B1AE1 /* readxm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = readxm.c; sourceTree = "<group>"; };
+		DB9039C9186FF35C007B1AE1 /* readxm2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = readxm2.c; sourceTree = "<group>"; };
+		DB9039CA186FF35C007B1AE1 /* xmeffect.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = xmeffect.c; sourceTree = "<group>"; };
+		DB905B3218701F16007B1AE1 /* DUMB-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "DUMB-Debug.xcconfig"; sourceTree = "<group>"; };
+		DB905B3318701F16007B1AE1 /* DUMB-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "DUMB-Release.xcconfig"; sourceTree = "<group>"; };
+		DB905B3418701F16007B1AE1 /* DUMB.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DUMB.xcconfig; sourceTree = "<group>"; };
+		DB905B3518701F21007B1AE1 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = ../../Configurations/Debug.xcconfig; sourceTree = "<group>"; };
+		DB905B3618701F21007B1AE1 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = ../../Configurations/Release.xcconfig; sourceTree = "<group>"; };
+		DB905B3718701F2E007B1AE1 /* DUMB-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DUMB-Info.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		DB90392C186FF2B1007B1AE1 = {
+			isa = PBXGroup;
+			children = (
+				DB90396E186FF35C007B1AE1 /* DUMB */,
+				DB905B3818701F33007B1AE1 /* Supporting Files */,
+				DB903939186FF2D1007B1AE1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DB903939186FF2D1007B1AE1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB903938186FF2D1007B1AE1 /* dumb.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB90396E186FF35C007B1AE1 /* DUMB */ = {
+			isa = PBXGroup;
+			children = (
+				DB90397C186FF35C007B1AE1 /* include */,
+				DB903990186FF35C007B1AE1 /* src */,
+			);
+			name = DUMB;
+			path = "DUMB-src";
+			sourceTree = "<group>";
+		};
+		DB90397C186FF35C007B1AE1 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				DB90397D186FF35C007B1AE1 /* aldumb.h */,
+				DB90397E186FF35C007B1AE1 /* dumb.h */,
+				DB90397F186FF35C007B1AE1 /* internal */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		DB90397F186FF35C007B1AE1 /* internal */ = {
+			isa = PBXGroup;
+			children = (
+				DB903980186FF35C007B1AE1 /* aldumb.h */,
+				DB903981186FF35C007B1AE1 /* dumb.h */,
+				DB903982186FF35C007B1AE1 /* it.h */,
+			);
+			path = internal;
+			sourceTree = "<group>";
+		};
+		DB903990186FF35C007B1AE1 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				DB90399E186FF35C007B1AE1 /* core */,
+				DB9039AB186FF35C007B1AE1 /* helpers */,
+				DB9039B5186FF35C007B1AE1 /* it */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		DB90399E186FF35C007B1AE1 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				DB90399F186FF35C007B1AE1 /* atexit.c */,
+				DB9039A0186FF35C007B1AE1 /* duhlen.c */,
+				DB9039A1186FF35C007B1AE1 /* duhtag.c */,
+				DB9039A2186FF35C007B1AE1 /* dumbfile.c */,
+				DB9039A3186FF35C007B1AE1 /* loadduh.c */,
+				DB9039A4186FF35C007B1AE1 /* makeduh.c */,
+				DB9039A5186FF35C007B1AE1 /* rawsig.c */,
+				DB9039A6186FF35C007B1AE1 /* readduh.c */,
+				DB9039A7186FF35C007B1AE1 /* register.c */,
+				DB9039A8186FF35C007B1AE1 /* rendduh.c */,
+				DB9039A9186FF35C007B1AE1 /* rendsig.c */,
+				DB9039AA186FF35C007B1AE1 /* unload.c */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		DB9039AB186FF35C007B1AE1 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DB9039AC186FF35C007B1AE1 /* clickrem.c */,
+				DB9039AD186FF35C007B1AE1 /* memfile.c */,
+				DB9039B0186FF35C007B1AE1 /* resample.c */,
+				DB9039B2186FF35C007B1AE1 /* sampbuf.c */,
+				DB9039B3186FF35C007B1AE1 /* silence.c */,
+				DB9039B4186FF35C007B1AE1 /* stdfile.c */,
+			);
+			path = helpers;
+			sourceTree = "<group>";
+		};
+		DB9039B5186FF35C007B1AE1 /* it */ = {
+			isa = PBXGroup;
+			children = (
+				DB9039B6186FF35C007B1AE1 /* itload.c */,
+				DB9039B7186FF35C007B1AE1 /* itload2.c */,
+				DB9039B8186FF35C007B1AE1 /* itmisc.c */,
+				DB9039B9186FF35C007B1AE1 /* itorder.c */,
+				DB9039BA186FF35C007B1AE1 /* itread.c */,
+				DB9039BB186FF35C007B1AE1 /* itread2.c */,
+				DB9039BC186FF35C007B1AE1 /* itrender.c */,
+				DB9039BD186FF35C007B1AE1 /* itunload.c */,
+				DB9039BE186FF35C007B1AE1 /* loadmod.c */,
+				DB9039BF186FF35C007B1AE1 /* loadmod2.c */,
+				DB9039C0186FF35C007B1AE1 /* loads3m.c */,
+				DB9039C1186FF35C007B1AE1 /* loads3m2.c */,
+				DB9039C2186FF35C007B1AE1 /* loadxm.c */,
+				DB9039C3186FF35C007B1AE1 /* loadxm2.c */,
+				DB9039C4186FF35C007B1AE1 /* readmod.c */,
+				DB9039C5186FF35C007B1AE1 /* readmod2.c */,
+				DB9039C6186FF35C007B1AE1 /* reads3m.c */,
+				DB9039C7186FF35C007B1AE1 /* reads3m2.c */,
+				DB9039C8186FF35C007B1AE1 /* readxm.c */,
+				DB9039C9186FF35C007B1AE1 /* readxm2.c */,
+				DB9039CA186FF35C007B1AE1 /* xmeffect.c */,
+			);
+			path = it;
+			sourceTree = "<group>";
+		};
+		DB905B3118701F16007B1AE1 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				DB905B3518701F21007B1AE1 /* Debug.xcconfig */,
+				DB905B3618701F21007B1AE1 /* Release.xcconfig */,
+				DB905B3218701F16007B1AE1 /* DUMB-Debug.xcconfig */,
+				DB905B3318701F16007B1AE1 /* DUMB-Release.xcconfig */,
+				DB905B3418701F16007B1AE1 /* DUMB.xcconfig */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		DB905B3818701F33007B1AE1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DB905B3718701F2E007B1AE1 /* DUMB-Info.plist */,
+				DB905B3118701F16007B1AE1 /* Configurations */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		DB903935186FF2D1007B1AE1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB9039EC186FF35C007B1AE1 /* it.h in Headers */,
+				DB9039EB186FF35C007B1AE1 /* dumb.h in Headers */,
+				DB9039E9186FF35C007B1AE1 /* dumb.h in Headers */,
+				DB9039E8186FF35C007B1AE1 /* aldumb.h in Headers */,
+				DB9039EA186FF35C007B1AE1 /* aldumb.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXLegacyTarget section */
+		DB903964186FF2EB007B1AE1 /* Download DUMB */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = DB903965186FF2EB007B1AE1 /* Build configuration list for PBXLegacyTarget "Download DUMB" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = "$(SRCROOT)";
+			dependencies = (
+			);
+			name = "Download DUMB";
+			passBuildSettingsInEnvironment = 1;
+			productName = "Download DUMB";
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXNativeTarget section */
+		DB903937186FF2D1007B1AE1 /* DUMB */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB90395E186FF2D1007B1AE1 /* Build configuration list for PBXNativeTarget "DUMB" */;
+			buildPhases = (
+				DB903933186FF2D1007B1AE1 /* Sources */,
+				DB903935186FF2D1007B1AE1 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB903969186FF2F9007B1AE1 /* PBXTargetDependency */,
+			);
+			name = DUMB;
+			productName = DUMB;
+			productReference = DB903938186FF2D1007B1AE1 /* dumb.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DB90392D186FF2B1007B1AE1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+			};
+			buildConfigurationList = DB903930186FF2B1007B1AE1 /* Build configuration list for PBXProject "DUMB" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DB90392C186FF2B1007B1AE1;
+			productRefGroup = DB903939186FF2D1007B1AE1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DB903937186FF2D1007B1AE1 /* DUMB */,
+				DB903964186FF2EB007B1AE1 /* Download DUMB */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DB903933186FF2D1007B1AE1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB903A0A186FF35C007B1AE1 /* makeduh.c in Sources */,
+				DB903A27186FF35C007B1AE1 /* loadxm2.c in Sources */,
+				DB903A21186FF35C007B1AE1 /* itunload.c in Sources */,
+				DB903A25186FF35C007B1AE1 /* loads3m2.c in Sources */,
+				DB903A24186FF35C007B1AE1 /* loads3m.c in Sources */,
+				DB903A19186FF35C007B1AE1 /* stdfile.c in Sources */,
+				DB903A2C186FF35C007B1AE1 /* readxm.c in Sources */,
+				DB903A06186FF35C007B1AE1 /* duhlen.c in Sources */,
+				DB903A28186FF35C007B1AE1 /* readmod.c in Sources */,
+				DB903A1F186FF35C007B1AE1 /* itread2.c in Sources */,
+				DB903A0F186FF35C007B1AE1 /* rendsig.c in Sources */,
+				DB903A26186FF35C007B1AE1 /* loadxm.c in Sources */,
+				DB903A0B186FF35C007B1AE1 /* rawsig.c in Sources */,
+				DB903A18186FF35C007B1AE1 /* silence.c in Sources */,
+				DB903A1E186FF35C007B1AE1 /* itread.c in Sources */,
+				DB903A2B186FF35C007B1AE1 /* reads3m2.c in Sources */,
+				DB903A1C186FF35C007B1AE1 /* itmisc.c in Sources */,
+				DB903A23186FF35C007B1AE1 /* loadmod2.c in Sources */,
+				DB903A05186FF35C007B1AE1 /* atexit.c in Sources */,
+				DB903A11186FF35C007B1AE1 /* clickrem.c in Sources */,
+				DB903A1B186FF35C007B1AE1 /* itload2.c in Sources */,
+				DB903A2A186FF35C007B1AE1 /* reads3m.c in Sources */,
+				DB903A09186FF35C007B1AE1 /* loadduh.c in Sources */,
+				DB903A29186FF35C007B1AE1 /* readmod2.c in Sources */,
+				DB903A1D186FF35C007B1AE1 /* itorder.c in Sources */,
+				DB903A0E186FF35C007B1AE1 /* rendduh.c in Sources */,
+				DB903A0D186FF35C007B1AE1 /* register.c in Sources */,
+				DB903A08186FF35C007B1AE1 /* dumbfile.c in Sources */,
+				DB903A0C186FF35C007B1AE1 /* readduh.c in Sources */,
+				DB903A10186FF35C007B1AE1 /* unload.c in Sources */,
+				DB903A15186FF35C007B1AE1 /* resample.c in Sources */,
+				DB903A07186FF35C007B1AE1 /* duhtag.c in Sources */,
+				DB903A22186FF35C007B1AE1 /* loadmod.c in Sources */,
+				DB903A2E186FF35C007B1AE1 /* xmeffect.c in Sources */,
+				DB903A17186FF35C007B1AE1 /* sampbuf.c in Sources */,
+				DB903A1A186FF35C007B1AE1 /* itload.c in Sources */,
+				DB903A2D186FF35C007B1AE1 /* readxm2.c in Sources */,
+				DB903A20186FF35C007B1AE1 /* itrender.c in Sources */,
+				DB903A12186FF35C007B1AE1 /* memfile.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DB903969186FF2F9007B1AE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB903964186FF2EB007B1AE1 /* Download DUMB */;
+			targetProxy = DB903968186FF2F9007B1AE1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		DB903931186FF2B1007B1AE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB905B3518701F21007B1AE1 /* Debug.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		DB903932186FF2B1007B1AE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB905B3618701F21007B1AE1 /* Release.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		DB90395F186FF2D1007B1AE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB905B3218701F16007B1AE1 /* DUMB-Debug.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		DB903960186FF2D1007B1AE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB905B3318701F16007B1AE1 /* DUMB-Release.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		DB903966186FF2EB007B1AE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		DB903967186FF2EB007B1AE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DB903930186FF2B1007B1AE1 /* Build configuration list for PBXProject "DUMB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB903931186FF2B1007B1AE1 /* Debug */,
+				DB903932186FF2B1007B1AE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB90395E186FF2D1007B1AE1 /* Build configuration list for PBXNativeTarget "DUMB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB90395F186FF2D1007B1AE1 /* Debug */,
+				DB903960186FF2D1007B1AE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB903965186FF2EB007B1AE1 /* Build configuration list for PBXLegacyTarget "Download DUMB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB903966186FF2EB007B1AE1 /* Debug */,
+				DB903967186FF2EB007B1AE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DB90392D186FF2B1007B1AE1 /* Project object */;
+}

@@ -1,0 +1,72 @@
+diff --git a/Source/MACLib/MACLib.h b/Source/MACLib/MACLib.h
+index 1018dd4..e758acd 100644
+--- a/Source/MACLib/MACLib.h
++++ b/Source/MACLib/MACLib.h
+@@ -95,7 +95,7 @@ typedef void (__stdcall * APE_PROGRESS_CALLBACK) (int);
+ class IAPEProgressCallback
+ {
+ public:
+-    
++	virtual ~IAPEProgressCallback() {};
+     virtual void Progress(int nPercentageDone) = 0;
+     virtual int GetKillFlag() = 0; // KILL_FLAG_CONTINUE to continue
+ };
+diff --git a/Source/Shared/CircleBuffer.h b/Source/Shared/CircleBuffer.h
+index 52de8f9..a5eb4a5 100644
+--- a/Source/Shared/CircleBuffer.h
++++ b/Source/Shared/CircleBuffer.h
+@@ -18,14 +18,14 @@ public:
+     int MaxGet();
+ 
+     // direct writing
+-    __forceinline unsigned char * CCircleBuffer::GetDirectWritePointer()
++    __forceinline unsigned char * GetDirectWritePointer()
+     {
+         // return a pointer to the tail -- note that it will always be safe to write
+         // at least m_nMaxDirectWriteBytes since we use an end cap region
+         return &m_pBuffer[m_nTail];
+     }
+ 
+-    __forceinline void CCircleBuffer::UpdateAfterDirectWrite(int nBytes)
++	__forceinline void UpdateAfterDirectWrite(int nBytes)
+     {
+         // update the tail
+         m_nTail += nBytes;
+diff --git a/Source/Shared/SmartPtr.h b/Source/Shared/SmartPtr.h
+index 05dec01..7dde758 100644
+--- a/Source/Shared/SmartPtr.h
++++ b/Source/Shared/SmartPtr.h
+@@ -64,28 +64,28 @@ public:
+         m_bDelete = a_bDelete;
+     }
+ 
+-    __forceinline TYPE * GetPtr() const
++    inline TYPE * GetPtr() const
+     {
+         return m_pObject;
+     }
+ 
+-    __forceinline operator TYPE * () const
++    inline operator TYPE * () const
+     {
+         return m_pObject;
+     }
+ 
+-    __forceinline TYPE * operator ->() const
++    inline TYPE * operator ->() const
+     {
+         return m_pObject;
+     }
+ 
+     // declare assignment, but don't implement (compiler error if we try to use)
+     // that way we can't carelessly mix smart pointers and regular pointers
+-    __forceinline void * operator =(void *) const;
++    inline void * operator =(void *) const;
+ };
+ 
+ #ifdef _MSC_VER
+     #pragma warning(pop)
+-#endif _MSC_VER
++#endif // _MSC_VER
+ 
+ }

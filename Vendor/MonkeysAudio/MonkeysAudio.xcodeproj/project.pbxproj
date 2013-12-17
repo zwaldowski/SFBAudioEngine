@@ -1,0 +1,490 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DB903F5D186FF966007B1AE1 /* All.h in Headers */ = {isa = PBXBuildFile; fileRef = DB903E82186FF966007B1AE1 /* All.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB903FB4186FF966007B1AE1 /* APECompress.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB903EF1186FF966007B1AE1 /* APECompress.cpp */; };
+		DB903FB5186FF966007B1AE1 /* APECompress.h in Headers */ = {isa = PBXBuildFile; fileRef = DB903EF2186FF966007B1AE1 /* APECompress.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB903FB6186FF966007B1AE1 /* APECompressCore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB903EF3186FF966007B1AE1 /* APECompressCore.cpp */; };
+		DB903FB7186FF966007B1AE1 /* APECompressCore.h in Headers */ = {isa = PBXBuildFile; fileRef = DB903EF4186FF966007B1AE1 /* APECompressCore.h */; };
+		DB903FB8186FF966007B1AE1 /* APECompressCreate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB903EF5186FF966007B1AE1 /* APECompressCreate.cpp */; };
+		DB903FB9186FF966007B1AE1 /* APECompressCreate.h in Headers */ = {isa = PBXBuildFile; fileRef = DB903EF6186FF966007B1AE1 /* APECompressCreate.h */; };
+		DB903FBA186FF966007B1AE1 /* APEDecompress.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB903EF7186FF966007B1AE1 /* APEDecompress.cpp */; };
+		DB903FBB186FF966007B1AE1 /* APEDecompress.h in Headers */ = {isa = PBXBuildFile; fileRef = DB903EF8186FF966007B1AE1 /* APEDecompress.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB903FBC186FF966007B1AE1 /* APEHeader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB903EF9186FF966007B1AE1 /* APEHeader.cpp */; };
+		DB903FBD186FF966007B1AE1 /* APEHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = DB903EFA186FF966007B1AE1 /* APEHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB903FBE186FF966007B1AE1 /* APEInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB903EFB186FF966007B1AE1 /* APEInfo.cpp */; };
+		DB903FBF186FF966007B1AE1 /* APEInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = DB903EFC186FF966007B1AE1 /* APEInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB903FC0186FF966007B1AE1 /* APELink.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB903EFD186FF966007B1AE1 /* APELink.cpp */; };
+		DB903FC1186FF966007B1AE1 /* APELink.h in Headers */ = {isa = PBXBuildFile; fileRef = DB903EFE186FF966007B1AE1 /* APELink.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB903FC2186FF966007B1AE1 /* APESimple.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB903EFF186FF966007B1AE1 /* APESimple.cpp */; };
+		DB903FC3186FF966007B1AE1 /* APETag.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB903F00186FF966007B1AE1 /* APETag.cpp */; };
+		DB903FC4186FF966007B1AE1 /* APETag.h in Headers */ = {isa = PBXBuildFile; fileRef = DB903F01186FF966007B1AE1 /* APETag.h */; };
+		DB903FC5186FF966007B1AE1 /* BitArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB903F02186FF966007B1AE1 /* BitArray.cpp */; };
+		DB903FC6186FF966007B1AE1 /* BitArray.h in Headers */ = {isa = PBXBuildFile; fileRef = DB903F03186FF966007B1AE1 /* BitArray.h */; };
+		DB903FC7186FF966007B1AE1 /* MACLib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB903F04186FF966007B1AE1 /* MACLib.cpp */; };
+		DB903FC8186FF966007B1AE1 /* MACLib.h in Headers */ = {isa = PBXBuildFile; fileRef = DB903F05186FF966007B1AE1 /* MACLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB903FC9186FF966007B1AE1 /* MACProgressHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB903F06186FF966007B1AE1 /* MACProgressHelper.cpp */; };
+		DB903FCA186FF966007B1AE1 /* MACProgressHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = DB903F07186FF966007B1AE1 /* MACProgressHelper.h */; };
+		DB903FCB186FF966007B1AE1 /* md5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB903F08186FF966007B1AE1 /* md5.cpp */; };
+		DB903FCC186FF966007B1AE1 /* md5.h in Headers */ = {isa = PBXBuildFile; fileRef = DB903F09186FF966007B1AE1 /* md5.h */; };
+		DB903FCD186FF966007B1AE1 /* NewPredictor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB903F0A186FF966007B1AE1 /* NewPredictor.cpp */; };
+		DB903FCE186FF966007B1AE1 /* NewPredictor.h in Headers */ = {isa = PBXBuildFile; fileRef = DB903F0B186FF966007B1AE1 /* NewPredictor.h */; };
+		DB903FCF186FF966007B1AE1 /* NNFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB903F0C186FF966007B1AE1 /* NNFilter.cpp */; };
+		DB903FD0186FF966007B1AE1 /* NNFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = DB903F0D186FF966007B1AE1 /* NNFilter.h */; };
+		DB903FDF186FF966007B1AE1 /* Predictor.h in Headers */ = {isa = PBXBuildFile; fileRef = DB903F1D186FF966007B1AE1 /* Predictor.h */; };
+		DB903FE0186FF966007B1AE1 /* Prepare.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB903F1E186FF966007B1AE1 /* Prepare.cpp */; };
+		DB903FE1186FF966007B1AE1 /* Prepare.h in Headers */ = {isa = PBXBuildFile; fileRef = DB903F1F186FF966007B1AE1 /* Prepare.h */; };
+		DB903FE2186FF966007B1AE1 /* ScaledFirstOrderFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = DB903F20186FF966007B1AE1 /* ScaledFirstOrderFilter.h */; };
+		DB903FE3186FF966007B1AE1 /* UnBitArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB903F21186FF966007B1AE1 /* UnBitArray.cpp */; };
+		DB903FE4186FF966007B1AE1 /* UnBitArray.h in Headers */ = {isa = PBXBuildFile; fileRef = DB903F22186FF966007B1AE1 /* UnBitArray.h */; };
+		DB903FE5186FF966007B1AE1 /* UnBitArrayBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB903F23186FF966007B1AE1 /* UnBitArrayBase.cpp */; };
+		DB903FE6186FF966007B1AE1 /* UnBitArrayBase.h in Headers */ = {isa = PBXBuildFile; fileRef = DB903F24186FF966007B1AE1 /* UnBitArrayBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB903FE7186FF966007B1AE1 /* WAVInputSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB903F25186FF966007B1AE1 /* WAVInputSource.cpp */; };
+		DB903FE8186FF966007B1AE1 /* WAVInputSource.h in Headers */ = {isa = PBXBuildFile; fileRef = DB903F26186FF966007B1AE1 /* WAVInputSource.h */; };
+		DB903FFF186FF966007B1AE1 /* CharacterHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB903F49186FF966007B1AE1 /* CharacterHelper.cpp */; };
+		DB904000186FF966007B1AE1 /* CharacterHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = DB903F4A186FF966007B1AE1 /* CharacterHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB904001186FF966007B1AE1 /* CircleBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB903F4B186FF966007B1AE1 /* CircleBuffer.cpp */; };
+		DB904002186FF966007B1AE1 /* CircleBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = DB903F4C186FF966007B1AE1 /* CircleBuffer.h */; };
+		DB904003186FF966007B1AE1 /* GlobalFunctions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB903F4D186FF966007B1AE1 /* GlobalFunctions.cpp */; };
+		DB904004186FF966007B1AE1 /* GlobalFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = DB903F4E186FF966007B1AE1 /* GlobalFunctions.h */; };
+		DB904005186FF966007B1AE1 /* ID3Genres.h in Headers */ = {isa = PBXBuildFile; fileRef = DB903F4F186FF966007B1AE1 /* ID3Genres.h */; };
+		DB904006186FF966007B1AE1 /* IO.h in Headers */ = {isa = PBXBuildFile; fileRef = DB903F50186FF966007B1AE1 /* IO.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB904007186FF966007B1AE1 /* NoWindows.h in Headers */ = {isa = PBXBuildFile; fileRef = DB903F51186FF966007B1AE1 /* NoWindows.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB904008186FF966007B1AE1 /* RollBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = DB903F52186FF966007B1AE1 /* RollBuffer.h */; };
+		DB90400A186FF966007B1AE1 /* StdLibFileIO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB903F54186FF966007B1AE1 /* StdLibFileIO.cpp */; };
+		DB90400B186FF966007B1AE1 /* StdLibFileIO.h in Headers */ = {isa = PBXBuildFile; fileRef = DB903F55186FF966007B1AE1 /* StdLibFileIO.h */; };
+		DB90400C186FF966007B1AE1 /* StdString.h in Headers */ = {isa = PBXBuildFile; fileRef = DB903F56186FF966007B1AE1 /* StdString.h */; };
+		DB90400D186FF966007B1AE1 /* Timer.h in Headers */ = {isa = PBXBuildFile; fileRef = DB903F57186FF966007B1AE1 /* Timer.h */; };
+		DB904011186FF966007B1AE1 /* WinFileIO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB903F5B186FF966007B1AE1 /* WinFileIO.cpp */; };
+		DB904012186FF966007B1AE1 /* WinFileIO.h in Headers */ = {isa = PBXBuildFile; fileRef = DB903F5C186FF966007B1AE1 /* WinFileIO.h */; };
+		DB904020186FFB10007B1AE1 /* SmartPtr.h in Headers */ = {isa = PBXBuildFile; fileRef = DB90401F186FFB10007B1AE1 /* SmartPtr.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DB90401D186FF9C2007B1AE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB903E46186FF8C1007B1AE1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB903E4C186FF92D007B1AE1;
+			remoteInfo = "Download MAC";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DB903E55186FF93C007B1AE1 /* mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB903E82186FF966007B1AE1 /* All.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = All.h; path = include/All.h; sourceTree = "<group>"; };
+		DB903E85186FF966007B1AE1 /* MonkeysAudio-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MonkeysAudio-Info.plist"; sourceTree = "<group>"; };
+		DB903E86186FF966007B1AE1 /* MonkeysAudio-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MonkeysAudio-Prefix.pch"; sourceTree = "<group>"; };
+		DB903EF1186FF966007B1AE1 /* APECompress.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = APECompress.cpp; sourceTree = "<group>"; };
+		DB903EF2186FF966007B1AE1 /* APECompress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APECompress.h; sourceTree = "<group>"; };
+		DB903EF3186FF966007B1AE1 /* APECompressCore.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = APECompressCore.cpp; sourceTree = "<group>"; };
+		DB903EF4186FF966007B1AE1 /* APECompressCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APECompressCore.h; sourceTree = "<group>"; };
+		DB903EF5186FF966007B1AE1 /* APECompressCreate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = APECompressCreate.cpp; sourceTree = "<group>"; };
+		DB903EF6186FF966007B1AE1 /* APECompressCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APECompressCreate.h; sourceTree = "<group>"; };
+		DB903EF7186FF966007B1AE1 /* APEDecompress.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = APEDecompress.cpp; sourceTree = "<group>"; };
+		DB903EF8186FF966007B1AE1 /* APEDecompress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APEDecompress.h; sourceTree = "<group>"; };
+		DB903EF9186FF966007B1AE1 /* APEHeader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = APEHeader.cpp; sourceTree = "<group>"; };
+		DB903EFA186FF966007B1AE1 /* APEHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APEHeader.h; sourceTree = "<group>"; };
+		DB903EFB186FF966007B1AE1 /* APEInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = APEInfo.cpp; sourceTree = "<group>"; };
+		DB903EFC186FF966007B1AE1 /* APEInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APEInfo.h; sourceTree = "<group>"; };
+		DB903EFD186FF966007B1AE1 /* APELink.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = APELink.cpp; sourceTree = "<group>"; };
+		DB903EFE186FF966007B1AE1 /* APELink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APELink.h; sourceTree = "<group>"; };
+		DB903EFF186FF966007B1AE1 /* APESimple.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = APESimple.cpp; sourceTree = "<group>"; };
+		DB903F00186FF966007B1AE1 /* APETag.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = APETag.cpp; sourceTree = "<group>"; };
+		DB903F01186FF966007B1AE1 /* APETag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APETag.h; sourceTree = "<group>"; };
+		DB903F02186FF966007B1AE1 /* BitArray.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BitArray.cpp; sourceTree = "<group>"; };
+		DB903F03186FF966007B1AE1 /* BitArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BitArray.h; sourceTree = "<group>"; };
+		DB903F04186FF966007B1AE1 /* MACLib.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MACLib.cpp; sourceTree = "<group>"; };
+		DB903F05186FF966007B1AE1 /* MACLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MACLib.h; sourceTree = "<group>"; };
+		DB903F06186FF966007B1AE1 /* MACProgressHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MACProgressHelper.cpp; sourceTree = "<group>"; };
+		DB903F07186FF966007B1AE1 /* MACProgressHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MACProgressHelper.h; sourceTree = "<group>"; };
+		DB903F08186FF966007B1AE1 /* md5.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = md5.cpp; sourceTree = "<group>"; };
+		DB903F09186FF966007B1AE1 /* md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = md5.h; sourceTree = "<group>"; };
+		DB903F0A186FF966007B1AE1 /* NewPredictor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NewPredictor.cpp; sourceTree = "<group>"; };
+		DB903F0B186FF966007B1AE1 /* NewPredictor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPredictor.h; sourceTree = "<group>"; };
+		DB903F0C186FF966007B1AE1 /* NNFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NNFilter.cpp; sourceTree = "<group>"; };
+		DB903F0D186FF966007B1AE1 /* NNFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNFilter.h; sourceTree = "<group>"; };
+		DB903F1D186FF966007B1AE1 /* Predictor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Predictor.h; sourceTree = "<group>"; };
+		DB903F1E186FF966007B1AE1 /* Prepare.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Prepare.cpp; sourceTree = "<group>"; };
+		DB903F1F186FF966007B1AE1 /* Prepare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prepare.h; sourceTree = "<group>"; };
+		DB903F20186FF966007B1AE1 /* ScaledFirstOrderFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaledFirstOrderFilter.h; sourceTree = "<group>"; };
+		DB903F21186FF966007B1AE1 /* UnBitArray.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UnBitArray.cpp; sourceTree = "<group>"; };
+		DB903F22186FF966007B1AE1 /* UnBitArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnBitArray.h; sourceTree = "<group>"; };
+		DB903F23186FF966007B1AE1 /* UnBitArrayBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UnBitArrayBase.cpp; sourceTree = "<group>"; };
+		DB903F24186FF966007B1AE1 /* UnBitArrayBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnBitArrayBase.h; sourceTree = "<group>"; };
+		DB903F25186FF966007B1AE1 /* WAVInputSource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WAVInputSource.cpp; sourceTree = "<group>"; };
+		DB903F26186FF966007B1AE1 /* WAVInputSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAVInputSource.h; sourceTree = "<group>"; };
+		DB903F49186FF966007B1AE1 /* CharacterHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CharacterHelper.cpp; sourceTree = "<group>"; };
+		DB903F4A186FF966007B1AE1 /* CharacterHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterHelper.h; sourceTree = "<group>"; };
+		DB903F4B186FF966007B1AE1 /* CircleBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CircleBuffer.cpp; sourceTree = "<group>"; };
+		DB903F4C186FF966007B1AE1 /* CircleBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleBuffer.h; sourceTree = "<group>"; };
+		DB903F4D186FF966007B1AE1 /* GlobalFunctions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GlobalFunctions.cpp; sourceTree = "<group>"; };
+		DB903F4E186FF966007B1AE1 /* GlobalFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalFunctions.h; sourceTree = "<group>"; };
+		DB903F4F186FF966007B1AE1 /* ID3Genres.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ID3Genres.h; sourceTree = "<group>"; };
+		DB903F50186FF966007B1AE1 /* IO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IO.h; sourceTree = "<group>"; };
+		DB903F51186FF966007B1AE1 /* NoWindows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoWindows.h; sourceTree = "<group>"; };
+		DB903F52186FF966007B1AE1 /* RollBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RollBuffer.h; sourceTree = "<group>"; };
+		DB903F54186FF966007B1AE1 /* StdLibFileIO.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StdLibFileIO.cpp; sourceTree = "<group>"; };
+		DB903F55186FF966007B1AE1 /* StdLibFileIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StdLibFileIO.h; sourceTree = "<group>"; };
+		DB903F56186FF966007B1AE1 /* StdString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StdString.h; sourceTree = "<group>"; };
+		DB903F57186FF966007B1AE1 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
+		DB903F5B186FF966007B1AE1 /* WinFileIO.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WinFileIO.cpp; sourceTree = "<group>"; };
+		DB903F5C186FF966007B1AE1 /* WinFileIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WinFileIO.h; sourceTree = "<group>"; };
+		DB90401F186FFB10007B1AE1 /* SmartPtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmartPtr.h; sourceTree = "<group>"; };
+		DB905B4118702062007B1AE1 /* MonkeysAudio-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "MonkeysAudio-Debug.xcconfig"; sourceTree = "<group>"; };
+		DB905B4218702062007B1AE1 /* MonkeysAudio-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "MonkeysAudio-Release.xcconfig"; sourceTree = "<group>"; };
+		DB905B4318702062007B1AE1 /* MonkeysAudio.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = MonkeysAudio.xcconfig; sourceTree = "<group>"; };
+		DB905B441870206D007B1AE1 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = ../../Configurations/Debug.xcconfig; sourceTree = "<group>"; };
+		DB905B451870206D007B1AE1 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = ../../Configurations/Release.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		DB903E45186FF8C1007B1AE1 = {
+			isa = PBXGroup;
+			children = (
+				DB903ED0186FF966007B1AE1 /* MonkeysAudio */,
+				DB90401C186FF9A9007B1AE1 /* Supporting Files */,
+				DB903E56186FF93C007B1AE1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DB903E56186FF93C007B1AE1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB903E55186FF93C007B1AE1 /* mac.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB903ED0186FF966007B1AE1 /* MonkeysAudio */ = {
+			isa = PBXGroup;
+			children = (
+				DB903EF0186FF966007B1AE1 /* MACLib */,
+				DB903F45186FF966007B1AE1 /* Shared */,
+			);
+			name = MonkeysAudio;
+			path = "MonkeysAudio-src/Source";
+			sourceTree = "<group>";
+		};
+		DB903EF0186FF966007B1AE1 /* MACLib */ = {
+			isa = PBXGroup;
+			children = (
+				DB903EF1186FF966007B1AE1 /* APECompress.cpp */,
+				DB903EF2186FF966007B1AE1 /* APECompress.h */,
+				DB903EF3186FF966007B1AE1 /* APECompressCore.cpp */,
+				DB903EF4186FF966007B1AE1 /* APECompressCore.h */,
+				DB903EF5186FF966007B1AE1 /* APECompressCreate.cpp */,
+				DB903EF6186FF966007B1AE1 /* APECompressCreate.h */,
+				DB903EF7186FF966007B1AE1 /* APEDecompress.cpp */,
+				DB903EF8186FF966007B1AE1 /* APEDecompress.h */,
+				DB903EF9186FF966007B1AE1 /* APEHeader.cpp */,
+				DB903EFA186FF966007B1AE1 /* APEHeader.h */,
+				DB903EFB186FF966007B1AE1 /* APEInfo.cpp */,
+				DB903EFC186FF966007B1AE1 /* APEInfo.h */,
+				DB903EFD186FF966007B1AE1 /* APELink.cpp */,
+				DB903EFE186FF966007B1AE1 /* APELink.h */,
+				DB903EFF186FF966007B1AE1 /* APESimple.cpp */,
+				DB903F00186FF966007B1AE1 /* APETag.cpp */,
+				DB903F01186FF966007B1AE1 /* APETag.h */,
+				DB903F02186FF966007B1AE1 /* BitArray.cpp */,
+				DB903F03186FF966007B1AE1 /* BitArray.h */,
+				DB903F04186FF966007B1AE1 /* MACLib.cpp */,
+				DB903F05186FF966007B1AE1 /* MACLib.h */,
+				DB903F06186FF966007B1AE1 /* MACProgressHelper.cpp */,
+				DB903F07186FF966007B1AE1 /* MACProgressHelper.h */,
+				DB903F08186FF966007B1AE1 /* md5.cpp */,
+				DB903F09186FF966007B1AE1 /* md5.h */,
+				DB903F0A186FF966007B1AE1 /* NewPredictor.cpp */,
+				DB903F0B186FF966007B1AE1 /* NewPredictor.h */,
+				DB903F0C186FF966007B1AE1 /* NNFilter.cpp */,
+				DB903F0D186FF966007B1AE1 /* NNFilter.h */,
+				DB903F1D186FF966007B1AE1 /* Predictor.h */,
+				DB903F1E186FF966007B1AE1 /* Prepare.cpp */,
+				DB903F1F186FF966007B1AE1 /* Prepare.h */,
+				DB903F20186FF966007B1AE1 /* ScaledFirstOrderFilter.h */,
+				DB903F21186FF966007B1AE1 /* UnBitArray.cpp */,
+				DB903F22186FF966007B1AE1 /* UnBitArray.h */,
+				DB903F23186FF966007B1AE1 /* UnBitArrayBase.cpp */,
+				DB903F24186FF966007B1AE1 /* UnBitArrayBase.h */,
+				DB903F25186FF966007B1AE1 /* WAVInputSource.cpp */,
+				DB903F26186FF966007B1AE1 /* WAVInputSource.h */,
+			);
+			path = MACLib;
+			sourceTree = "<group>";
+		};
+		DB903F45186FF966007B1AE1 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				DB903F49186FF966007B1AE1 /* CharacterHelper.cpp */,
+				DB903F4A186FF966007B1AE1 /* CharacterHelper.h */,
+				DB903F4B186FF966007B1AE1 /* CircleBuffer.cpp */,
+				DB903F4C186FF966007B1AE1 /* CircleBuffer.h */,
+				DB903F4D186FF966007B1AE1 /* GlobalFunctions.cpp */,
+				DB903F4E186FF966007B1AE1 /* GlobalFunctions.h */,
+				DB903F4F186FF966007B1AE1 /* ID3Genres.h */,
+				DB903F50186FF966007B1AE1 /* IO.h */,
+				DB903F51186FF966007B1AE1 /* NoWindows.h */,
+				DB903F52186FF966007B1AE1 /* RollBuffer.h */,
+				DB90401F186FFB10007B1AE1 /* SmartPtr.h */,
+				DB903F54186FF966007B1AE1 /* StdLibFileIO.cpp */,
+				DB903F55186FF966007B1AE1 /* StdLibFileIO.h */,
+				DB903F56186FF966007B1AE1 /* StdString.h */,
+				DB903F57186FF966007B1AE1 /* Timer.h */,
+				DB903F5B186FF966007B1AE1 /* WinFileIO.cpp */,
+				DB903F5C186FF966007B1AE1 /* WinFileIO.h */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		DB90401C186FF9A9007B1AE1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DB903E82186FF966007B1AE1 /* All.h */,
+				DB903E85186FF966007B1AE1 /* MonkeysAudio-Info.plist */,
+				DB903E86186FF966007B1AE1 /* MonkeysAudio-Prefix.pch */,
+				DB905B4018702062007B1AE1 /* Configurations */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DB905B4018702062007B1AE1 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				DB905B4118702062007B1AE1 /* MonkeysAudio-Debug.xcconfig */,
+				DB905B4218702062007B1AE1 /* MonkeysAudio-Release.xcconfig */,
+				DB905B4318702062007B1AE1 /* MonkeysAudio.xcconfig */,
+				DB905B441870206D007B1AE1 /* Debug.xcconfig */,
+				DB905B451870206D007B1AE1 /* Release.xcconfig */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		DB903E52186FF93C007B1AE1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB903F5D186FF966007B1AE1 /* All.h in Headers */,
+				DB903FBD186FF966007B1AE1 /* APEHeader.h in Headers */,
+				DB904000186FF966007B1AE1 /* CharacterHelper.h in Headers */,
+				DB903FB5186FF966007B1AE1 /* APECompress.h in Headers */,
+				DB903FC1186FF966007B1AE1 /* APELink.h in Headers */,
+				DB903FBF186FF966007B1AE1 /* APEInfo.h in Headers */,
+				DB903FBB186FF966007B1AE1 /* APEDecompress.h in Headers */,
+				DB903FC8186FF966007B1AE1 /* MACLib.h in Headers */,
+				DB904006186FF966007B1AE1 /* IO.h in Headers */,
+				DB904007186FF966007B1AE1 /* NoWindows.h in Headers */,
+				DB903FE6186FF966007B1AE1 /* UnBitArrayBase.h in Headers */,
+				DB904020186FFB10007B1AE1 /* SmartPtr.h in Headers */,
+				DB903FE8186FF966007B1AE1 /* WAVInputSource.h in Headers */,
+				DB904005186FF966007B1AE1 /* ID3Genres.h in Headers */,
+				DB903FE2186FF966007B1AE1 /* ScaledFirstOrderFilter.h in Headers */,
+				DB903FB9186FF966007B1AE1 /* APECompressCreate.h in Headers */,
+				DB903FE1186FF966007B1AE1 /* Prepare.h in Headers */,
+				DB903FE4186FF966007B1AE1 /* UnBitArray.h in Headers */,
+				DB90400B186FF966007B1AE1 /* StdLibFileIO.h in Headers */,
+				DB904004186FF966007B1AE1 /* GlobalFunctions.h in Headers */,
+				DB903FB7186FF966007B1AE1 /* APECompressCore.h in Headers */,
+				DB90400D186FF966007B1AE1 /* Timer.h in Headers */,
+				DB903FCA186FF966007B1AE1 /* MACProgressHelper.h in Headers */,
+				DB903FD0186FF966007B1AE1 /* NNFilter.h in Headers */,
+				DB904012186FF966007B1AE1 /* WinFileIO.h in Headers */,
+				DB904002186FF966007B1AE1 /* CircleBuffer.h in Headers */,
+				DB903FCC186FF966007B1AE1 /* md5.h in Headers */,
+				DB904008186FF966007B1AE1 /* RollBuffer.h in Headers */,
+				DB90400C186FF966007B1AE1 /* StdString.h in Headers */,
+				DB903FC6186FF966007B1AE1 /* BitArray.h in Headers */,
+				DB903FCE186FF966007B1AE1 /* NewPredictor.h in Headers */,
+				DB903FDF186FF966007B1AE1 /* Predictor.h in Headers */,
+				DB903FC4186FF966007B1AE1 /* APETag.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXLegacyTarget section */
+		DB903E4C186FF92D007B1AE1 /* Download MAC */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = DB903E4D186FF92D007B1AE1 /* Build configuration list for PBXLegacyTarget "Download MAC" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = "$(SRCROOT)";
+			dependencies = (
+			);
+			name = "Download MAC";
+			passBuildSettingsInEnvironment = 1;
+			productName = "Download MAC";
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXNativeTarget section */
+		DB903E54186FF93C007B1AE1 /* MAC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB903E7B186FF93C007B1AE1 /* Build configuration list for PBXNativeTarget "MAC" */;
+			buildPhases = (
+				DB903E50186FF93C007B1AE1 /* Sources */,
+				DB903E52186FF93C007B1AE1 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB90401E186FF9C2007B1AE1 /* PBXTargetDependency */,
+			);
+			name = MAC;
+			productName = MAC;
+			productReference = DB903E55186FF93C007B1AE1 /* mac.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DB903E46186FF8C1007B1AE1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+			};
+			buildConfigurationList = DB903E49186FF8C1007B1AE1 /* Build configuration list for PBXProject "MonkeysAudio" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DB903E45186FF8C1007B1AE1;
+			productRefGroup = DB903E56186FF93C007B1AE1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DB903E4C186FF92D007B1AE1 /* Download MAC */,
+				DB903E54186FF93C007B1AE1 /* MAC */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DB903E50186FF93C007B1AE1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB903FE5186FF966007B1AE1 /* UnBitArrayBase.cpp in Sources */,
+				DB903FBC186FF966007B1AE1 /* APEHeader.cpp in Sources */,
+				DB903FBE186FF966007B1AE1 /* APEInfo.cpp in Sources */,
+				DB903FC7186FF966007B1AE1 /* MACLib.cpp in Sources */,
+				DB903FCF186FF966007B1AE1 /* NNFilter.cpp in Sources */,
+				DB90400A186FF966007B1AE1 /* StdLibFileIO.cpp in Sources */,
+				DB904001186FF966007B1AE1 /* CircleBuffer.cpp in Sources */,
+				DB903FB4186FF966007B1AE1 /* APECompress.cpp in Sources */,
+				DB903FC3186FF966007B1AE1 /* APETag.cpp in Sources */,
+				DB903FE7186FF966007B1AE1 /* WAVInputSource.cpp in Sources */,
+				DB903FBA186FF966007B1AE1 /* APEDecompress.cpp in Sources */,
+				DB903FFF186FF966007B1AE1 /* CharacterHelper.cpp in Sources */,
+				DB903FE0186FF966007B1AE1 /* Prepare.cpp in Sources */,
+				DB903FC5186FF966007B1AE1 /* BitArray.cpp in Sources */,
+				DB903FB6186FF966007B1AE1 /* APECompressCore.cpp in Sources */,
+				DB903FC2186FF966007B1AE1 /* APESimple.cpp in Sources */,
+				DB904011186FF966007B1AE1 /* WinFileIO.cpp in Sources */,
+				DB903FB8186FF966007B1AE1 /* APECompressCreate.cpp in Sources */,
+				DB903FCB186FF966007B1AE1 /* md5.cpp in Sources */,
+				DB904003186FF966007B1AE1 /* GlobalFunctions.cpp in Sources */,
+				DB903FCD186FF966007B1AE1 /* NewPredictor.cpp in Sources */,
+				DB903FC9186FF966007B1AE1 /* MACProgressHelper.cpp in Sources */,
+				DB903FC0186FF966007B1AE1 /* APELink.cpp in Sources */,
+				DB903FE3186FF966007B1AE1 /* UnBitArray.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DB90401E186FF9C2007B1AE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB903E4C186FF92D007B1AE1 /* Download MAC */;
+			targetProxy = DB90401D186FF9C2007B1AE1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		DB903E4A186FF8C1007B1AE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB905B441870206D007B1AE1 /* Debug.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		DB903E4B186FF8C1007B1AE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB905B4218702062007B1AE1 /* MonkeysAudio-Release.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		DB903E4E186FF92D007B1AE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		DB903E4F186FF92D007B1AE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		DB903E7C186FF93C007B1AE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB905B4118702062007B1AE1 /* MonkeysAudio-Debug.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		DB903E7D186FF93C007B1AE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB905B451870206D007B1AE1 /* Release.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DB903E49186FF8C1007B1AE1 /* Build configuration list for PBXProject "MonkeysAudio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB903E4A186FF8C1007B1AE1 /* Debug */,
+				DB903E4B186FF8C1007B1AE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB903E4D186FF92D007B1AE1 /* Build configuration list for PBXLegacyTarget "Download MAC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB903E4E186FF92D007B1AE1 /* Debug */,
+				DB903E4F186FF92D007B1AE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB903E7B186FF93C007B1AE1 /* Build configuration list for PBXNativeTarget "MAC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB903E7C186FF93C007B1AE1 /* Debug */,
+				DB903E7D186FF93C007B1AE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DB903E46186FF8C1007B1AE1 /* Project object */;
+}

@@ -1,0 +1,4 @@
+#include "../../Configurations/Framework-Debug.xcconfig"
+#include "Opus.xcconfig"
+
+GCC_OPTIMIZATION_LEVEL=1

@@ -1,0 +1,5 @@
+#include "Library-Shared.xcconfig"
+
+VALIDATE_PRODUCT=YES
+COPY_PHASE_STRIP=YES
+ENABLE_NS_ASSERTIONS=NO
