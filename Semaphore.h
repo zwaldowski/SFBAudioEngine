@@ -30,63 +30,87 @@
 
 #pragma once
 
-#include <mach/task.h>
+#include <iostream>
+#include <CoreFoundation/CoreFoundation.h>
 
-/*! @file Semaphore.h @brief A mach \c semaphore_t wrapper */
+/*! @file Semaphore.h @brief A class for multi-threaded data flow and access control. */
 
 /*! @brief \c SFBAudioEngine's encompassing namespace */
 namespace SFB {
 
-	/*! @brief A wrapper around a mach semaphore */
-	class Semaphore
-	{
-	public:
-		/*!
-		 * @brief Create a new \c Semaphore
-		 * @throws std::runtime_exception
-		 */
-		Semaphore();
+	/*! @brief %Threading functionality */
+	namespace Dispatch {
+		/*! @brief Internal implementation, wraps dispatch_semaphore_t. */
+		struct SemaphoreImpl;
 
-		/*! @brief Destroy this \c Semaphore */
-		~Semaphore();
-
-		/*! @cond */
-
-		/*! @internal This class is non-copyable */
-		Semaphore(const Semaphore& rhs) = delete;
-
-		/*! @internal This class is non-assignable */
-		Semaphore& operator=(const Semaphore& rhs) = delete;
-
-		/*! @endcond */
-
-		/*!
-		 * @brief Signal the \c Semaphore to wake a blocked thread
-		 * @return \c true if successful, \c false otherwise
-		 */
-		bool Signal();
-
-		/*!
-		 * @brief Signal the \c Semaphore to wake all blocked threads
-		 * @return \c true if successful, \c false otherwise
-		 */
-		bool SignalAll();
-
-		/*!
-		 * @brief Block the calling thread until the \c Semaphore is signaled
-		 * @return \c true if successful, \c false otherwise
-		 */
-		bool Wait();
-
-		/*!
-		 * @brief Block the calling thread until the \c Semaphore is signaled
-		 * @param duration The maximum duration to block
-		 * @return \c true if successful, \c false otherwise
-		 */
-		bool TimedWait(mach_timespec_t duration);
-
-	private:
-		semaphore_t mSemaphore;		/*!< The mach semahore */
-	};
-
+		/*! @brief A wrapper around a native semaphore. */
+		class Semaphore
+		{
+		public:
+			
+			// ========================================
+			/*! @name Factory Methods */
+			//@{
+			
+			/*! @brief A \c std::unique_ptr for \c Semaphore objects */
+			typedef std::unique_ptr<Semaphore> unique_ptr;
+			
+			//@}
+			
+			// ========================================
+			/*! @name Creation and Destruction */
+			// @{
+			
+			/*!
+			 * @brief Create a new \c Semaphore
+			 * @throws std::runtime_exception
+			 */
+			inline Semaphore() : Semaphore(0) { };
+			
+			/*!
+			 * @brief Create a new \c Semaphore
+			 * @param count The starting value for the semaphore. Waiting and
+			 * signalling the semaphore will decrement and increment this count,
+			 * respectively.
+			 * @throws std::runtime_exception
+			 */
+			Semaphore(long count);
+			
+			/*! @brief Destroy this \c Semaphore */
+			~Semaphore();
+			
+			/*! @cond */
+			
+			/*! @internal This class is non-copyable */
+			Semaphore(const Semaphore& rhs) = delete;
+			
+			/*! @internal This class is non-assignable */
+			Semaphore& operator=(const Semaphore& rhs) = delete;
+			
+			/*! @endcond */
+			
+			//@}
+						
+			/*!
+			 * @brief Signal the \c Semaphore to wake a blocked thread
+			 * @return \c true if successful, \c false otherwise
+			 */
+			bool Signal();
+			
+			/*!
+			 * @brief Block the calling thread until the \c Semaphore is signaled
+			 * @return \c true if successful, \c false otherwise
+			 */
+			bool Wait();
+			
+			/*!
+			 * @brief Block the calling thread until the \c Semaphore is signaled
+			 * @param duration The maximum duration to block
+			 * @return \c true if successful, \c false otherwise
+			 */
+			bool Wait(CFTimeInterval duration);
+		private:
+			std::unique_ptr<SemaphoreImpl> mPrivate;
+		};
+	}
 }

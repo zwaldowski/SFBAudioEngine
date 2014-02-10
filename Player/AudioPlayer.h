@@ -760,10 +760,10 @@ namespace SFB {
 			std::atomic<DecoderStateData *>			mActiveDecoders [kActiveDecoderArraySize];
 
 			std::mutex								mMutex;
-			Semaphore								mSemaphore;
+			Dispatch::Semaphore						mSemaphore;
 
 			std::thread								mDecoderThread;
-			Semaphore								mDecoderSemaphore;
+			Dispatch::Semaphore						mDecoderSemaphore;
 
 			std::thread								mCollectorThread;
 			Semaphore								mCollectorSemaphore;

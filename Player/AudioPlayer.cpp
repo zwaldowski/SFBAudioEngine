@@ -1623,14 +1623,11 @@ bool SFB::Audio::Player::SkipToNextTrack()
 	if(OutputIsRunning()) {
 		mFlags.fetch_or(eAudioPlayerFlagRequestMute, std::memory_order_relaxed);
 
-		mach_timespec_t renderTimeout = {
-			.tv_sec = 0,
-			.tv_nsec = NSEC_PER_SEC / 10
-		};
+		CFTimeInterval renderTimeout = 0.1;
 
 		// The rendering thread will clear eAudioPlayerFlagRequestMute when the current render cycle completes
 		while(eAudioPlayerFlagRequestMute & mFlags.load(std::memory_order_relaxed))
-			mSemaphore.TimedWait(renderTimeout);
+			mSemaphore.Wait(renderTimeout);
 	}
 	else
 		mFlags.fetch_or(eAudioPlayerFlagMuteOutput, std::memory_order_relaxed);
@@ -1641,13 +1638,10 @@ bool SFB::Audio::Player::SkipToNextTrack()
 	mDecoderSemaphore.Signal();
 
 	// Wait for decoding to finish or a SIGSEGV could occur if the collector collects an active decoder
-	mach_timespec_t timeout = {
-		.tv_sec = 0,
-		.tv_nsec = NSEC_PER_SEC / 10
-	};
+	CFTimeInterval timeout = .1;
 
 	while(!(eDecoderStateDataFlagDecodingFinished & currentDecoderState->mFlags.load(std::memory_order_relaxed)))
-		mSemaphore.TimedWait(timeout);
+		mSemaphore.Wait(timeout);
 
 	currentDecoderState->mFlags.fetch_or(eDecoderStateDataFlagRenderingFinished, std::memory_order_relaxed);
 
@@ -1864,10 +1858,7 @@ void * SFB::Audio::Player::DecoderThreadEntry()
 	if(!setThreadPolicy(DECODER_THREAD_IMPORTANCE))
 		LOGGER_WARNING("org.sbooth.AudioEngine.Player", "Couldn't set decoder thread importance");
 
-	mach_timespec_t timeout = {
-		.tv_sec = 5,
-		.tv_nsec = 0
-	};
+	CFTimeInterval timeout = 5;
 
 	while(!(eAudioPlayerFlagStopDecoding & mFlags.load(std::memory_order_relaxed))) {
 
@@ -1940,14 +1931,11 @@ void * SFB::Audio::Player::DecoderThreadEntry()
 					mFlags.fetch_or(eAudioPlayerFlagFormatMismatch, std::memory_order_relaxed);
 
 					// Wait for the currently rendering decoder to finish
-					mach_timespec_t renderTimeout = {
-						.tv_sec = 0,
-						.tv_nsec = NSEC_PER_SEC / 100
-					};
+					CFTimeInterval renderTimeout = 0.01;
 
 					// The rendering thread will clear eAudioPlayerFlagRequestMute when the current render cycle completes
 					while(eAudioPlayerFlagFormatMismatch & mFlags.load(std::memory_order_relaxed))
-						mSemaphore.TimedWait(renderTimeout);
+						mSemaphore.Wait(renderTimeout);
 				}
 
 				if(mFormatMismatchBlock)
@@ -2039,14 +2027,11 @@ void * SFB::Audio::Player::DecoderThreadEntry()
 						if(OutputIsRunning()) {
 							mFlags.fetch_or(eAudioPlayerFlagRequestMute, std::memory_order_relaxed);
 
-							mach_timespec_t renderTimeout = {
-								.tv_sec = 0,
-								.tv_nsec = NSEC_PER_SEC / 100
-							};
+							CFTimeInterval renderTimeout = .01;
 
 							// The rendering thread will clear eAudioPlayerFlagRequestMute when the current render cycle completes
 							while(eAudioPlayerFlagRequestMute & mFlags.load(std::memory_order_relaxed))
-								mSemaphore.TimedWait(renderTimeout);
+								mSemaphore.Wait(renderTimeout);
 						}
 						else
 							mFlags.fetch_or(eAudioPlayerFlagMuteOutput, std::memory_order_relaxed);
@@ -2079,14 +2064,11 @@ void * SFB::Audio::Player::DecoderThreadEntry()
 							if(OutputIsRunning()) {
 								mFlags.fetch_or(eAudioPlayerFlagRequestMute, std::memory_order_relaxed);
 
-								mach_timespec_t renderTimeout = {
-									.tv_sec = 0,
-									.tv_nsec = NSEC_PER_SEC / 100
-								};
+								CFTimeInterval renderTimeout = .01;
 
 								// The rendering thread will clear eAudioPlayerFlagRequestMute when the current render cycle completes
 								while(eAudioPlayerFlagRequestMute & mFlags.load(std::memory_order_relaxed))
-									mSemaphore.TimedWait(renderTimeout);
+									mSemaphore.Wait(renderTimeout);
 							}
 							else
 								mFlags.fetch_or(eAudioPlayerFlagMuteOutput, std::memory_order_relaxed);
@@ -2184,7 +2166,7 @@ void * SFB::Audio::Player::DecoderThreadEntry()
 				}
 
 				// Wait for the audio rendering thread to signal us that it could use more data, or for the timeout to happen
-				mDecoderSemaphore.TimedWait(timeout);
+				mDecoderSemaphore.Wait(timeout);
 			}
 			
 			// ========================================
@@ -2208,7 +2190,7 @@ void * SFB::Audio::Player::DecoderThreadEntry()
 		}
 
 		// Wait for another thread to wake us, or for the timeout to happen
-		mDecoderSemaphore.TimedWait(timeout);
+		mDecoderSemaphore.Wait(timeout);
 	}
 
 	LOGGER_INFO("org.sbooth.AudioEngine.Player", "Decoding thread terminating");
@@ -2221,10 +2203,7 @@ void * SFB::Audio::Player::CollectorThreadEntry()
 	pthread_setname_np("org.sbooth.AudioEngine.Collector");
 
 	// The collector should be signaled when there is cleanup to be done, so there is no need for a short timeout
-	mach_timespec_t timeout = {
-		.tv_sec = 30,
-		.tv_nsec = 0
-	};
+	CFTimeInterval timeout = 30;
 
 	while(!(eAudioPlayerFlagStopCollecting & mFlags.load(std::memory_order_relaxed))) {
 		
@@ -2248,7 +2227,7 @@ void * SFB::Audio::Player::CollectorThreadEntry()
 		}
 		
 		// Wait for any thread to signal us to try and collect finished decoders
-		mCollectorSemaphore.TimedWait(timeout);
+		mCollectorSemaphore.Wait(timeout);
 	}
 	
 	LOGGER_INFO("org.sbooth.AudioEngine.Player", "Collecting thread terminating");

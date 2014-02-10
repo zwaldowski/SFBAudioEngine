@@ -28,74 +28,78 @@
  *  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <mach/mach.h>
-#include <stdexcept>
-
 #include "Semaphore.h"
+
+#include "CFWrapper.h"
+#include "DispatchWrapper.h"
 #include "Logger.h"
 
-SFB::Semaphore::Semaphore()
-{
-	kern_return_t result = semaphore_create(mach_task_self(), &mSemaphore, SYNC_POLICY_FIFO, 0);
+#include <dispatch/dispatch.h>
 
-	if(KERN_SUCCESS != result) {
-		LOGGER_CRIT("org.sbooth.AudioEngine.Semaphore", "semaphore_create failed: " << mach_error_string(result));
-		throw std::runtime_error("Unable to create the semaphore");
+using namespace SFB::Dispatch;
+
+namespace {
+	static dispatch_time_t TimeFromNow(CFTimeInterval duration) {
+		return dispatch_time(DISPATCH_TIME_NOW, (int64_t)(duration * NSEC_PER_SEC));
 	}
 }
 
-SFB::Semaphore::~Semaphore()
-{
-	kern_return_t result = semaphore_destroy(mach_task_self(), mSemaphore);
-
-	if(KERN_SUCCESS != result)
-		LOGGER_ERR("org.sbooth.AudioEngine.Semaphore", "semaphore_destroy failed: " << mach_error_string(result));
+namespace SFB {
+	namespace Dispatch {
+		struct SemaphoreImpl
+		{
+			SemaphoreImpl(dispatch_semaphore_t iSema) : semaphore(iSema) {
+				if (!semaphore) {
+					LOGGER_CRIT("org.sbooth.AudioEngine.Dispatch.Semaphore", "dispatch_semaphore_create failed.");
+					throw std::runtime_error("Unable to create the semaphore");
+				}
+			}
+			
+			bool Signal()
+			{
+				return (dispatch_semaphore_signal(semaphore) != 0);
+			}
+			
+			bool Wait()
+			{
+				return Wait(DISPATCH_TIME_FOREVER);
+			}
+			
+			bool Wait(CFTimeInterval duration)
+			{
+				return Wait(TimeFromNow(duration));
+			}
+			
+		private:
+			
+			bool Wait(dispatch_time_t time)
+			{
+				return (dispatch_semaphore_wait(semaphore, time) == 0);
+			}
+			
+			dispatch_semaphore semaphore;
+		};
+	}
 }
 
-bool SFB::Semaphore::Signal()
+Semaphore::Semaphore(long count) : mPrivate(nullptr)
 {
-	kern_return_t result = semaphore_signal(mSemaphore);
-
-	if(KERN_SUCCESS != result) {
-		LOGGER_WARNING("org.sbooth.AudioEngine.Semaphore", "Couldn't signal the semaphore: " << mach_error_string(result));
-		return false;
-	}
-
-	return true;
+	mPrivate.reset(new SemaphoreImpl(dispatch_semaphore_create(count)));
 }
 
-bool SFB::Semaphore::SignalAll()
+Semaphore::~Semaphore() { }
+
+bool Semaphore::Signal()
 {
-	kern_return_t result = semaphore_signal_all(mSemaphore);
-
-	if(KERN_SUCCESS != result) {
-		LOGGER_WARNING("org.sbooth.AudioEngine.Semaphore", "Couldn't signal the semaphore: " << mach_error_string(result));
-		return false;
-	}
-
-	return true;
+	return mPrivate->Signal();
 }
 
-bool SFB::Semaphore::Wait()
+bool Semaphore::Wait()
 {
-	kern_return_t result = semaphore_wait(mSemaphore);
-
-	if(KERN_SUCCESS != result) {
-		LOGGER_WARNING("org.sbooth.AudioEngine.Semaphore", "Semaphore couldn't wait: " << mach_error_string(result));
-		return false;
-	}
-
-	return true;
+	return mPrivate->Wait();
 }
 
-bool SFB::Semaphore::TimedWait(mach_timespec_t duration)
+bool Semaphore::Wait(CFTimeInterval duration)
 {
-	kern_return_t result = semaphore_timedwait(mSemaphore, duration);
-
-	if(KERN_SUCCESS != result && KERN_OPERATION_TIMED_OUT != result) {
-		LOGGER_WARNING("org.sbooth.AudioEngine.Semaphore", "Semaphore couldn't timedwait: " << mach_error_string(result));
-		return false;
-	}
-
-	return true;
+	return mPrivate->Wait(duration);
 }
