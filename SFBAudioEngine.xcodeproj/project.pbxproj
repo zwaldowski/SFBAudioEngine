@@ -133,6 +133,8 @@
 		DB9058AD187014D8007B1AE1 /* mpg123.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB9058AA187014CD007B1AE1 /* mpg123.framework */; };
 		DB9058AE187014DF007B1AE1 /* mpg123.framework in Copy Embedded Frameworks */ = {isa = PBXBuildFile; fileRef = DB9058AA187014CD007B1AE1 /* mpg123.framework */; };
 		DBC8716D185F8D9E00F2EA95 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DBC8716C185F8D9E00F2EA95 /* libz.dylib */; };
+		DBDF155E18AFF9B800EFAF0A /* Queue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DBDF155C18AFF9B800EFAF0A /* Queue.cpp */; };
+		DBDF155F18AFF9B800EFAF0A /* Queue.h in Headers */ = {isa = PBXBuildFile; fileRef = DBDF155D18AFF9B800EFAF0A /* Queue.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +144,48 @@
 			proxyType = 1;
 			remoteGlobalIDString = 32C212D41091116D00BA2493;
 			remoteInfo = SFBAudioEngine.framework;
+		};
+		DB437FE718A8883F00E94BC6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB9058A4187014CD007B1AE1 /* mpg123.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB905A9B18701E00007B1AE1;
+			remoteInfo = libmpg123;
+		};
+		DB437FF318A8883F00E94BC6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB903DE6186FF75C007B1AE1 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB9058D1187015B0007B1AE1;
+			remoteInfo = libogg;
+		};
+		DB437FF518A8883F00E94BC6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB903DE6186FF75C007B1AE1 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB90593D1870194F007B1AE1;
+			remoteInfo = libvorbis;
+		};
+		DB437FF718A8883F00E94BC6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB903DE6186FF75C007B1AE1 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB90598918701A57007B1AE1;
+			remoteInfo = libspeex;
+		};
+		DB437FF918A8883F00E94BC6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB903DE6186FF75C007B1AE1 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB9059F318701BC0007B1AE1;
+			remoteInfo = libFLAC;
+		};
+		DB437FFF18A8883F00E94BC6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB90556C18701239007B1AE1 /* WavPack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB905A5918701D04007B1AE1;
+			remoteInfo = libwavpack;
 		};
 		DB903E1F186FF847007B1AE1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -534,6 +578,9 @@
 		DB9058A4187014CD007B1AE1 /* mpg123.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = mpg123.xcodeproj; path = Vendor/mpg123/mpg123.xcodeproj; sourceTree = "<group>"; };
 		DBC804B2186009690026B6E5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		DBC8716C185F8D9E00F2EA95 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		DBDF155C18AFF9B800EFAF0A /* Queue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Queue.cpp; sourceTree = "<group>"; };
+		DBDF155D18AFF9B800EFAF0A /* Queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Queue.h; sourceTree = "<group>"; };
+		DBDF157818B0506000EFAF0A /* DispatchWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DispatchWrapper.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -586,10 +633,12 @@
 			);
 			name = CFPlayer;
 			sourceTree = "<group>";
+			usesTabs = 1;
 		};
 		29B97315FDCFA39411CA2CEA /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				DBDDAC5018B0B0B8006979AC /* Dispatch */,
 				3230A937182E698900D630CF /* AudioBufferList.h */,
 				3230A936182E698900D630CF /* AudioBufferList.cpp */,
 				32C99D2018305387004388CF /* AudioChannelLayout.h */,
@@ -598,14 +647,12 @@
 				32B848E5180E199D00A222C5 /* AudioConverter.cpp */,
 				32B848EA180E395D00A222C5 /* ReplayGainAnalyzer.h */,
 				32B848E9180E395D00A222C5 /* ReplayGainAnalyzer.cpp */,
-				32A5A20117DD1BF80064C5DE /* CFWrapper.h */,
 				321FCF9017BF1C3600828C3A /* RingBuffer.h */,
 				321FCF8F17BF1C3600828C3A /* RingBuffer.cpp */,
+				32A5A20117DD1BF80064C5DE /* CFWrapper.h */,
 				32AEB2901409AF2B001F9A60 /* Logger.h */,
 				32AEB28F1409AF2B001F9A60 /* Logger.cpp */,
 				32DFA2F214FA7FD400D1FB58 /* Logger+NSOverloads.mm */,
-				326A98F61392F38A0061A65F /* Semaphore.h */,
-				326A98F51392F38A0061A65F /* Semaphore.cpp */,
 				322D78B1112F9851006676FC /* CreateDisplayNameForURL.h */,
 				322D78B0112F9851006676FC /* CreateDisplayNameForURL.cpp */,
 				320723BC138D521A00007369 /* CreateStringForOSType.h */,
@@ -865,6 +912,10 @@
 				DB90518C187004B4007B1AE1 /* FLAC.framework */,
 				DB90518E187004B4007B1AE1 /* opus.framework */,
 				DB90545118700D8C007B1AE1 /* sndfile.framework */,
+				DB437FF418A8883F00E94BC6 /* libogg.a */,
+				DB437FF618A8883F00E94BC6 /* libvorbis.a */,
+				DB437FF818A8883F00E94BC6 /* libspeex.a */,
+				DB437FFA18A8883F00E94BC6 /* libFLAC.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -873,6 +924,7 @@
 			isa = PBXGroup;
 			children = (
 				DB90557218701239007B1AE1 /* wavpack.framework */,
+				DB43800018A8883F00E94BC6 /* libwavpack.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -881,6 +933,7 @@
 			isa = PBXGroup;
 			children = (
 				DB9058AA187014CD007B1AE1 /* mpg123.framework */,
+				DB437FE818A8883F00E94BC6 /* libmpg123.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -902,6 +955,18 @@
 			name = "System Frameworks";
 			sourceTree = "<group>";
 		};
+		DBDDAC5018B0B0B8006979AC /* Dispatch */ = {
+			isa = PBXGroup;
+			children = (
+				DBDF155D18AFF9B800EFAF0A /* Queue.h */,
+				DBDF155C18AFF9B800EFAF0A /* Queue.cpp */,
+				DBDF157818B0506000EFAF0A /* DispatchWrapper.h */,
+				326A98F61392F38A0061A65F /* Semaphore.h */,
+				326A98F51392F38A0061A65F /* Semaphore.cpp */,
+			);
+			name = Dispatch;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -919,6 +984,7 @@
 				326A98F81392F38A0061A65F /* Semaphore.h in Headers */,
 				326CE06E17E3B023003877AB /* CreateDisplayNameForURL.h in Headers */,
 				32AEB2F61409BB23001F9A60 /* Logger.h in Headers */,
+				DBDF155F18AFF9B800EFAF0A /* Queue.h in Headers */,
 				32B848EC180E395D00A222C5 /* ReplayGainAnalyzer.h in Headers */,
 				32A5A20317DD1BF80064C5DE /* CFWrapper.h in Headers */,
 				32C99D2218305387004388CF /* AudioChannelLayout.h in Headers */,
@@ -1057,6 +1123,48 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		DB437FE818A8883F00E94BC6 /* libmpg123.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libmpg123.a;
+			remoteRef = DB437FE718A8883F00E94BC6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB437FF418A8883F00E94BC6 /* libogg.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libogg.a;
+			remoteRef = DB437FF318A8883F00E94BC6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB437FF618A8883F00E94BC6 /* libvorbis.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libvorbis.a;
+			remoteRef = DB437FF518A8883F00E94BC6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB437FF818A8883F00E94BC6 /* libspeex.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libspeex.a;
+			remoteRef = DB437FF718A8883F00E94BC6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB437FFA18A8883F00E94BC6 /* libFLAC.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libFLAC.a;
+			remoteRef = DB437FF918A8883F00E94BC6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB43800018A8883F00E94BC6 /* libwavpack.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libwavpack.a;
+			remoteRef = DB437FFF18A8883F00E94BC6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		DB903E20186FF847007B1AE1 /* dumb.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -1209,6 +1317,7 @@
 				3205E3BF1130787300FD9DAD /* WAVEMetadata.cpp in Sources */,
 				3205E3CD11307A3700FD9DAD /* AddID3v2TagToDictionary.cpp in Sources */,
 				3205E4191130840A00FD9DAD /* SetID3v2TagFromMetadata.cpp in Sources */,
+				DBDF155E18AFF9B800EFAF0A /* Queue.cpp in Sources */,
 				3205E42A1130847C00FD9DAD /* AIFFMetadata.cpp in Sources */,
 				3205E43E113085AE00FD9DAD /* MP3Metadata.cpp in Sources */,
 				3205E45C11308F8C00FD9DAD /* MusepackMetadata.cpp in Sources */,
@@ -1344,10 +1453,6 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/Frameworks",
-				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1367,10 +1472,6 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/Frameworks",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				INFOPLIST_FILE = "SimplePlayer/SimplePlayer-Info.plist";
