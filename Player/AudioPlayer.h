@@ -44,6 +44,7 @@
 #include "RingBuffer.h"
 #include "AudioChannelLayout.h"
 #include "Semaphore.h"
+#include "Queue.h"
 
 /*! @file AudioPlayer.h @brief Core playback functionality */
 
@@ -708,7 +709,7 @@ namespace SFB {
 			// ========================================
 			// Thread entry points
 			void * DecoderThreadEntry();
-			void * CollectorThreadEntry();
+			void CollectorTaskEntry();
 
 			// ========================================
 			// AUGraph Setup and Control
@@ -765,8 +766,7 @@ namespace SFB {
 			std::thread								mDecoderThread;
 			Dispatch::Semaphore						mDecoderSemaphore;
 
-			std::thread								mCollectorThread;
-			Semaphore								mCollectorSemaphore;
+			Dispatch::Queue							*mCollectorQueue;
 
 			std::atomic_llong						mFramesDecoded;
 			std::atomic_llong						mFramesRendered;

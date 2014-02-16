@@ -67,8 +67,7 @@ enum eAudioPlayerFlags : unsigned int {
 	eAudioPlayerFlagRingBufferNeedsReset	= 1u << 3,
 	eAudioPlayerFlagStartPlayback			= 1u << 4,
 
-	eAudioPlayerFlagStopDecoding			= 1u << 10,
-	eAudioPlayerFlagStopCollecting			= 1u << 11
+	eAudioPlayerFlagStopDecoding			= 1u << 10
 };
 
 namespace {
@@ -81,6 +80,7 @@ namespace {
 		::SFB::Logger::SetCurrentLevel(::SFB::Logger::disabled);
 	}
 
+	static CFStringRef const AudioPlayerCollectionTaskKey = CFSTR("org.sbooth.AudioEngine.Collector");
 }
 
 // ========================================
@@ -237,7 +237,7 @@ namespace {
 #pragma mark Creation/Destruction
 
 SFB::Audio::Player::Player()
-	: mAUGraph(nullptr), mOutputNode(-1), mMixerNode(-1), mDefaultMaximumFramesPerSlice(0), mFlags(ATOMIC_VAR_INIT(0)), mRingBuffer(new RingBuffer()), mRingBufferCapacity(ATOMIC_VAR_INIT(RING_BUFFER_CAPACITY_FRAMES)), mRingBufferWriteChunkSize(ATOMIC_VAR_INIT(RING_BUFFER_WRITE_CHUNK_SIZE_FRAMES)), mFramesDecoded(ATOMIC_VAR_INIT(0)), mFramesRendered(ATOMIC_VAR_INIT(0)), mFramesRenderedLastPass(0), mFormatMismatchBlock(nullptr)
+    : mAUGraph(nullptr), mOutputNode(-1), mMixerNode(-1), mDefaultMaximumFramesPerSlice(0), mFlags(ATOMIC_VAR_INIT(0)), mRingBuffer(new RingBuffer()), mRingBufferCapacity(ATOMIC_VAR_INIT(RING_BUFFER_CAPACITY_FRAMES)), mRingBufferWriteChunkSize(ATOMIC_VAR_INIT(RING_BUFFER_WRITE_CHUNK_SIZE_FRAMES)), mFramesDecoded(ATOMIC_VAR_INIT(0)), mFramesRendered(ATOMIC_VAR_INIT(0)), mFramesRenderedLastPass(0), mFormatMismatchBlock(nullptr), mCollectorQueue(Dispatch::Queue::Global())
 {
 	memset(&mDecoderEventBlocks, 0, sizeof(mDecoderEventBlocks));
 	memset(&mRenderEventBlocks, 0, sizeof(mRenderEventBlocks));
@@ -260,14 +260,16 @@ SFB::Audio::Player::Player()
 	}
 
 	// ========================================
-	// Launch the collector thread
+	// Launch the collector task
 	try {
-		mCollectorThread = std::thread(&Player::CollectorThreadEntry, this);
+		mCollectorQueue->ScheduleTask(AudioPlayerCollectionTaskKey, 30, ^{
+			CollectorTaskEntry();
+		}, Dispatch::Queue::TimerBehavior::RepeatingCoalesce, 3);
 	}
 
 	catch(const std::exception& e) {
-		LOGGER_CRIT("org.sbooth.AudioEngine.Player", "Unable to create collector thread: " << e.what());
-
+		LOGGER_CRIT("org.sbooth.AudioEngine.Player", "Unable to create collector task: " << e.what());
+		
 		mFlags.fetch_or(eAudioPlayerFlagStopDecoding, std::memory_order_relaxed);
 		mDecoderSemaphore.Signal();
 
@@ -324,17 +326,11 @@ SFB::Audio::Player::~Player()
 	catch(const std::exception& e) {
 		LOGGER_ERR("org.sbooth.AudioEngine.Player", "Unable to join decoder thread: " << e.what());
 	}
-
-	// End the collector thread
-	mFlags.fetch_or(eAudioPlayerFlagStopCollecting, std::memory_order_relaxed);
-	mCollectorSemaphore.Signal();
 	
 	try {
-		mCollectorThread.join();
-	}
-
-	catch(const std::exception& e) {
-		LOGGER_ERR("org.sbooth.AudioEngine.Player", "Unable to join collector thread: " << e.what());
+		mCollectorQueue->SignalTask(AudioPlayerCollectionTaskKey, true, true);
+	} catch(const std::exception& e) {
+		LOGGER_ERR("org.sbooth.AudioEngine.Player", "Unable to join collector task: " << e.what());
 	}
 
 	// Force any decoders left hanging by the collector to end
@@ -1821,7 +1817,7 @@ OSStatus SFB::Audio::Player::RenderNotify(AudioUnitRenderActionFlags		*ioActionF
 				decoderState = nullptr;
 
 				// Since rendering is finished, signal the collector to clean up this decoder
-				mCollectorSemaphore.Signal();
+				mCollectorQueue->SignalTask(AudioPlayerCollectionTaskKey);
 			}
 
 			framesRemainingToDistribute -= framesFromThisDecoder;
@@ -1992,7 +1988,7 @@ void * SFB::Audio::Player::DecoderThreadEntry()
 				decoderState = nullptr;
 
 				// If this happens, output will be impossible
-				mCollectorSemaphore.Signal();
+				mCollectorQueue->SignalTask(AudioPlayerCollectionTaskKey);
 
 				continue;
 			}
@@ -2198,41 +2194,26 @@ void * SFB::Audio::Player::DecoderThreadEntry()
 	return nullptr;
 }
 
-void * SFB::Audio::Player::CollectorThreadEntry()
+void SFB::Audio::Player::CollectorTaskEntry()
 {
-	pthread_setname_np("org.sbooth.AudioEngine.Collector");
-
-	// The collector should be signaled when there is cleanup to be done, so there is no need for a short timeout
-	CFTimeInterval timeout = 30;
-
-	while(!(eAudioPlayerFlagStopCollecting & mFlags.load(std::memory_order_relaxed))) {
+	for (UInt32 bufferIndex = 0; bufferIndex < kActiveDecoderArraySize; ++bufferIndex) {
+		DecoderStateData *decoderState = mActiveDecoders[bufferIndex].load(std::memory_order_relaxed);
 		
-		for(UInt32 bufferIndex = 0; bufferIndex < kActiveDecoderArraySize; ++bufferIndex) {
-			DecoderStateData *decoderState = mActiveDecoders[bufferIndex].load(std::memory_order_relaxed);
-
-			if(nullptr == decoderState)
-				continue;
-
-			auto flags = decoderState->mFlags.load(std::memory_order_relaxed);
-
-			if(!(eDecoderStateDataFlagDecodingFinished & flags) || !(eDecoderStateDataFlagRenderingFinished & flags))
-				continue;
-
-			bool swapSucceeded = mActiveDecoders[bufferIndex].compare_exchange_strong(decoderState, nullptr);
-
-			if(swapSucceeded) {
-				LOGGER_DEBUG("org.sbooth.AudioEngine.Player", "Collecting decoder: \"" << decoderState->mDecoder->GetURL() << "\"");
-				delete decoderState, decoderState = nullptr;
-			}
+		if(nullptr == decoderState)
+			continue;
+		
+		auto flags = decoderState->mFlags.load(std::memory_order_relaxed);
+		
+		if(!(eDecoderStateDataFlagDecodingFinished & flags) || !(eDecoderStateDataFlagRenderingFinished & flags))
+			continue;
+		
+		bool swapSucceeded = mActiveDecoders[bufferIndex].compare_exchange_strong(decoderState, nullptr);
+		
+		if(swapSucceeded) {
+			LOGGER_DEBUG("org.sbooth.AudioEngine.Player", "Collecting decoder: \"" << decoderState->mDecoder->GetURL() << "\"");
+			delete decoderState, decoderState = nullptr;
 		}
-		
-		// Wait for any thread to signal us to try and collect finished decoders
-		mCollectorSemaphore.Wait(timeout);
 	}
-	
-	LOGGER_INFO("org.sbooth.AudioEngine.Player", "Collecting thread terminating");
-	
-	return nullptr;
 }
 
 #pragma mark AudioHardware Utilities
@@ -3151,8 +3132,8 @@ void SFB::Audio::Player::StopActiveDecoders()
 
 		decoderState->mFlags.fetch_or(eDecoderStateDataFlagRenderingFinished, std::memory_order_relaxed);
 	}
-
-	mCollectorSemaphore.Signal();
+	
+	mCollectorQueue->SignalTask(AudioPlayerCollectionTaskKey);
 }
 
 bool SFB::Audio::Player::SetupAUGraphAndRingBufferForDecoder(Decoder& decoder)
