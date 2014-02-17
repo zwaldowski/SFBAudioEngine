@@ -133,6 +133,8 @@
 		DB9058AD187014D8007B1AE1 /* mpg123.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB9058AA187014CD007B1AE1 /* mpg123.framework */; };
 		DB9058AE187014DF007B1AE1 /* mpg123.framework in Copy Embedded Frameworks */ = {isa = PBXBuildFile; fileRef = DB9058AA187014CD007B1AE1 /* mpg123.framework */; };
 		DBC8716D185F8D9E00F2EA95 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DBC8716C185F8D9E00F2EA95 /* libz.dylib */; };
+		DBDDACAE18B1C9FF006979AC /* ScanFromString.h in Headers */ = {isa = PBXBuildFile; fileRef = DBDDACAC18B1C9FF006979AC /* ScanFromString.h */; };
+		DBDDACC318B1CF01006979AC /* ScanFromString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DBDDACAB18B1C9FF006979AC /* ScanFromString.cpp */; };
 		DBDF155E18AFF9B800EFAF0A /* Queue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DBDF155C18AFF9B800EFAF0A /* Queue.cpp */; };
 		DBDF155F18AFF9B800EFAF0A /* Queue.h in Headers */ = {isa = PBXBuildFile; fileRef = DBDF155D18AFF9B800EFAF0A /* Queue.h */; };
 /* End PBXBuildFile section */
@@ -578,6 +580,8 @@
 		DB9058A4187014CD007B1AE1 /* mpg123.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = mpg123.xcodeproj; path = Vendor/mpg123/mpg123.xcodeproj; sourceTree = "<group>"; };
 		DBC804B2186009690026B6E5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		DBC8716C185F8D9E00F2EA95 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		DBDDACAB18B1C9FF006979AC /* ScanFromString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScanFromString.cpp; sourceTree = "<group>"; };
+		DBDDACAC18B1C9FF006979AC /* ScanFromString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanFromString.h; sourceTree = "<group>"; };
 		DBDF155C18AFF9B800EFAF0A /* Queue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Queue.cpp; sourceTree = "<group>"; };
 		DBDF155D18AFF9B800EFAF0A /* Queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Queue.h; sourceTree = "<group>"; };
 		DBDF157818B0506000EFAF0A /* DispatchWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DispatchWrapper.h; sourceTree = "<group>"; };
@@ -657,6 +661,8 @@
 				322D78B0112F9851006676FC /* CreateDisplayNameForURL.cpp */,
 				320723BC138D521A00007369 /* CreateStringForOSType.h */,
 				320723C7138D564700007369 /* CreateStringForOSType.cpp */,
+				DBDDACAC18B1C9FF006979AC /* ScanFromString.h */,
+				DBDDACAB18B1C9FF006979AC /* ScanFromString.cpp */,
 				32DFA2F114FA7FD400D1FB58 /* CFErrorUtilities.h */,
 				32DFA2F014FA7FD400D1FB58 /* CFErrorUtilities.cpp */,
 				32C212D61091116D00BA2493 /* Info.plist */,
@@ -988,6 +994,7 @@
 				32B848EC180E395D00A222C5 /* ReplayGainAnalyzer.h in Headers */,
 				32A5A20317DD1BF80064C5DE /* CFWrapper.h in Headers */,
 				32C99D2218305387004388CF /* AudioChannelLayout.h in Headers */,
+				DBDDACAE18B1C9FF006979AC /* ScanFromString.h in Headers */,
 				32B848E8180E199D00A222C5 /* AudioConverter.h in Headers */,
 				320A32E414DD5E8F00A5BAA4 /* TrueAudioMetadata.h in Headers */,
 				32BA761118203AFF00366204 /* OggOpusDecoder.h in Headers */,
@@ -1318,6 +1325,7 @@
 				3205E3CD11307A3700FD9DAD /* AddID3v2TagToDictionary.cpp in Sources */,
 				3205E4191130840A00FD9DAD /* SetID3v2TagFromMetadata.cpp in Sources */,
 				DBDF155E18AFF9B800EFAF0A /* Queue.cpp in Sources */,
+				DBDDACC318B1CF01006979AC /* ScanFromString.cpp in Sources */,
 				3205E42A1130847C00FD9DAD /* AIFFMetadata.cpp in Sources */,
 				3205E43E113085AE00FD9DAD /* MP3Metadata.cpp in Sources */,
 				3205E45C11308F8C00FD9DAD /* MusepackMetadata.cpp in Sources */,

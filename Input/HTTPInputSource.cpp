@@ -30,6 +30,7 @@
 
 #include "HTTPInputSource.h"
 #include "Logger.h"
+#include "ScanFromString.h"
 
 // ========================================
 // CFNetwork callbacks
@@ -144,11 +145,10 @@ SInt64 SFB::HTTPInputSource::_GetLength() const
 
 	SInt64 contentLength = -1;
 
-	// FIXME: 64-bit lengths aren't handled correctly
 	CFStringRef contentLengthString = reinterpret_cast<CFStringRef>(CFDictionaryGetValue(mResponseHeaders, CFSTR("Content-Length")));
 	if(contentLengthString)
-		contentLength = CFStringGetIntValue(contentLengthString);
-
+		contentLength = SFB::CFStringGetLongValue(contentLengthString);
+	
 	return contentLength;
 }
 
