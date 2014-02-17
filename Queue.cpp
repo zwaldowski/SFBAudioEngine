@@ -510,9 +510,15 @@ void Queue::ScheduleTask(CFStringRef name, CFTimeInterval delay, ::Block block, 
 void Queue::SignalTask(CFStringRef name, bool waitForCompletion, bool cancel)
 {
 	if (waitForCompletion) {
-		mPrivate->DispatchAsyncBlockingCaller(^(dispatch_block_t enter, dispatch_block_t exit){
-			mPrivate->SignalTask(name, cancel, enter, exit);
-		});
+		if (IsCurrentQueue()) {
+			DispatchSync(^{
+				mPrivate->SignalTask(name, cancel);
+			});
+		} else {
+			mPrivate->DispatchAsyncBlockingCaller(^(dispatch_block_t enter, dispatch_block_t exit){
+				mPrivate->SignalTask(name, cancel, enter, exit);
+			});
+		}
 	} else {
 		DispatchAsync(^{
 			mPrivate->SignalTask(name, cancel);
@@ -523,9 +529,15 @@ void Queue::SignalTask(CFStringRef name, bool waitForCompletion, bool cancel)
 void Queue::SignalAllTasks(bool waitForCompletion, bool cancel)
 {
 	if (waitForCompletion) {
-		mPrivate->DispatchAsyncBlockingCaller(^(dispatch_block_t enter, dispatch_block_t exit){
-			mPrivate->SignalAllTasks(cancel, enter, exit);
-		});
+		if (IsCurrentQueue()) {
+			DispatchSync(^{
+				mPrivate->SignalAllTasks(cancel);
+			});
+		} else {
+			mPrivate->DispatchAsyncBlockingCaller(^(dispatch_block_t enter, dispatch_block_t exit){
+				mPrivate->SignalAllTasks(cancel, enter, exit);
+			});
+		}
 	} else {
 		DispatchAsync(^{
 			mPrivate->SignalAllTasks(cancel);
