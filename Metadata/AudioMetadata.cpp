@@ -246,15 +246,11 @@ void SFB::Audio::Metadata::RevertUnsavedChanges()
 {
 	CFDictionaryRemoveAllValues(mChangedMetadata);
 
-	auto iter = std::begin(mPictures);
-	while(iter != std::end(mPictures)) {
-		auto picture = *iter;
+	for (auto picture : mPictures) {
 		if(AttachedPicture::ChangeState::Removed == picture->mState) {
 			picture->mState = AttachedPicture::ChangeState::Saved;
-			picture->RevertUnsavedChanges();
 		}
-		else
-			picture->RevertUnsavedChanges();
+		picture->RevertUnsavedChanges();
 	}
 }
 
