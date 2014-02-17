@@ -237,7 +237,7 @@ namespace {
 #pragma mark Creation/Destruction
 
 SFB::Audio::Player::Player()
-    : mAUGraph(nullptr), mOutputNode(-1), mMixerNode(-1), mDefaultMaximumFramesPerSlice(0), mFlags(ATOMIC_VAR_INIT(0)), mRingBuffer(new RingBuffer()), mRingBufferCapacity(ATOMIC_VAR_INIT(RING_BUFFER_CAPACITY_FRAMES)), mRingBufferWriteChunkSize(ATOMIC_VAR_INIT(RING_BUFFER_WRITE_CHUNK_SIZE_FRAMES)), mFramesDecoded(ATOMIC_VAR_INIT(0)), mFramesRendered(ATOMIC_VAR_INIT(0)), mFramesRenderedLastPass(0), mFormatMismatchBlock(nullptr), mCollectorQueue(Dispatch::Queue::Global())
+    : mAUGraph(nullptr), mOutputNode(-1), mMixerNode(-1), mDefaultMaximumFramesPerSlice(0), mFlags(ATOMIC_VAR_INIT(0)), mRingBuffer(new RingBuffer()), mRingBufferCapacity(ATOMIC_VAR_INIT(RING_BUFFER_CAPACITY_FRAMES)), mRingBufferWriteChunkSize(ATOMIC_VAR_INIT(RING_BUFFER_WRITE_CHUNK_SIZE_FRAMES)), mFramesDecoded(ATOMIC_VAR_INIT(0)), mFramesRendered(ATOMIC_VAR_INIT(0)), mFramesRenderedLastPass(0), mFormatMismatchBlock(nullptr), mCollectorQueue(Dispatch::Queue::Global()), mTrackActionQueue(Dispatch::Queue::Create())
 {
 	memset(&mDecoderEventBlocks, 0, sizeof(mDecoderEventBlocks));
 	memset(&mRenderEventBlocks, 0, sizeof(mRenderEventBlocks));
@@ -378,25 +378,27 @@ bool SFB::Audio::Player::Pause()
 
 bool SFB::Audio::Player::Stop()
 {
-	std::unique_lock<std::mutex> lock(mMutex, std::try_to_lock);
-	if(!lock)
-		return false;
-
-	if(OutputIsRunning())
-		StopOutput();
-
-	StopActiveDecoders();
-
-	if(!ResetOutput())
-		return false;
-
-	// Reset the ring buffer
-	mFramesDecoded.store(0, std::memory_order_relaxed);
-	mFramesRendered.store(0, std::memory_order_relaxed);
-
-	mFlags.fetch_or(eAudioPlayerFlagRingBufferNeedsReset, std::memory_order_relaxed);
-
-	return true;
+	__block bool result = false;
+	
+	mTrackActionQueue->DispatchSync(^{
+		if(OutputIsRunning())
+			StopOutput();
+		
+		StopActiveDecoders();
+		
+		if(!ResetOutput())
+			return;
+		
+		// Reset the ring buffer
+		mFramesDecoded.store(0, std::memory_order_relaxed);
+		mFramesRendered.store(0, std::memory_order_relaxed);
+		
+		mFlags.fetch_or(eAudioPlayerFlagRingBufferNeedsReset, std::memory_order_relaxed);
+		
+		result = true;
+	});
+	
+	return result;
 }
 
 SFB::Audio::Player::PlayerState SFB::Audio::Player::GetPlayerState() const
@@ -1589,22 +1591,22 @@ bool SFB::Audio::Player::Enqueue(Decoder::unique_ptr& decoder)
 	//     from underneath them
 	// In practice, the only time I've seen this happen is when using GuardMalloc, presumably because the
 	// normal execution time of Enqueue() isn't sufficient to lead to this condition.
-	std::unique_lock<std::mutex> lock(mMutex, std::try_to_lock);
-	if(!lock)
-		return false;
-
-	// If there are no decoders in the queue, set up for playback
-	if(nullptr == GetCurrentDecoderState() && !mDecoderQueue.empty()) {
-		if(!SetupAUGraphAndRingBufferForDecoder(*decoder))
-			return false;
-	}
-
-	// Take ownership of the decoder and add it to the queue
-	mDecoderQueue.push_back(std::move(decoder));
-
-	mDecoderSemaphore.Signal();
-	
-	return true;
+	__block bool result = false;
+	mTrackActionQueue->DispatchSync(^{
+		// If there are no decoders in the queue, set up for playback
+		if(nullptr == GetCurrentDecoderState() && !mDecoderQueue.empty()) {
+			if(!SetupAUGraphAndRingBufferForDecoder(*decoder))
+				return;
+		}
+		
+		// Take ownership of the decoder and add it to the queue
+		mDecoderQueue.push_back(std::move(decoder));
+		
+		mDecoderSemaphore.Signal();
+		
+		result = true;
+	});
+	return result;
 }
 
 bool SFB::Audio::Player::SkipToNextTrack()
@@ -1651,13 +1653,13 @@ bool SFB::Audio::Player::SkipToNextTrack()
 
 bool SFB::Audio::Player::ClearQueuedDecoders()
 {
-	std::unique_lock<std::mutex> lock(mMutex, std::try_to_lock);
-	if(!lock)
-		return false;
-
-	mDecoderQueue.clear();
-
-	return true;
+	__block bool result = false;
+	mTrackActionQueue->DispatchSync(^{
+		mDecoderQueue.clear();
+		
+		result = true;
+	});
+	return result;
 }
 
 #pragma mark Ring Buffer Parameters
@@ -1860,19 +1862,19 @@ void * SFB::Audio::Player::DecoderThreadEntry()
 
 		int64_t decoderCounter = 0;
 
-		DecoderStateData *decoderState = nullptr;
+		__block DecoderStateData *decoderState = nullptr;
 		{
 			// ========================================
 			// Lock the queue and remove the head element that contains the next decoder to use
-			std::unique_ptr<Decoder> decoder;
+			__block std::unique_ptr<Decoder> decoder;
 			{
-				std::unique_lock<std::mutex> lock(mMutex, std::try_to_lock);
-
-				if(lock && !mDecoderQueue.empty()) {
-					auto iter = std::begin(mDecoderQueue);
-					decoder = std::move(*iter);
-					mDecoderQueue.erase(iter);
-				}
+				mTrackActionQueue->DispatchSync(^{
+					if(!mDecoderQueue.empty()) {
+						auto iter = std::begin(mDecoderQueue);
+						decoder = std::move(*iter);
+						mDecoderQueue.erase(iter);
+					}
+				});
 			}
 
 			// ========================================
@@ -1939,11 +1941,9 @@ void * SFB::Audio::Player::DecoderThreadEntry()
 
 				// Adjust the formats
 				{
-					std::unique_lock<std::mutex> lock(mMutex, std::try_to_lock);
-					if(lock)
+					mTrackActionQueue->DispatchSync(^{
 						SetupAUGraphAndRingBufferForDecoder(*decoderState->mDecoder);
-					else
-						delete decoderState, decoderState = nullptr;
+					});
 				}
 
 				// Clear the mute flag that was set in the rendering thread so output will resume
@@ -2476,19 +2476,21 @@ bool SFB::Audio::Player::CloseOutput()
 bool SFB::Audio::Player::StartOutput()
 {
 	LOGGER_DEBUG("org.sbooth.AudioEngine.Player", "StartOutput");
-
-	// We don't want to start output in the middle of a buffer modification
-	std::unique_lock<std::mutex> lock(mMutex, std::try_to_lock);
-	if(!lock)
-		return false;
-
-	OSStatus result = AUGraphStart(mAUGraph);
-	if(noErr != result) {
-		LOGGER_ERR("org.sbooth.AudioEngine.Player", "AUGraphStart failed: " << result);
-		return false;
-	}
 	
-	return true;
+	__block bool ret = false;
+	
+	// We don't want to start output in the middle of a buffer modification
+	mTrackActionQueue->DispatchSync(^{
+		OSStatus result = AUGraphStart(mAUGraph);
+		if(noErr != result) {
+			LOGGER_ERR("org.sbooth.AudioEngine.Player", "AUGraphStart failed: " << result);
+			return;
+		}
+		
+		ret = true;
+	});
+	
+	return ret;
 }
 
 bool SFB::Audio::Player::StopOutput()

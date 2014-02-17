@@ -760,7 +760,8 @@ namespace SFB {
 			std::vector<Decoder::unique_ptr>		mDecoderQueue;
 			std::atomic<DecoderStateData *>			mActiveDecoders [kActiveDecoderArraySize];
 
-			std::mutex								mMutex;
+			Dispatch::Queue::unique_ptr				mTrackActionQueue;
+			
 			Dispatch::Semaphore						mSemaphore;
 
 			std::thread								mDecoderThread;
